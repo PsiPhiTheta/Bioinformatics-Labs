@@ -1,0 +1,41 @@
+<div id="ABC">
+<div style="padding:5px; border:1px solid #000000; background-color:#b3dbce; font-size:300%; font-weight:400; color: #000000; width:100%;">
+Thomas Hollis' Journal
+<div style="padding:5px; margin-top:20px; margin-bottom:10px; background-color:#b3dbce; font-size:30%; font-weight:200; color: #000000; ">
+(Thomas Hollis' personal Journal)
+</div>
+</div>
+
+
+ __TOC__
+
+= Main =
+
+== Week 1 ==
+Accessed and created main StudentWiki user page.  Completed the following units:
+
+<div class="mw-collapsible mw-collapsed" data-expandtext="Expand" data-collapsetext="Completed the following units:" style="width:50%; ">
+Completed the following units:
+<div class="mw-collapsible-content" style="padding:10px;">
+{{WP | FND-Wiki_editing}}
+
+</div>
+</div>
+
+== Week 2 ==
+Pushed ahead on course content.
+
+<div class="ToDo">
+ToDo:
+* Explore the WikiMarkup syntax
+* Push ahead with course content
+* Create and commit current progress to a Github repository
+</div>
+
+<div class="note">
+Note: This section is still in development. 
+</div>
+
+{{CC-BY}}
+
+[[Category:BCH441_2018]]
