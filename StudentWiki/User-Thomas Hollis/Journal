@@ -1,7 +1,7 @@
 <div id="ABC">
-<div style="padding:5px; border:1px solid #000000; background-color:#b3dbce; font-size:300%; font-weight:400; color: #000000; width:100%;">
+<div style="padding:5px; border:1px solid #000000; background-color:#C0C0C0; font-size:300%; font-weight:400; color: #000000; width:100%;">
 Thomas Hollis' Journal
-<div style="padding:5px; margin-top:20px; margin-bottom:10px; background-color:#b3dbce; font-size:30%; font-weight:200; color: #000000; ">
+<div style="padding:5px; margin-top:20px; margin-bottom:10px; background-color:#C0C0C0; font-size:30%; font-weight:200; color: #000000; ">
 (Thomas Hollis' personal Journal)
 </div>
 </div>
@@ -9,25 +9,77 @@ Thomas Hollis' Journal
 
  __TOC__
 
-= Main =
 
-== Week 1 ==
-Accessed and created main StudentWiki user page.  Completed the following units:
+= 0. Course preparations =
+This section outlines the work done on all the courses that have to do with course preparation. 
 
-<div class="mw-collapsible mw-collapsed" data-expandtext="Expand" data-collapsetext="Completed the following units:" style="width:50%; ">
-Completed the following units:
-<div class="mw-collapsible-content" style="padding:10px;">
-{{WP | FND-Wiki_editing}}
+== 0.1 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Wiki_editing Wiki Editing] ==
+; Objective
+The main objective is to gain an in depth understanding of how to navigate and edit the student wiki as well as comprehend what will be expected of me throughout the course. 
 
+<div class="time-estimate">
+Time estimated: 2 h; taken 6 h; date started: 2018-09-14; date completed: 2018-09-15
 </div>
+
+; Activities
+I accessed and created my main StudentWiki user page, journal page and insights page.  This was not too challenging as I have been contributing to Wikipedia's public body of information for a few years now and I am used to the WikiMarkup syntax. As an avid fan of the open-source community, I also created and committed my current progress to my own personal [https://github.com/PsiPhiTheta "Bioinformatics" Github repository] for the rest of the world to use. What was the most time consuming was to explore the entire wiki to see everything that this course has to offer, including all the activities that occurred in previous years. I must confess I did get a little carried away in my exploration and the boundary between "fun" and "work" is already starting to blur. However, I do believe that this is a good sign and I am very excited for the course ahead.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Journal Journal Writing].
+
+== 0.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Journal Journal Writing] ==
+; Objective
+The main objective is to start off my Journal with a strong baseline on which I can build the rest of my discoveries in this course.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken 1.5 h; date started: 2018-09-15; date completed: 2018-09-15
 </div>
 
-== Week 2 ==
-Pushed ahead on course content.
+; Activities
+I started writing my journal, including this precise section. I also edited my main [[User:Thomas_Hollis | user page]] and added some information to help my classmates identify who I am and what my background is. This will undoubtably be useful for collaboration in the future, especially given my computer science background with very little biology knowledge. 
 
+;Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-Plagiarism Plagiarism].
+
+== 0.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-Plagiarism Plagiarism] ==
+; Objective
+The main objective is to revise concepts related to Plagiarism. Collaboration can all to easily turn into plagiarism in academic institutions and the only way to stamp it out is through education. 
+
+<div class="time-estimate">
+Time estimated: 20 min; taken 1 h; date started: 2018-09-15; date completed: 2018-09-15
+</div>
+
+; Activities
+Read in detail the wiki page and the websites referred to in the main body. Checked all existing content to make sure it is fully cited. Added a citation for Google Deep Dream algorithms on my main User: page. Added the following practice APA citations:
+* a procedure in the methods section of a journal article, as you would cite it in a technical report:
+Gruber, H., Holzer, M., & Ruepp, O. (2016). Sorting the Slow Way: An Analysis of Perversely Awful Randomized Sorting Algorithms. Lecture Notes in Computer Science Fun with Algorithms, 4475, 183-197. doi:10.1007/978-3-540-72914-3_17
+* a piece of code you found in a StackOverflow article, as you would put it as a comment into computer code:
+BioGeek. (2015, April 24). Are there any worse sorting algorithms than Bogosort (a.k.a Monkey Sort)? Retrieved September 16, 2018, from https://stackoverflow.com/questions/2609857/are-there-any-worse-sorting-algorithms-than-bogosort-a-k-a-monkey-sort
+* some contents from a classmate's journal that you incorporate into your own journal:
+Moskal, N. (2013) Open Project Concept. Retrieved September 16, 2018, from http://steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Natalia_Moskal/Open_Project
+
+;Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-Insights Insights].
+
+== 0.4 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-Insights Insights] ==
+; Objective
+The main objective is to learn how to create and maintain the "insights!" page in BCH441. 
+<div class="time-estimate">
+Time estimated: 0.5 h; taken 1 h; date started: 2018-09-16; date completed: 2018-09-16
+</div>
+
+; Activities
+Edited my [[User:Thomas_Hollis/insights! | insights]] page.
+
+;Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Netiquette Netiquette].
+
+= 1. R Programming =
+This section outlines the work done on all the courses related to learning the R programming language. 
+
+== 1.1 ==
 <div class="ToDo">
 ToDo:
-* Explore the WikiMarkup syntax
 * Push ahead with course content
 * Create and commit current progress to a Github repository
 </div>
@@ -36,6 +88,13 @@ ToDo:
 Note: This section is still in development. 
 </div>
 
+{{Vspace}}
+
+=Notes and References=
+<references />
+
+{{Vspace}}
+
 {{CC-BY}}
 
-[[Category:BCH441_2018]]
+[[Category:BCH441-2018 Journal]]
