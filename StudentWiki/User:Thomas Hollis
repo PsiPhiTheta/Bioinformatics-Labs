@@ -1,19 +1,147 @@
 <div id="ABC">
-<div style="padding:5px; border:1px solid #000000; background-color:#b3dbce; font-size:300%; font-weight:400; color: #000000; width:100%;">
+<div style="padding:5px; border:1px solid #000000; background-color:#C0C0C0; font-size:300%; font-weight:400; color: #000000; width:100%;">
 User: Thomas Hollis
-<div style="padding:5px; margin-top:20px; margin-bottom:10px; background-color:#b3dbce; font-size:30%; font-weight:200; color: #000000; ">
+<div style="padding:5px; margin-top:20px; margin-bottom:10px; background-color:#C0C0C0; font-size:30%; font-weight:200; color: #000000; ">
 (Thomas Hollis' personal user page)
 </div>
 </div>
 
+{{Vspace}}
+
+[[File:Thomas_Hollis_(Google_Deep_Dream).jpg|200px|thumb|right|A picture of Thomas Hollis passed through multiple iterations of Google Deep Dream <ref>Google. (2015, August 12). Google/deepdream. Retrieved September 15, 2018, from https://github.com/google/deepdream</ref> algorithms]]
 
  __TOC__
 
 = About =
-Formerly a Bachelor of Electrical and Electronic Engineering at the University of Manchester (2015-2018), I am now a candidate in the Master of Science in Applied Computing at University of Toronto (2018-2020).
+Formerly a Bachelor of Electrical and Electronic Engineering at the University of Manchester (2015-2018), I am now a candidate in the Master of Science in Applied Computing at University of Toronto (2018-2020). Biology novice.
 
 = Contact me =
 Email address: mailto:thollis@cs.toronto.edu
+
+= Useful code =
+Below is a collection of useful code snippets for subsequent reuse and referral. I hope that future-me finds them useful, as well as hopefully other classmates.
+
+== Git cheat sheet ==
+This is a cheat sheet for Git syntax that I wrote to help myself and classmates remember any git command for the future.
+{| class="wikitable"
+|-
+! Command example
+! Operation explanation
+|-
+| <source lang="R"> git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY </source>
+| Clones the linked repository to local storage
+|-
+| <source lang="R">git add GenomeAlgo.py
+git commit -m "v10.5"
+
+git push origin master </source>
+| Pushes the updated file to the master branch with the version as a comment
+|-
+|} 
+
+== R cheat sheet ==
+This is a cheat sheet for R syntax that I wrote for myself and my classmates to avoid silly mistakes and learn the R language more thoroughly.
+
+{| class="wikitable"
+|-
+! Command example
+! Operation explanation
+|-
+| <source lang="R">library(RWeka)</source>
+| Installs the RWeka package and all its dependencies
+|-
+| <source lang="R">save(x, y, z, file = “mydata.RData”)</source>
+| Saves objects x, y, z regardless of whether they are vectors, factors, lists or data frames into a file of given name.
+|-
+| <source lang="R">load(“mydata.RData”)</source>
+| Recreates the x, y, z data structures
+|-
+| <source lang="R">save.image()</source>
+| Saves current session to a file called .RData (R will look for this file automatically next time you start R)
+|-
+| <source lang="R">CTRL+L</source>
+| Clears terminal
+|-
+| <source lang="R">mydata <- read.csv("data.csv", stringsAsFactors = FALSE, header = FALSE)</source>
+| By default R assumes that CSV files include headers as the first row of the file thus header = FALSE must be used for headless CSV files.
+|-
+| <source lang="R">write.csv(pt_data, file = "pt_data.csv")</source>
+| Used to create a CSV file from an R object
+|-
+| <source lang="R">object_name</source>
+| Prints the information stored in an R object
+|-
+| <source lang="R">remove(object_name)</source>
+| Removes an R object
+|-
+| <source lang="R">CVector_name <- c(“John”)</source>
+| Writes a character vector
+|-
+| <source lang="R">NVector_name <- c(9.81)</source>
+| Writes a numeric vector
+|-
+| <source lang="R">IVector_name <- c(12, 13)</source>
+| Writes an integer vector (two entries)
+|-
+| <source lang="R">LVector_name <- c(TRUE, FALSE)</source>
+| Writes a logical vector (two entries)
+|-
+| <source lang="R">NULL</source>
+| Special vector type used in machine learning used to indicate absence of a value
+|-
+| <source lang="R">NA</source>
+| Special vector type used in machine learning used to indicate missing value (used for uninitialized values in vectors)
+|-
+| <source lang="R">& | ! </source>
+| AND, OR, NOT logical operators
+|-
+| <source lang="R">%>%</source>
+| Pipe operator
+|-
+| <source lang="R">Vector_name[1:4]</source>
+| Prints elements of vector from 1st to 4th in the form:   [1] 12, 13, NA, NA
+|-
+| <source lang="R">blood <- factor(c("O", "AB", "A"), levels = c("A", "B", "AB", "O"))</source>
+| Creating a factor with 3 blood types and adding a level that did not appear in the data before writing to the var ‘blood’ in the form:
+[1] O  AB A 
+Levels: A B AB O
+|-
+| <source lang="R">list()</source>
+| List function which creates a list, a fast way of assigning/displaying data of an object
+|-
+| <source lang="R">m <- matrix(c('a', 'b', 'c', 'd'), nrow = 2)</source>
+| Matrix creation results in the following:
+"a"  "c" 
+"b"  "d"
+|-
+| <source lang="R">summary(patients$year)</source>
+| Useful for investigating numeric variables (displays several common summary statistics). 
+|-
+| <source lang="R">mean()</source>
+| Function used to find the mean of data
+|-
+| <source lang="R">median()</source>
+| Function used to find the median of data
+|-
+| <source lang="R">range()</source>
+| Returns minimum and maximum values of data
+|-
+| <source lang="R">IQR()</source>
+| Used to find the inter-quartile range of data
+|-
+| <source lang="R">var()</source>
+| Outputs the variance of dataset
+|-
+| <source lang="R">sd()</source>
+| Outputs the standard deviation of dataset
+|-
+| <source lang="R">plot(x = patiens$age, y = patients$diseases,
+main = "Scatterplot of Age vs. Concurrent Diseases",
+xlab = "Patient age (years)",
+ylab = "Number of concurrent diseases")</source>
+| Typical scatterplot command
+|-
+|}
 
 = External Links =
 
@@ -21,15 +149,20 @@ Email address: mailto:thollis@cs.toronto.edu
 
 ====[[User:Thomas Hollis/insights! | Insights!]]====
 
-Github account: https://github.com/PsiPhiTheta
+Github account: https://github.com/PsiPhiTheta (lots of additional material here that this course inspired me to do) 
 
-Google scholar account: https://scholar.google.co.uk/citations?user=Gmr1zVUAAAAJ&hl=en
+Google scholar account: https://scholar.google.co.uk/citations?user=Gmr1zVUAAAAJ&hl=en (my current publications)
 
 UofT landing page: http://www.cs.toronto.edu/~thollis/
 
 Personal landing page: http://www.thomashollis.com
 
 
+= References = 
+<references/>
+
+
+{{Vspace}}
 
 
 {{CC-BY}}
