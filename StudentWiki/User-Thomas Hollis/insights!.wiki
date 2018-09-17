@@ -1,0 +1,68 @@
+<div id="ABC">
+<div style="padding:5px; border:1px solid #000000; background-color:#C0C0C0; font-size:300%; font-weight:400; color: #000000; width:100%;">
+Thomas Hollis' insights!
+<div style="padding:5px; margin-top:20px; margin-bottom:10px; background-color:#C0C0C0; font-size:30%; font-weight:200; color: #000000; ">
+(Thomas Hollis' insights! page)
+</div>
+</div>
+
+
+ __TOC__
+
+= Top 25 shortlist =
+For sake of concision, the following constitutes my top 25 bioinformatics insights by chronological order (effort was made to create rhymes but alas Shakespeare's wit is a challenge mere bioinformaticians can only strive toward). 
+
+== Insight #1 - Standing On The Shoulders of Giants ==
+ 
+In 1675, Isaac Newton is famously quoted to have said: "If I have seen further it is by standing on the shoulders of Giants." <ref>Newton, I. Letter from Sir Isaac Newton to Robert Hooke. Historical Society of Pennsylvania. Retrieved 16 September 2018.</ref>. In a similar vein, my first few days spent on this course made me realise the following insight that I have phrased into a poem:
+; The future will always be better than the past
+; From the shoulders of bigger, better and more numerous giants
+; We may now use new tools to learn increasingly fast
+; Allowing us to visit more science and become its ultimate clients
+
+: 16 September 2018
+
+== Insight #2 - You know what a good insight is? ==
+You know what a good insight is? Rhetorical questions. After having read "What do you think I think of that? Exactly." on the [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Netiquette Netiquette page], I had not only a wholesome chuckle but also an insight. As an aspiring educator, the following advice will undoubtably be useful to future-me:
+; Never allow technology to make your educational delivery boring. The age-old tip of engaging with your audience is just as valid for online content!
+
+: 16 September 2018
+
+== Insight #3 - Always follow the breadcrumbs ==
+Sometimes I wonder if I follow too many breadcrumbs. Today, I was not disappointed when I followed the URL to [https://github.com/hyginn Prof. Steipe's GitHub]. The profile picture being a QR code was too enigmatic for me to ignore. Like a child on an easter egg hunt, I scanned it and spent the next hour getting lost in Wikipedia's various pages on the art of [https://en.wikipedia.org/wiki/Hieronymus_Bosch Hieronymus Bosch].
+; Always follow the breadcrumbs
+; As it may lead to fascinating outcomes
+; You never know what you might stumble across
+; Just make sure that you minimise time loss
+
+: 17 September 2018
+
+== Insight #4 - Never forget the big picture ==
+[[File:Progress.png|200px|thumb|right|A screenshot of my current progress]]
+I have always believed that maintaining a high level view of the situation helps to motivate me to work in an efficient and targeted manner. It always me to know what I am doing and to know where I want to get to. 
+; Therefore, I have decided to gradually check off each unit once I have finished going through it in a graphical high level way. 
+; (see screenshot of progress aside)
+
+: 17 September 2018
+
+== Insight #25 - Reflect on how far you have come ==
+[[File:ProgressFinal.png|200px|thumb|right|A screenshot of my final progress]]
+As hindsight is settling in, it seems to me that looking back at the course map and seeing visually how much I have achieved is hugely beneficial.  
+; Therefore, I have decided to repost Insight #4 but updated showing the overall achievement. 
+; (see screenshot of progress aside)
+
+: ?? ?? 2018
+
+= Honorable mentions = 
+More insights can be found on my [https://github.com/PsiPhiTheta  GitHub] or by asking me in person. 
+
+<div class="note">
+Note: This section is still in development. 
+</div>
+
+= References =
+<references/>
+
+{{CC-BY}}
+
+[[Category:Insights!]]
