@@ -1,0 +1,233 @@
+<div id="ABC">
+<div style="padding:5px; border:1px solid #000000; background-color:#C0C0C0; font-size:300%; font-weight:400; color: #000000; width:100%;">
+Thomas Hollis' Journal
+<div style="padding:5px; margin-top:20px; margin-bottom:10px; background-color:#C0C0C0; font-size:30%; font-weight:200; color: #000000; ">
+(Thomas Hollis' personal Journal)
+</div>
+</div>
+
+
+ __TOC__
+
+
+= 0. Course preparations =
+This section outlines the work done on all the courses that have to do with course preparation. 
+
+== 0.1 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Wiki_editing Wiki Editing] ==
+; Objective
+The main objective is to gain an in depth understanding of how to navigate and edit the student wiki as well as comprehend what will be expected of me throughout the course. 
+
+<div class="time-estimate">
+Time estimated: 2 h; taken: 6 h; date started: 2018-09-14; date completed: 2018-09-15
+</div>
+
+; Activities
+I accessed and created my main StudentWiki user page, journal page and insights page.  This was not too challenging as I have been contributing to Wikipedia's public body of information for a few years now and I am used to the WikiMarkup syntax. As an avid fan of the open-source community, I also created and committed my current progress to my own personal [https://github.com/PsiPhiTheta "Bioinformatics" Github repository] for the rest of the world to use. What was the most time consuming was to explore the entire wiki to see everything that this course has to offer, including all the activities that occurred in previous years. I must confess I did get a little carried away in my exploration and the boundary between "fun" and "work" is already starting to blur. However, I do believe that this is a good sign and I am very excited for the course ahead.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Journal Journal Writing].
+
+== 0.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Journal Journal Writing] ==
+; Objective
+The main objective is to start off my Journal with a strong baseline on which I can build the rest of my discoveries in this course.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1.5 h; date started: 2018-09-15; date completed: 2018-09-15
+</div>
+
+; Activities
+I started writing my journal, including this precise section. I also edited my main [[User:Thomas_Hollis | user page]] and added some information to help my classmates identify who I am and what my background is. This will undoubtably be useful for collaboration in the future, especially given my computer science background with very little biology knowledge. 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-Plagiarism Plagiarism].
+
+== 0.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-Plagiarism Plagiarism] ==
+; Objective
+The main objective is to revise concepts related to Plagiarism. Collaboration can all to easily turn into plagiarism in academic institutions and the only way to stamp it out is through education. 
+
+<div class="time-estimate">
+Time estimated: 20 min; taken: 1 h; date started: 2018-09-15; date completed: 2018-09-15
+</div>
+
+; Activities
+Read in detail the wiki page and the websites referred to in the main body. Checked all existing content to make sure it is fully cited. Added a citation for Google Deep Dream algorithms on my main User: page. Added the following practice APA citations:
+* a procedure in the methods section of a journal article, as you would cite it in a technical report:
+Gruber, H., Holzer, M., & Ruepp, O. (2016). Sorting the Slow Way: An Analysis of Perversely Awful Randomized Sorting Algorithms. Lecture Notes in Computer Science Fun with Algorithms, 4475, 183-197. doi:10.1007/978-3-540-72914-3_17
+* a piece of code you found in a StackOverflow article, as you would put it as a comment into computer code:
+BioGeek. (2015, April 24). Are there any worse sorting algorithms than Bogosort (a.k.a Monkey Sort)? Retrieved September 16, 2018, from https://stackoverflow.com/questions/2609857/are-there-any-worse-sorting-algorithms-than-bogosort-a-k-a-monkey-sort
+* some contents from a classmate's journal that you incorporate into your own journal:
+Moskal, N. (2013) Open Project Concept. Retrieved September 16, 2018, from http://steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Natalia_Moskal/Open_Project
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-Insights Insights].
+
+== 0.4 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-Insights Insights] ==
+; Objective
+The main objective is to learn how to create and maintain the "insights!" page in BCH441. 
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-09-16; date completed: 2018-09-16
+</div>
+
+; Activities
+Edited my [[User:Thomas_Hollis/insights! | insights]] page.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Netiquette Netiquette].
+
+== 0.5 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Netiquette Netiquette] ==
+; Objective
+The main objective is to learn how to interact with other users on this StudentWiki network and in the mailing list. 
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-09-16; date completed: 2018-09-16
+</div>
+
+; Activities
+Read the [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Netiquette Netiquette] page carefully and came up with an insight for future me.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Backups Backups].
+
+== 0.6 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Backups Backups] ==
+; Objective
+The main objective is to refresh existing knowledge on how to securely backup data to prevent accidental data loss. 
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-09-16; date completed: 2018-09-16
+</div>
+
+; Activities
+Read the [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Backups Backups] page carefully and verified the effectiveness of my current backup solution. I currently store all of my personal files (excluding application data) in iCloud drive, which is continually backed up on Apple servers. So when is the last time I made a backup? Approximately three seconds ago when I saved my most recent file. Apple servers themselves are geographically distributed, redundant and backed up (often using RAID or similar technology). In addition, as I do not trust anyone else but myself with my own data, I also make differential local backups of my entire drive on the 1st of each month. This is done on two separate external hard drives (Time Machine really is a good utility). This allows me to have an on-site backup and off-site backup which protects me in the case that there is a fire and both my laptop and my hard drive get destroyed. Indeed the risk of this is non-negligeable as there are 24 000 house fires per year in Canada <ref>SGI Canada. (2018). Fire prevention and safety. Retrieved September 16, 2018, from https://www.sgicanada.ca/news?title=fire-prevention-and-safety</ref> for a total of 14 million houses <ref>Statistics Canada. (2016). Canada 2016 Census. Retrieved September 16, 2018, from https://www12.statcan.gc.ca/census-recensement/2016/as-sa/98-200-x/2016005/98-200-x2016005-eng.cfm</ref>. The probability of fire is therefore around 0.17% per year, roughly the same as the SSD failure rate listed in the [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Backups Backups] page. 
+
+As a quick sanity check I created and deleted a test file (containing the data: "ATGC") that I successfully recovered, as shown aside. [[File:RecoveredFile.png|200px|thumb|right|Recovered data from deleted test file]]
+
+; Conclusion and Outlook
+While friends may laugh at my backup strategy and fail to understand why I get so excited on the first day of each month, I will persist in backing up my data reliably. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Cargo_Cult Cargo Cult].
+
+== 0.7 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Cargo_Cult Cargo Cult] ==
+; Objective
+The main objective is to understand how to better identify examples of Cargo Cult science.
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-09-16; date completed: 2018-09-16
+</div>
+
+; Activities
+Read the 1974 {{WP|Richard Feynman}} [http://calteches.library.caltech.edu/51/2/CargoCult.htm Caltech Commencement address]. Contributed to the [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/Cargo_Cult_Science Cargo Cult Science] and [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/Not_(quite)_Cargo_Cult_Science Not (quite) Cargo Cult Science] pages by adding the example of [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/Cargo_Cult_Science#SCI_gen SCIgen] and commenting on the [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/Cargo_Cult_Science#SpongeBob_and_his_bubble_dance Spongebob Cargo Cult] example.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Technical_questions Technical Questions].
+
+== 0.8 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Technical_questions Technical questions] ==
+; Objective
+The main objectives are to understand how to ask technical questions and to learn the concept of Minimal Working Examples (MWEs).
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-09-16; date completed: 2018-09-16
+</div>
+
+; Activities
+Read the three recommended documents and bookmarked them for later use. 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Info_sources Information Sources].
+
+== 0.9 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Info_sources Information Sources] ==
+; Objective
+The main objectives are to build a database of information sources that will be of invaluable help for subsequent modules and to learn to navigate these resources.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken 1 h; date started: 2018-09-16; date completed: 2018-09-16
+</div>
+
+; Activities
+Bookmarked all useful resources and spend some time on each to create an account and/or learn to navigate the website.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Biocomputing_setup Biocomputing Setup].
+
+== 0.10 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Biocomputing_setup Biocomputing Setup] ==
+; Objective
+The main objectives are to set up my computer with the required IDEs, languages and utilities needed for bioinformatics. 
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 10 min; date started: 2018-09-16; date completed: 2018-09-16
+</div>
+
+; Activities
+After reading the entire recommended setup, I made a total of 0 changes to my setup. Indeed, I already had installed all the recommended tools, already structured my filesystem well and of course all my file extensions are always displayed by default. Yay! 
+
+I very much like that Prof. Steipe is on my side in the macOS vs. Windows war... take that [https://en.wikipedia.org/wiki/Bill_Gates Bill]. 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Installation Installation].
+
+= 1. R Programming =
+This section outlines the work done on all the courses related to learning the R programming language. 
+
+== 1.1 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Installation Installation] ==
+; Objective
+The main objectives are to remind myself on how to install and run packages in R. 
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 0.5 h; date started: 2018-09-16; date completed: 2018-09-16
+</div>
+
+; Activities
+Indeed as I have had prior experience using R and RStudio this module was more of a refresher. Nonetheless, I found it to be a useful review - especially the script that checks if a package is already installed before installing it. I also executed all the code suggested and had a good play around with the new packages discussed. 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Setup Setup].
+
+== 1.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Setup Setup] ==
+; Objective
+The main objectives are to check that my R environment is setup as recommended for bioinformatics.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-09-16; date completed: 2018-09-16
+</div>
+
+; Activities
+Indeed as I have used RStudio in the past only for machine learning and statistics, it was not optimally configured for Bioinformatics so I slightly tweaked my setup. I also learnt all about connecting RStudio to GitHub and did all the suggested exercises.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Console Console].
+
+== 1.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Console Console] ==
+; Objective
+The objective here was to learn the difference between executing entire scripts and executing commands individually from the console. 
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.1 h; date started: 2018-09-17; date completed: 2018-09-17
+</div>
+
+; Activities
+This was already known to me but reading the full wiki page is always good to serve as a refresher. 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Help Help].
+
+== 1.4 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Help Help] ==
+; Objective
+The main objective here is to gain familiarity with all the different sources of help for R programming outside what has already been mentioned. 
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: ?? h; date started: 2018-09-17; date completed: 2018-09-17
+</div>
+
+; Activities
+Read all the links recommended and tried out the code excerpts.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Syntax_basics Syntax basics].
+
+=Notes and References=
+<references />
+
+{{Vspace}}
+
+<div class="note">
+Note: This page is still in development. 
+</div>
+
+
+{{CC-BY}}
+
+[[Category:BCH441-2018 Journal]]
