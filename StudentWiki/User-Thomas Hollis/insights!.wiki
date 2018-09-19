@@ -45,6 +45,18 @@ I have always believed that maintaining a high level view of the situation helps
 
 : 17 September 2018
 
+== Insight #5 - Bluelight is your sleep cycle's worst enemy ==
+I have known for many years now that blue light (light closer to the UV side of the EM spectrum) was particularly good at suppressing the secretion of melatonin. I have however always assumed that, if I was ''really'' tired, my lack of melatonin would not be an issue. However, after much late night coding on a monitor with fullscreen RStudio I find myself in disagreement with my past-self. 
+; RStudio has a night mode that can be activated in the global settings!
+
+: 18 September 2018
+
+== Insight #6 - Why you should never trust someone who says "Trust Me" ==
+When Prof. Steipe says (without justification) that I should take the habit of always setting <code>stringsAsFactors = FALSE</code>, my eyebrows raised immediately. This made me think of people who make a statement or recommendation and when prompted to explain the rationale behind this, their reply is: "Trust me". I have found that, in most cases, "trust me" usually means "I have an idea why but I don't want to explain it to you". In many cases this is indicative of a weak idea where the supporting data is missing (e.g. "Trust me, X is a bad politician"). However, in other cases this is indicative of a highly knowledgeable person whose time is limited (e.g. "Trust me, that won't work"). I believe that in both cases the investigation is entirely worth it! If someone has a poor argument, take the most charitable interpretation of the argument and try to find data for or against it. In the case where someone doesn't have time to explain it to you, don't take their word for it - look it up yourself! You'll never know what kind of secrets could spill out. In this case the secrets behind <code>stringsAsFactors = FALSE</code> were [https://www.tutorialspoint.com/r/r_factors.htm definitely worth it].
+; Never trust someone who says "Trust me".
+
+: 18 September 2018
+
 == Insight #25 - Reflect on how far you have come ==
 [[File:ProgressFinal.png|200px|thumb|right|A screenshot of my final progress]]
 As hindsight is settling in, it seems to me that looking back at the course map and seeing visually how much I have achieved is hugely beneficial.  
@@ -54,6 +66,8 @@ As hindsight is settling in, it seems to me that looking back at the course map 
 : ?? ?? 2018
 
 = Honorable mentions = 
+Upon rereading my insights, I have found another insight: many of my insights use language such as "never, "always" or "worst". This is bound to come back to bite me as I am sure I can find exceptions to all of these rules. Perhaps my final insight should have been: "The only strong opinion anyone is entitled to is the strong opinion that nobody is entitled to strong opinions".
+
 More insights can be found on my [https://github.com/PsiPhiTheta  GitHub] or by asking me in person. 
 
 <div class="note">
