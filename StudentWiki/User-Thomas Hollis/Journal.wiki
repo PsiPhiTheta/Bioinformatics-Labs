@@ -218,6 +218,114 @@ Read all the links recommended and tried out the code excerpts.
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Syntax_basics Syntax basics].
 
+== 1.5 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Syntax_basics Syntax basics] ==
+; Objective
+The objective is to refresh on some R basics through examples.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-09-18; date completed: 2018-09-18
+</div>
+
+; Activities
+Running all the suggested code was a good opportunity for me to check that I am building my knowledge on good foundations. I was also able to make sure I don't have any bad R-programming habits to shake off. One particular thing I brushed up on was the difference between the "<-" and "=" in R. A really good explanation was read [https://renkun.me/2014/01/28/difference-between-assignment-operators-in-r/ here]. I also found out in this week's lecture that you never need to explicitly define parameters that have the "=" sign in R documentation. 
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+The code I wrote can be found here:
+<div class="mw-collapsible-content">
+<source lang="r">
+
+numbers <- c(16, 20, 3, 5, 9)
+numbers
+
+lastNum <- tail(numbers, 1)    
+lastNum
+
+if (lastNum < 6 | lastNum > 10) {
+  (bool1 <- 1)
+} else {
+  (bool1 <- 2)
+}
+
+if (lastNum >= 10 & lastNum < 20) {
+  (bool2 <- 1)
+} else {
+  (bool2 <- 2)
+}
+
+lastNum <- (lastNum/7) - ((((lastNum/7)*10)%/%1)/10)
+
+lastNum <- lastNum*100
+lastNum <- lastNum %/% 1
+lastNum <- lastNum ^ (1/3)
+
+if (lastNum == 2) {
+  (bool3 <- 1)
+} else {
+  (bool3 <- 2)
+}
+
+</source>
+
+</div>
+</div>
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Objects-Vectors Vectors].
+
+== 1.6 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Objects-Vectors Vectors] ==
+; Objective
+My objective for this unit is to build on my existing knowledge of R vectorisation. 
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-09-18; date completed: 2018-09-18
+</div>
+
+; Activities
+Ran through all the code suggested and found out something that I completely overlooked in the past: the difference between <code>mode(x)</code> and <code>class(x)</code>. A fascinating extension to the comments from Prof. Steipe can be found [https://stats.stackexchange.com/questions/3212/mode-class-and-type-of-r-objects here].
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Objects-Data_frames Data Frames].
+
+== 1.7 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Objects-Data_frames Data Frames] ==
+; Objective
+My main goal in this section is to remind myself what an R data frame is and how it operates.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-09-18; date completed: 2018-09-19
+</div>
+
+; Activities
+I ran through the code and spend a significant amount of time getting lost in rabbit wholes about how R ''actually'' does things... (see more on this in my [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Thomas_Hollis/insights!#Insight_.236_-_Why_you_should_never_trust_someone_who_says_.22Trust_Me.22 insights!] page).
+
+Oh and I actually wrote some code too...
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+One line but it counts anyway right?
+<div class="mw-collapsible-content">
+<source lang="r">
+rownames(plasmidData)[4]<-"pMAL-p5x"
+</source>
+
+</div>
+</div>
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Objects-Lists Lists].
+
+== 1.8 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Objects-Lists Lists] ==
+; Objective
+
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-09-18; date completed: 2018-09-19
+</div>
+
+; Activities
+
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Subsetting Subsetting].
+
 =Notes and References=
 <references />
 
