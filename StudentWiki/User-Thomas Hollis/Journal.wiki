@@ -54,7 +54,7 @@ Read in detail the wiki page and the websites referred to in the main body. Chec
 * a procedure in the methods section of a journal article, as you would cite it in a technical report:
 Gruber, H., Holzer, M., & Ruepp, O. (2016). Sorting the Slow Way: An Analysis of Perversely Awful Randomized Sorting Algorithms. Lecture Notes in Computer Science Fun with Algorithms, 4475, 183-197. doi:10.1007/978-3-540-72914-3_17
 * a piece of code you found in a StackOverflow article, as you would put it as a comment into computer code:
-BioGeek. (2015, April 24). Are there any worse sorting algorithms than Bogosort (a.k.a Monkey Sort)? Retrieved September 16, 2018, from https://stackoverflow.com/questions/2609857/are-there-any-worse-sorting-algorithms-than-bogosort-a-k-a-monkey-sort
+<code> # BioGeek. (2015, April 24). Are there any worse sorting algorithms than Bogosort (a.k.a Monkey Sort)? Retrieved September 16, 2018, from https://stackoverflow.com/questions/2609857/are-there-any-worse-sorting-algorithms-than-bogosort-a-k-a-monkey-sort </code>
 * some contents from a classmate's journal that you incorporate into your own journal:
 Moskal, N. (2013) Open Project Concept. Retrieved September 16, 2018, from http://steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Natalia_Moskal/Open_Project
 
@@ -233,6 +233,7 @@ Running all the suggested code was a good opportunity for me to check that I am 
 The code I wrote can be found here:
 <div class="mw-collapsible-content">
 <source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1
 
 numbers <- c(16, 20, 3, 5, 9)
 numbers
@@ -264,6 +265,7 @@ if (lastNum == 2) {
   (bool3 <- 2)
 }
 
+# END
 </source>
 
 </div>
@@ -303,9 +305,10 @@ Oh and I actually wrote some code too...
 One line but it counts anyway right?
 <div class="mw-collapsible-content">
 <source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1
 rownames(plasmidData)[4]<-"pMAL-p5x"
+# END
 </source>
-
 </div>
 </div>
 
@@ -314,17 +317,213 @@ The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc
 
 == 1.8 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Objects-Lists Lists] ==
 ; Objective
-
+My objective here is to understand some concepts about lists that I may have overlooked.
 
 <div class="time-estimate">
 Time estimated: 0.5 h; taken: 1 h; date started: 2018-09-18; date completed: 2018-09-19
 </div>
 
 ; Activities
+This unit was actually very interesting as it went over in detail an aspect of R that I had always overlooked: the detail of lists. I learn lots of new R tricks! 
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Here is the script I wrote:
+<div class="mw-collapsible-content">
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1
 
+pACYC184 <- list(size="4245", marker="Tet, Cam", ori="pUC19")
+pUC19 <- list(size=2686, marker="ampicillin", ori="ColE1", accession="L01397", BanI=c(235, 408, 550, 1647) )
+plasmidDB <- list()
+plasmidDB[["pUC19"]] <- pUC19
+plasmidDB[["pACYC184"]] <- pACYC184
+pBR322 <- list(size=4361, marker="Amp, Tet", ori="ColE1")
+plasmidDB[["pBR322"]] <- pBR322
+
+plasmidDB[["pACYC184"]]
+
+#Now we must retrieve all sizes from the list and find the smallest
+lapply(plasmidDB, function(x) {return(x$ori)})
+x <- unlist(lapply(plasmidDB, function(x) {return(x$size)}))
+min(x)
+
+# END
+</source>
+</div>
+</div>
 
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Subsetting Subsetting].
+
+== 1.9 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Subsetting Subsetting] ==
+; Objective
+The main goal for me here is to learn the details of subsetting in R which I may not already be aware of.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 2 h; date started: 2018-09-19; date completed: 2018-09-19
+</div>
+
+; Activities
+I was surprised to learn a lot of new things about subsetting when completing all the required exercises.  For example, it was interesting to find out the difference between <code>order(x)</code> and <code>sort.list(x)</code> simply by reading R documentation! I absolutely love how organised the R documentation is - makes coding in R extremely smooth! Lots of new things covered here. I must make sure to try to practice what I have learnt soon to help engrain it into long term memory.
+
+''Reminder from past-thomas to future-thomas: ''
+
+''Do not write code where you use the magic numbers: name your rows and columns instead!''
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Here is the code I wrote for this unit:
+<div class="mw-collapsible-content">
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1
+
+LPSdat[1:10, 1:2] #first ten rows of first two columns
+LPSdat[10:1, 1:2] #first ten rows backward of first two columns
+LPSdat[sample(1:10), 1:2] #first ten rows in random order of first two columns
+LPSdat[order(LPSdat[1:10,2]),1:2] #first ten rows of first two columns ordered by value in the second column ascending
+LPSdat$Mo.LPS[1:10] #first ten rows of colum named Mo.LPS
+LPSdat[1:10, c("Mo.LPS","Mo.ctrl")] #first ten rows of column Mo.LPS and Mo.ctrl
+LPSdat$genes[nchar(LPSdat$genes)==3] #all genes with gene name over three characters long
+LPSdat[grep("Il",LPSdat$genes), 1:2] #first two columns of all genes that have the string "Il" inside their name
+LPSdat[(LPSdat$B.LPS - LPSdat$B.ctrl) > 2,] #all genes for which B-cells are stimulated by LPS by more than 2 log units
+
+# END
+</source>
+</div>
+</div>
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Control_structures Control Structures].
+
+== 1.10 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Control_structures Control Structures] ==
+; Objective
+I think that my main task for this section will be to learn about the <code>seq_along()</code> function as the other material I believe will only serve as a reminder.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-09-19; date completed: 2018-09-19
+</div>
+
+; Activities
+Updated my knowledge on control structures - especially now I know that using <code>seq_along()</code> prevents unexpected behaviour for <code>null</code> sequences.
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Code developed:
+<div class="mw-collapsible-content">
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1
+
+cnt <- 3 #numeric count
+txt <- as.character(cnt) #character count
+while (cnt > -1) { #break condition
+    txt <- c(txt, cnt) #append new character to count
+    cnt = cnt - 1 #decrement
+}
+(txt <- c(txt, "Lift Off!")) #append final string & print
+
+# END
+</source>
+</div>
+</div>
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Functions Functions].
+
+== 1.11 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Functions Functions] ==
+; Objective
+This unit will mostly be practice in consolidating my skills at writing functions in R.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1.5 h; date started: 2018-09-19; date completed: 2018-09-19
+</div>
+
+; Activities
+My main activity was to have my mind blown: inputs to R functions can be abbreviated up to their smallest unique form! I never knew that! Oh and I had an extended practice by modifying to the extreme some of the functions provided. 
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Code developed:
+<div class="mw-collapsible-content">
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1 
+
+countDown <- function(n) {
+    cnt <- n #numeric count
+    txt <- as.character(cnt) #character count
+    while (cnt > 0) { #break condition
+        cnt = cnt - 1 #decrement
+        txt <- c(txt, cnt) #append new character to count
+    }
+    return (txt <- c(txt, "Lift Off!")) #append final string & print
+}
+
+myLifeDays <- function(birthday, reverse) {
+    if (missing(birthday)) {
+        if (missing(reverse)) { #if no arguments are provided
+            print ("Enter your birthday as a string in \"YYYY-MM-DD\" format and/or the days as an integer.")
+            return()
+        }
+    }
+
+    if (missing(reverse)) { #if only the birthday argument is provided
+        bd <- strptime(birthday, "%Y-%m-%d") # convert string to time
+        now <- format(Sys.time(), "%Y-%m-%d") # convert "now" to time
+        diff <- round(as.numeric(difftime(now, bd, unit="days")))
+        print(sprintf("This date was %d days ago.", diff))
+    } else if (missing(birthday)) { #if only the reverse argument is provided
+        now <- format(Sys.time(), "%Y-%m-%d")
+        print(as.Date(now) + reverse)
+    } else { #if both arguments are provided
+        bd <- strptime(birthday, "%Y-%m-%d") # convert string to time
+        now <- format(Sys.time(), "%Y-%m-%d") # convert "now" to time
+        diff <- round(as.numeric(difftime(now, bd, unit="days")))
+        print(sprintf("This date was %d days ago.", diff))
+
+        now <- format(Sys.time(), "%Y-%m-%d")
+        print(as.Date(now) + reverse)
+    }
+}
+
+myLifeDays("1932-09-25", 3)
+myLifeDays("1932-09-25")
+myLifeDays(,3)
+myLifeDays(r=3,b="1970-01-01")
+
+countDown(10)
+
+seq(-5, 3) #sequence of integers from -5 to 3
+seq(from = -2, to = 2, by = (1/3)) #sequence of numbers from -2 to 2 in intervals of 1/3
+seq(length.out=30, to=100, from=1) #sequence of 30 numbers between 1 and 100. Pass the arguments in the following order: length.out, to, from.
+
+# END
+</source>
+</div>
+</div>
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Plotting Plotting].
+
+== 1.12 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Plotting Plotting] ==
+; Objective
+Here I would like to learn new methods of plotting and displaying data in R as it is a crucial skill.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1.5 h; date started: 2018-09-19; date completed: 2018-09-20
+</div>
+
+; Activities
+Sat in mesmerisation as all the nice colours of R plots flowed from my screen into my eyes. Then saved a local copy of the amazing tutorial I just completed because that was absolutely fantastic! Future-me is going to love this.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Coding_style Coding Style].
+
+== 1.13 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Coding_style Coding Style] ==
+; Objective
+Learn a consistent coding style to use throughout the Wiki! 
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-09-20; date completed: 2018-09-20
+</div>
+
+; Activities
+Well let's just say I may have re-editted all the code I have written till now to make it conform to the standards expected...
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Introduction Introduction].
 
 =Notes and References=
 <references />
