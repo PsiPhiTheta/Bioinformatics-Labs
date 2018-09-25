@@ -523,7 +523,51 @@ Time estimated: 0.5 h; taken: 1 h; date started: 2018-09-20; date completed: 201
 Well let's just say I may have re-editted all the code I have written till now to make it conform to the standards expected...
 
 ; Conclusion and Outlook
-The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Introduction Introduction].
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Introduction Introduction to R].
+
+== 1.14 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Introduction Introduction to R] ==
+; Objective
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-09-24; date completed: 2018-09-25
+</div>
+
+; Activities
+Git cloned the ABC-units repository and ran the sample task to ensure R studio is set up correctly. All good. 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Cell_cycle Cell Cycle].
+
+== 1.15 Extra modules ==
+; Objective
+The main objective is to read through extra programming modules that are not necessary to complete the course. 
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-09-25; date completed: 2018-09-25
+</div>
+
+; Activities
+I had a good read through of the [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Debugging Debugging] and [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Literate_programming Literate Programming] courses! Sadly, the unit that appealed most to me, [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Optimization Optimization], is still a stub.
+
+; Conclusion and Outlook
+Although this was not required, it was definitely worthwhile and good fun.
+
+= 2. Bioinformatics fundamentals =
+This section outlines the work done on all the courses that have to do with bioinformatics fundamentals. 
+
+== 2.1 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Cell_cycle Cell Cycle] ==
+; Objective
+Understand the fundamentals behind the cell cycle, in particular for the case of yeast and the role of the Mbp1 protein.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 2 h; date started: 2018-09-25; date completed: 2018-09-25
+</div>
+
+; Activities
+Very intensive reading followed by more intensive reading. All the sources provided (as well as a few visits to Wikipedia) where explored. Much of the content was not understood so I am going to come back to this. Wow, that's a lot of biology I need to catch up on!
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-Data_models Data Models].
 
 =Notes and References=
 <references />
