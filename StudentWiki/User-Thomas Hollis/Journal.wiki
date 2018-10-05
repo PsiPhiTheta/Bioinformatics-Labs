@@ -538,7 +538,7 @@ Git cloned the ABC-units repository and ran the sample task to ensure R studio i
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Cell_cycle Cell Cycle].
 
-== 1.15 Extra modules ==
+== 1.15 Extra learning units ==
 ; Objective
 The main objective is to read through extra programming modules that are not necessary to complete the course. 
 
@@ -564,10 +564,51 @@ Time estimated: 1 h; taken: 2 h; date started: 2018-09-25; date completed: 2018-
 </div>
 
 ; Activities
-Very intensive reading followed by more intensive reading. All the sources provided (as well as a few visits to Wikipedia) where explored. Much of the content was not understood so I am going to come back to this. Wow, that's a lot of biology I need to catch up on!
+Very intensive reading followed by more intensive reading. All the sources provided (as well as a few visits to Wikipedia) where explored. Much of the content was not understood so I am going to come back to this. Wow, that's a lot of biology I need to catch up on! Thanks to [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Alana_Man/BCH441_Journal Alana Man] for making me realise how much biology knowledge I need to work to catch up on! Her journal is a good sanity check when I find a certain unit challenging. 
 
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-Data_models Data Models].
+
+== 2.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-Data_models Data Models] ==
+; Objective
+Learn how to sketch data models.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 2 h; date started: 2018-09-30; date completed: 2018-10-04
+</div>
+
+; Activities
+I wrote my first bioinformatics sketch! Also I was the first one in the class to do so, so I am happy with the pace at which I am currently working. I don't think my sketch is very good but I look forward to all the feedback from the mailing list! Here is the first version:
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+I am so ashamed of it that I have hidden it inside this collapsible box.
+<div class="mw-collapsible-content">
+[[File:TomProteinDB.png]]
+</div>
+</div>
+
+Indeed, from all the feedback I received I found out that I had completely missed a critical part of the unit which was a link to a pdf document about data models. Since I had totally not seen this I was a bit confused as I guessed my sketch out of the blue. One humiliating lecture painfully revealed how much I have missed. This was however a surprisingly a great learning opportunity to ensure I am more careful in the future. I redid this unit and wrote an amended version of my initial abomination:
+
+[[File:TomProteinDB2.png]]
+
+I feel like the toughest part here was understanding the biology behind it rather than actually building the model... I had to google A LOT of things. I may revisit this to improve the model at a later date.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-MYSPE My Species].
+
+== 2.20 Extra learning units ==
+; Objective
+The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
+
+<div class="time-estimate">
+Time estimated: ? h; taken: ? h; date started: 2018-10-01; date completed: 2018-??-??
+</div>
+
+; Activities
+So far the only unit I have checked out, [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-Systems_models Systems Models], is still a stub.
+
+; Conclusion and Outlook
+Although this was not required, it was definitely worthwhile!
 
 =Notes and References=
 <references />
