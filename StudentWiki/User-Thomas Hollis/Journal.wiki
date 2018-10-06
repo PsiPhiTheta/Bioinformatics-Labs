@@ -538,7 +538,47 @@ Git cloned the ABC-units repository and ran the sample task to ensure R studio i
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Cell_cycle Cell Cycle].
 
-== 1.15 Extra learning units ==
+== 1.15 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Unit_testing Testing R Code] ==
+; Objective
+My main objective here is to follow a rigorous protocol for testing my future R code. 
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-05; date completed: 2018-10-05
+</div>
+
+; Activities
+[[File:FloatingPointIssues.jpg|200px|thumb|right|Floating Point Issues]]
+I followed the learning unit page thoroughly and ran through the full R script. Floating point errors always made me very very sad (see aside). But what makes me even more sad is that <code> (0.1 + 0.7) == 0.8 </code> returns <code> FALSE </code>! Absolute abomination! To make things worse the reason behind this is just as tragic: [https://cran.r-project.org/doc/FAQ/R-FAQ.html#How-can-I-clean-up-my-workspace_003f FAQ section 7.31].
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Oh and I also wrote some code
+<div class="mw-collapsible-content">
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1
+
+calcGC <- function(inputSeq) {
+  countBefore <- nchar(inputSeq)
+  inputSeq <- gsub("G", "", inputSeq)
+  inputSeq <- gsub("C", "", inputSeq)
+  countAfter <- nchar(inputSeq)
+  count = (countBefore - countAfter)/countBefore
+  return(count)
+}
+
+expect_equal(calcGC("AATT"), 0)
+expect_equal(calcGC("ATGC"), 0.5)
+expect_equal(calcGC("AC"), 0.5)
+expect_equal(calcGC("CGCG"), 1)
+
+# END
+</source>
+</div>
+</div>
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-STA-Probability Probability].
+
+== 1.16 Extra learning units ==
 ; Objective
 The main objective is to read through extra programming modules that are not necessary to complete the course. 
 
@@ -552,7 +592,7 @@ I had a good read through of the [http://steipe.biochemistry.utoronto.ca/abc/ind
 ; Conclusion and Outlook
 Although this was not required, it was definitely worthwhile and good fun.
 
-= 2. Bioinformatics fundamentals =
+= 2. Fundamentals =
 This section outlines the work done on all the courses that have to do with bioinformatics fundamentals. 
 
 == 2.1 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Cell_cycle Cell Cycle] ==
@@ -596,19 +636,166 @@ I feel like the toughest part here was understanding the biology behind it rathe
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-MYSPE My Species].
 
-== 2.20 Extra learning units ==
+== 2.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-Software_development Software Development] == 
+; Objective
+Learn the formal theory behind software development, something that I have taken for granted for all my years as a software engineer. 
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-05; date completed: 2018-10-05
+</div>
+
+; Activities
+Read through in detail the contents of the learning unit page.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-Test_driven_development Test Driven Development].
+
+== 2.4 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-Test_driven_development Test Driven Development] == 
+; Objective
+Learn what test driven development is and how to leverage it in bioinformatics.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 0.5 h; date started: 2018-10-05; date completed: 2018-10-05
+</div>
+
+; Activities
+Read through in detail the contents of the learning unit page. Indeed I had actually done some test-driven development before but I was simply not aware that this development approach is called like that. I find it to be often useful but tend to overlook this approach for smaller projects. I can totally understand why it would be critical for bioinformatics and look forward to returning to this development style in subsequent work.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Unit_testing Testing R Code].
+
+== 2.5 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-MAT-Graphs_and_networks Graphs & Networks] == 
+; Objective
+
+
+<div class="time-estimate">
+Time estimated: ?? h; taken: ?? h; date started: 2018-10-??; date completed: 2018-10-??
+</div>
+
+; Activities
+I will take the in class quiz for this learning unit! I will also attend a quiz before just to get a feeling of how they are. 
+
+; Conclusion and Outlook
+
+== 2.6 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
 <div class="time-estimate">
-Time estimated: ? h; taken: ? h; date started: 2018-10-01; date completed: 2018-??-??
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-01; date completed: 2018-10-05
 </div>
 
 ; Activities
-So far the only unit I have checked out, [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-Systems_models Systems Models], is still a stub.
+So far most the extra units I have checked out ([http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-Systems_models Systems Models], [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-Integration_testing Integration testing], [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-STA-Bayes_theorem Bayes Theorem], [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-STA-Enrichment Enrichment] and [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-STA-Hypothesis_testing Hypothesis Testing]) are all still stubs. However, [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-SPN Structured Process Notation] was a very interesting read!
 
 ; Conclusion and Outlook
 Although this was not required, it was definitely worthwhile!
+
+= 3. Bioinformatics =
+This section outlines the work done on all the courses that have to do with bioinformatics fundamentals. 
+
+== 3.1 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-MYSPE My Species] ==
+; Objective
+Acquire my own species that I will work on for the rest of the course.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-05; date completed: 2018-10-05
+</div>
+
+; Activities
+Read through the learning unit and ran the R code. My species is "Babjeviella inositovora" and it's BiCode is "BABIN". This is awesome, I love it! I even created a [https://en.wikipedia.org/wiki/Babjeviella_inositovora Wikipedia page] for it! Why does El Salvador have a page for it and not the english wiki? According to its [https://www.ncbi.nlm.nih.gov/genome/?term=Babjeviella+inositovora NCBI page], my species has potential applications in biotechnology.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Abstractions Abstractions].
+
+== 3.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Abstractions Abstractions] ==
+; Objective
+Learn how abstractions are made in the field of bioinformatics.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-05; date completed: 2018-10-05
+</div>
+
+; Activities
+Interestingly enough there are many similarities between the abstractions I am used to making in computer science (such as those made by [https://en.wikipedia.org/wiki/Directed_acyclic_graph Directed Acyclic Graphs]) and those made in bioinformatics. This was my first bioinformatics abstraction attempt:
+[[File:TomAbstraction.png]]
+
+Although it is not very complete it came closer than I expected to the actual abstraction that is commonly used: [https://en.wikipedia.org/wiki/Gene_regulatory_network Gene Regulatory Networks].
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-Software_development Software Development].
+
+== 3.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Storing_data Storing Data] ==
+; Objective
+
+
+<div class="time-estimate">
+Time estimated: ?? h; taken: ?? h; date started: 2018-10-??; date completed: 2018-10-??
+</div>
+
+; Activities
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-MAT-Graphs_and_networks Graphs & Networks].
+
+== 3.4 Extra learning units ==
+; Objective
+The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-05; date completed: 2018-10-05
+</div>
+
+; Activities
+So far the only units I have checked out are [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-Human_genomics Human Genomics], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Dotplot Dotplot], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Internal_repeats Internal Repeats], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Selective_pressure Phylogenetic Analysis], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Conservation_scores Conservation Scores], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Motifs Structure Motifs], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-MD Molecular Dynamics], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Ab_initio_prediction Prediction] and [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-NGS_bioinformatics Next Generation Sequencing], which are still stubs.
+
+; Conclusion and Outlook
+Although this was not required, it was definitely worthwhile!
+
+= 4. Statistics =
+This section will be focussing on learning units that concern mathematical statistical theory and it implications in bioinformatics.
+
+== 4.1 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-STA-Probability Probability] ==
+; Objective
+As a student in Machine Learning, the aim of this course is to refresh my knowledge on basic probability theory.
+
+<div class="time-estimate">
+Time estimated:0.5 h; taken: 0.5 h; date started: 2018-10-05; date completed: 2018-10-05
+</div>
+
+; Activities
+This was fun. The touch of humour of Prof. Steipe is definitely appreciated! I liked the examples chosen too. Worked through the entire unit without too much trouble.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-STA-Probability_distribution Probability Distribution].
+
+== 4.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-STA-Probability_distribution Probability Distribution] ==
+; Objective
+As a student in Machine Learning and having already covered KL divergence, the aim of this course is to refresh my knowledge on probability distributions.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-05; date completed: 2018-10-05
+</div>
+
+; Activities
+I went through the R code thoroughly. There was actually a lot of very useful material that I had certainly forgotten or not previously considered (taken for granted). And as always I love all those colourful R graphs. 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-STA-Significance Significance].
+
+== 4.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-STA-Significance Significance] ==
+; Objective
+Since I did my bachelor thesis on granger causality relations of blockchain financial time series hopefully this chapter should be more of a consolidation than tackling new material. The main aim is to ensure I fully understand how to use and manipulate p-values.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-05; date completed: 2018-10-05
+</div>
+
+; Activities
+I went through the R code thoroughly and read the recommended papers.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Storing_data Storing Data].
 
 =Notes and References=
 <references />
