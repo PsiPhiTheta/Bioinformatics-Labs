@@ -677,7 +677,23 @@ I will take the in class quiz for this learning unit! I will also attend a quiz 
 
 ; Conclusion and Outlook
 
-== 2.6 Extra learning units ==
+== 2.6 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Genetic_code Genetic Code] ==
+; Objective
+The main objective here was to learn how DNA leads to protein synthesis through the use of mRNA and codons.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-06; date completed: 2018-10-06
+</div>
+
+; Activities
+Thankfully I read a lot of the supplementary materials including much of the wikipedia content. I think without this, the coding exercise would have been very confusing. I find all this stuff so cool. My world of computer science crashing into my genome, it's a beautiful sight. 
+
+I was surprised to find a lot of M codons (start codons) and did some digging as to why this is the case. In fact I found on [https://biology.stackexchange.com/questions/46427/multiple-start-and-stop-codons-in-mrna-and-pre-mrna the Biology StackExchange] that in about 5% of genes the first AUG (start codon) is skipped and translation starts at one of the other AUG sequences (although this is still poorly understood). 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Sequence Sequence]
+
+== 2.7 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
@@ -725,7 +741,71 @@ Although it is not very complete it came closer than I expected to the actual ab
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-CSC-Software_development Software Development].
 
-== 3.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Storing_data Storing Data] ==
+== 3.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Sequence Sequence] ==
+; Objective
+Learn how sequences work in bioinformatics, what types of sequences exist and how to use them in my own work.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken:1 h; date started: 2018-10-06; date completed: 2018-10-06
+</div>
+
+; Activities
+I must confess I have not yet memorised all of the IUPAC one letter amino acid codes. I also was not able to answer all of the [http://steipe.biochemistry.utoronto.ca/abc/index.php/Amino_Acid_Exam_Questions past exam questions] but I believe this might be because of my lack of biological knowledge. The R code was certainly interesting to go through too! 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Genetic_code_optimality Genetic Code Optimality]
+
+== 3.4 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Genetic_code_optimality Genetic Code Optimality] ==
+; Objective
+The main objective here is to look at alternative genetic codes and evaluate their robustness and optimality with regard to code changes (mutations).
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-06; date completed: 2018-10-06
+</div>
+
+; Activities
+Followed the code in depth. Very interesting stuff. A very powerful demonstration of genetic robustness!
+
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+The code I wrote can be found here:
+<div class="mw-collapsible-content">
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1
+
+set.seed(pi)
+N <- 200
+valSGC <- numeric(N)
+
+for (i in 1:N) {
+  GC <- swappedGC(GENETIC_CODE)   
+  x <- traRev(myAA, GC)         
+  x <- randMut(x)                
+  x <- traFor(x, GC)             
+  valXGC[i] <- evalMut(myAA, x)  
+}
+
+hist(valXGC,
+     col = "turquoise",
+     breaks = 15,
+     add = TRUE)
+
+# END
+</source>
+
+</div>
+</div>
+
+[[File:TomGeneticCodeOptimality.png]]
+
+Interpretation: Both modified alternative genetic codes yielded distributions with significantly more mutations (based on mutation frequency & penalty as defined in the code). Interestingly, the variance of these mutation distributions was also wider for the modified genetic codes than for the original. This suggests that the original genetic code is particularly good at resisting the impact of mutations. Indeed, even after some changes, these mutations will not necessarily be as expressed in the original genetic code than it would be in the alternative genetic codes. 
+
+; Conclusion and Outlook
+The genetic code is remarkably mutation proof. This is because the impact of the mutations (once translated back) on average causes less penalty (tangible impact) than in randomly generated variations of the genetic code. This would be in line with my expectations as I would expect natural selection to leave room for some mutation but not an excessive and unmanageable amount (with my limited knowledge of biology though, I am not making this statement with much confidence or authority...).
+
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Storing_data Storing data]
+
+== 3.5 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Storing_data Storing Data] ==
 ; Objective
 
 
@@ -738,7 +818,7 @@ Time estimated: ?? h; taken: ?? h; date started: 2018-10-??; date completed: 201
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-MAT-Graphs_and_networks Graphs & Networks].
 
-== 3.4 Extra learning units ==
+== 3.6 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
@@ -788,14 +868,18 @@ The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc
 Since I did my bachelor thesis on granger causality relations of blockchain financial time series hopefully this chapter should be more of a consolidation than tackling new material. The main aim is to ensure I fully understand how to use and manipulate p-values.
 
 <div class="time-estimate">
-Time estimated: 1 h; taken: 1 h; date started: 2018-10-05; date completed: 2018-10-05
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-05; date completed: 2018-10-06
 </div>
 
 ; Activities
-I went through the R code thoroughly and read the recommended papers.
+I went through the R code thoroughly and read the recommended papers. The p value I got using <code> p = (Nobs + 1) / (N + 1) </code> was <code> 0.03297888 </code>. This suggests statistically significant evidence against the null hypothesis (which in this case is that positively charged residues are not closer to negatively charged residues). The code also asks to mark down the sum of all the "chs" in binary hex format (I assume for Prof. Steipe to verify). Mine is: <code> 00 00 00 00 8c 9a e1 40 </code>.
+
+The [https://www.ncbi.nlm.nih.gov/pubmed/26961635 first paper] reviewed basically describes the tears of the American Statistical Association (ASA) which are concerned that papers only get published when p-values indicated statistical significance while papers showing no statistical significance do not get published. This yields a falsely robust methodology that the ASA are hoping to reverse.
+
+The [https://www.ncbi.nlm.nih.gov/pubmed/21878926 second paper] reviewed criticises neuroscience publications finding that around 50% of them use the incorrect procedure for evaluating statistical significance between two events, say A and B. The main error being that often A is shown to be statistically significant and control event B is said to be statistically significant but the difference between A and B is not examined to see if it itself is statistically significant. This paper also criticises the Cliff effect whereby people are overly swayed once the artificial boundary of $p < 0.05$ is crossed. It however concludes than in many cases this lack of statistic rigour would not however change the conclusions of the papers.
 
 ; Conclusion and Outlook
-The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Storing_data Storing Data].
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Genetic_code Genetic Code].
 
 =Notes and References=
 <references />
