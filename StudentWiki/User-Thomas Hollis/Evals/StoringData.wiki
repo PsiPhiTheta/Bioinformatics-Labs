@@ -1,0 +1,20 @@
+<div id="ABC">
+<div style="padding:5px; border:1px solid #000000; background-color:#C0C0C0; font-size:300%; font-weight:400; color: #000000; width:100%;">
+Evaluation page: Storing Data
+<div style="padding:5px; margin-top:20px; margin-bottom:10px; background-color:#C0C0C0; font-size:30%; font-weight:200; color: #000000; ">
+(Thomas Hollis' submission)
+</div>
+</div>
+
+
+ __TOC__
+
+
+= 1. =
+
+<div class="note">
+Note: This page is still in development. 
+</div>
+
+Note to self - remember to add the following tag when done editing:
+[[ <code> Category:EVAL-BIN-Storing_data </code> ]]
