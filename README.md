@@ -7,4 +7,4 @@ All my bioinformatics work is documented in the Journal Wiki Subpage of my main 
 
 ## 2. Scripts
 
-Some of the scripts written as saved explicitely as seperate scripts in the "scripts" folder, while a lot of the other R programming is embedded in the Journal Wiki.
+Some of the scripts written are saved explicitely as seperate scripts in the "scripts" folder, while a lot of the other R programming is embedded in the Journal Wiki.
