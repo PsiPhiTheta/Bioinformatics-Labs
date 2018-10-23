@@ -666,16 +666,44 @@ The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc
 
 == 2.5 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-MAT-Graphs_and_networks Graphs & Networks] == 
 ; Objective
-
+The objective in this unit is to understand how relationships between genes are presented in various graphs & networks. Much time was dedicated here as I plan to maximise my performance in the quiz that will take on this unit. 
 
 <div class="time-estimate">
-Time estimated: ?? h; taken: ?? h; date started: 2018-10-??; date completed: 2018-10-??
+Time estimated: 6 h; taken: 6 h; date started: 2018-10-13; date completed: 2018-10-23
 </div>
 
 ; Activities
-I will take the in class quiz for this learning unit! I will also attend a quiz before just to get a feeling of how they are. 
+I will take the in class quiz for this learning unit! I also attended a quiz before on the NCBI and EBI, just to get a feeling of how they are. 
+
+I read through the notes on graphs and networks and went through the R script tutorial, which I particularly enjoyed. I also had a gander at the [https://www.ncbi.nlm.nih.gov/pubmed/21527005 pubmed paper] on analysing biological networks using graph theory. A very interesting read even if some of the details went over my head.
+
+- The 8 main categories of graphs covered (in lectures and in my external readings) were: DAGs (directed acyclic graphs), cyclic graphs (like DAGs but with infinite response), trees (top to bottom direction only graph), random graphs, hypergraphs (with sets), dual graphs (a.k.a Voronoi diagrams), De Bruijn graphs (with amino acid sequences), Euler cycles (each edge visited once), Hamilton Cycles (each node visited exactly once).
+
+- The 5 main types of graph set metrics covered were: node number (size), edge number (in-degree, out-degree or simply degree), histogram of degrees, topology (degree centrality leads to high degree nodes in centre of network), state (random, scale-free i.e. no meaningful average node or hierarchical).
+
+- The 5 main topologic metrics covered are: shortest path, centrality, diameter, spanning trees (all the vertices covered with minimum possible number of edges - cannot be disconnected), causality (cannot have time delay units violating principles of causality) 
+
+- The 4 main methods for automatic graph generation were: Erdos-Renyi (random connection), Gilbert, Barabasi-Albert (degree drop as node number increases), Price.
+
+- The 4 main techniques for achieving scale-free graphs were: Erdos-Renyi (as before), copy model (add new nodes by copying a fraction of links of existing nodes), hierarchal model, hyperbolic geometric graphs (nodes connected if distance between them is smaller than a hyperbolic threshold)
+
+- The 2 main algorithms for structure analysis covered were: Dijkstra's algorithm (find shortest path in O(<math>V^2</math>)), Floyd-Warshall algorithm (all the shortest paths in O(<math>V^3</math>))
+
+The main equations to remember here are:
+
+- Scale free state probability (where <math>k</math> is usually between 2 and 3): 
+
+<math>P(k) \propto k^{-\gamma}</math> (blimey, wiki renders LaTeX poorly...)
+
+- Betweenness centrality: 
+
+<math>C_b(w) = \sum_{i\neq j\neq w} \frac{\sigma_{ij}(w)}{\sigma_{ij}}</math> 
 
 ; Conclusion and Outlook
+
+Graph theory is so awesome. I was familiar with Dijkstra before (a personal hero of mine) but I had no idea about many metrics discovered today. A true gem of information. I can see how these graphs could be leveraged frequently in bioinformatics! 
+
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Mutation_impact Mutation impact]
 
 == 2.6 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Genetic_code Genetic Code] ==
 ; Objective
@@ -720,6 +748,8 @@ Time estimated: 1 h; taken: 1 h; date started: 2018-10-05; date completed: 2018-
 
 ; Activities
 Read through the learning unit and ran the R code. My species is "Babjeviella inositovora" and it's BiCode is "BABIN". This is awesome, I love it! I even created a [https://en.wikipedia.org/wiki/Babjeviella_inositovora Wikipedia page] for it! Why does El Salvador have a page for it and not the english wiki? According to its [https://www.ncbi.nlm.nih.gov/genome/?term=Babjeviella+inositovora NCBI page], my species has potential applications in biotechnology.
+
+Update: due to an issue in the BABIN genome sequence being incomplete, Prof. Steipe has asked me to abandon it and pick a new one (by incrementing my student number by 1). This was quite sad as I was starting to get attached to BABIN. Oh well, my new species is "Isaria fumosorosea" and it's BiCode is "ISAFU". It already has a [https://en.wikipedia.org/wiki/Isaria_fumosorosea Wikipedia page] and I look forward to adopting it. It looks like a lot of research has already been done on it, as it shows promise of being a good pesticide!
 
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Abstractions Abstractions].
@@ -798,7 +828,7 @@ hist(valXGC,
 
 [[File:TomGeneticCodeOptimality.png]]
 
-Interpretation: Both modified alternative genetic codes yielded distributions with significantly more mutations (based on mutation frequency & penalty as defined in the code). Interestingly, the variance of these mutation distributions was also wider for the modified genetic codes than for the original. This suggests that the original genetic code is particularly good at resisting the impact of mutations. Indeed, even after some changes, these mutations will not necessarily be as expressed in the original genetic code than it would be in the alternative genetic codes. 
+Interpretation: Both modified alternative genetic codes yielded distributions with significantly more mutations (based on mutation frequency & penalty as defined in the code). Interestingly, the variance of these mutation distributions was also wider for the modified genetic codes (in blue and purple) than for the original (in yellow). This suggests that the original genetic code is particularly good at resisting the impact of mutations. Indeed, even after some changes, these mutations will not necessarily be as expressed in the original genetic code than it would be in the alternative genetic codes. 
 
 ; Conclusion and Outlook
 The genetic code is remarkably mutation proof. This is because the impact of the mutations (once translated back) on average causes less penalty (tangible impact) than in randomly generated variations of the genetic code. This would be in line with my expectations as I would expect natural selection to leave room for some mutation but not an excessive and unmanageable amount (with my limited knowledge of biology though, I am not making this statement with much confidence or authority...).
@@ -807,15 +837,169 @@ The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc
 
 == 3.5 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Storing_data Storing Data] ==
 ; Objective
-
+The main goal here is to learn about multiple concepts regarding data storage and ACID databases (for example JSON, mySQL and their R wrappers).
 
 <div class="time-estimate">
-Time estimated: ?? h; taken: ?? h; date started: 2018-10-??; date completed: 2018-10-??
+Time estimated: 6 h; taken: 6 h; date started: 2018-10-07; date completed: 2018-10-13
 </div>
 
 ; Activities
+My first learning unit to be submitted for credit! I intend on spending a lot of time on this to make sure I get it right. I created the evaluation submission page at: [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Thomas_Hollis/Eval_Storing_Data User:Thomas_Hollis/Eval_Storing_Data]. 
+
+The data formats covered are: '''FASTA''' (simple, commonly used), '''GBFF''' (extensively annotatable), '''BLAST''' (output file parsers heavily worked on for many years), '''PDB''' (apparently impossible to read all information from all PDB files with a single parser).
+
+The data grammars covered are: '''ASN.1''' (abstract syntax notation v1 - used by the NCBI), '''XML''' (extended markup language - widely used online), '''JSON''' (Java Script Object Notation - popular for key:value pairs, more human readable than XML). 
+
+The data model implementations covered are: '''text files in filesystems''' (using for example a folder hierarchy containing JSON files), '''spreadsheets''' (do not scale well, convert to .csv files for R imports), '''R lists and dataframes''' (what will be used mostly in this course), '''relational databases''' (such as MySQL, Maria DB, or Postgres).
+
+I also went through all the R code thoroughly with some extra background reading to make sure everything is in tip top shape. I had to change MYSPE as BABIN had missing information. Information on my new MYSPE can be found [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Thomas_Hollis/Journal#3.1_My_Species here].
+
+Code developed:
+
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1 
+#     - Purpose: Add an entry to a database and output information in a desired format
+#     - Bugs & issues: no bugs, no issues, no warnings
+
+# --- SECTION 1: Add entry to database -----------------
+#    Write and submit code that adds another philosopher to the datamodel:
+#       Immanuel Kant, (1724 - 1804), Enlightenment Philosophy.
+#       Works: Critique of Pure Reason (1781), Critique of Judgement (1790)
+
+tempPersonID <- autoincrement(philDB$person)
+temp <- data.frame(id = tempPersonID,
+                  name = "Immanuel Kant",
+                  born = "1724",
+                  died = "1804",
+                  school = "Enlightenment Philosophy",
+                  stringsAsFactors = FALSE)
+philDB$person <- rbind(philDB$person, temp)
+
+rm(temp) #I like my code like I like my room: clean and tidy :)
+
+tempBookID1 <- autoincrement(philDB$books)
+temp <- data.frame(id = tempBookID1,
+                  title = "Critique of Pure Reason",
+                  published = "1781",
+                  stringsAsFactors = FALSE)
+philDB$books <- rbind(philDB$books, temp)
+
+rm(temp) #I like my code like I like my room: clean and tidy :)
+
+tempBookID2 <- autoincrement(philDB$books)
+temp <- data.frame(id = tempBookID2,
+                   title = "Critique of Judgement",
+                   published = "1790",
+                   stringsAsFactors = FALSE)
+philDB$books <- rbind(philDB$books, temp)
+
+rm(temp) #I like my code like I like my room: clean and tidy :)
+
+temp <- data.frame(id = autoincrement(philDB$works),
+                  personID = tempPersonID,
+                  bookID = tempBookID1,
+                  stringsAsFactors = FALSE)
+philDB$works <- rbind(philDB$works, temp)
+
+rm(temp) #I like my code like I like my room: clean and tidy :)
+
+temp <- data.frame(id = autoincrement(philDB$works),
+                   personID = tempPersonID,
+                   bookID = tempBookID2,
+                   stringsAsFactors = FALSE)
+philDB$works <- rbind(philDB$works, temp)
+
+rm(temp) #I like my code like I like my room: clean and tidy :)
+rm(tempPersonID) #I like my code like I like my room: clean and tidy :)
+rm(tempBookID1) #I like my code like I like my room: clean and tidy :)
+rm(tempBookID2) #I like my code like I like my room: clean and tidy :)
+
+# --- SECTION 2: Output information in desired format -----------------
+#    Write and submit code that lists the books in alphabetical order,
+#    followed by the author and the year of publishing. Format your output like:
+#    "Analects" - Kongzi (220 BCE)
+#    Show the result.
+
+sel <- order(philDB$books$title)
+pID <- philDB$books$id[sel]
+sel <- numeric()
+for (ID in pID) {
+  sel <- philDB$works$personID[which(philDB$works$bookID == ID)]
+  cat(sprintf("\"%s\" - %s (%s)", philDB$books$title[ID], philDB$person$name[sel], philDB$books$published[ID]))
+  cat("\n")
+}
+
+rm(sel) #I like my code like I like my room: clean and tidy :)
+rm(pID) #I like my code like I like my room: clean and tidy :)
+rm(ID) #I like my code like I like my room: clean and tidy :)
+
+#   The output of this is:
+#   "Analects" - Kongzi (220 BCE)
+#   "Being and Time" - Martin Heidegger (1927)
+#   "Critique of Judgement" - Immanuel Kant (1790)
+#   "Critique of Pure Reason" - Immanuel Kant (1781)
+#   "Daodejing" - Laozi (530 BCE)
+#   "On the Way to Language" - Martin Heidegger (1959)
+#   "Zhuangzi" - Zhuangzi (300 BCE)
+
+# END
+</source>
+
+My E-value is: 6e-39.
+
+The NCBI protein database page link is: [https://www.ncbi.nlm.nih.gov/protein/XP_018701899.1?report=genbank&log$=protalign&blast_rank=1&RID=W4ASBWSC015 here]
+
+My <code>MBP1_BABIN.json</code> file is:
+<source lang="javascript">
+[
+  { "name" : "MBP1_ISAFU",
+    "RefSeqID" : "XP_018701899",
+    "UniProtID" : "A0A167PNW1",
+    "taxonomyID" : 1081104,
+    "sequence" : [
+       "MVKAAPPPPP TGPGIYSATY SGIPVYEYQF GHELKEHVMR RRHDDWINAT",
+       "HILKAAGFDK PARTRILERD VQKDVHEKIQ GGYGKYQGTW IPLESGEALA",
+       "HRHSVYDRLR PMFEYVPGDQ SPPPAPRHAS KPKAPKVKPP LPKWGASKPK",
+       "KSPAVATETH TLVPGTVPMR DDFENTDSMI VDDDTPDNIT IASASYMADE",
+       "DRYDMAHVST GHRRRKREEH LHDLAEQQHA MYGDELLDYF LLSRNGGQAI",
+       "VKPDPPPNFQ SDWPIDAENH TALHWACAMG DISVVRQLKR FNASISAKNA",
+       "RGETPFMRSV NFTNCYERQT FSDVMKELWD TVTAQDVSGC TVIHHAAIMK",
+       "NCRLYSPTCS RFYLDSILTR LDSHLSPSAL QQMLDIQDSD GNTALHLAAQ",
+       "RNARKCVRSL LGRNASTDIP NNEGIRAEDL IAELNAAKKD PGPQRSSSPF",
+       "APDSQRHASF RDALKDKPPK KTRKIFGSAA ATTVQSRIAP LLEEKFADLA",
+       "KSYDEEWNVK DRAESEARRI LTNTQAELQA AHEQIAKLET QLEPDEVATQ",
+       "VTNEANLAKH HVLSLITHQN RLHISQTADG ELSRINGDGG QDESYEERLN",
+       "LARQLSHMIA EQRIAETEYV DALSMVGVGD KIDKYRRLLK RCLDPKDSES",
+       "LDNNIDSVIG LMEEDRDLQN RHGPAEEPDP MDIPVGI"
+       ]
+  }
+]
+</source>
+
+My <code>MYSPEtaxonomy.json</code> file is:
+<source lang="javascript">
+[
+  { "ID" : 1081104,
+    "species" : "Isaria fumosorosea"}
+]
+</source>
+
+The result of the <code>biCode(myDB$taxonomy$species) %in% biCode(MYSPE)</code> command is:
+<source lang="r">
+[1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE
+</source>
+
+The result of the <code>myDB$protein$taxonomyID %in% myDB$taxonomy$ID[(myDB$taxonomy$species == MYSPE)]</code> command is:
+<source lang="r">
+[1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[14] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[27] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[40] FALSE FALSE FALSE FALSE FALSE  TRUE
+</source>
 
 ; Conclusion and Outlook
+As expected the only parts similar are the end. This entire unit was very fun as it helped show how we can make a rudimentary database in R. 
+
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-MAT-Graphs_and_networks Graphs & Networks].
 
 == 3.6 Extra learning units ==
