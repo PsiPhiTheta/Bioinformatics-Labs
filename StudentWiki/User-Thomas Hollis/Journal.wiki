@@ -578,7 +578,54 @@ expect_equal(calcGC("CGCG"), 1)
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-STA-Probability Probability].
 
-== 1.16 Extra learning units ==
+== 1.16 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-FASTA FASTA] ==
+; Objective
+My main objective here is to understand the structure of FASTA files. 
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-23; date completed: 2018-10-24
+</div>
+
+; Activities
+I went through the entire programming tutorial. 
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Sadly there was no code for me to write here...
+<div class="mw-collapsible-content">
+<source lang="r">
+# You were just too curious to see what was in here weren't you... well, like I said, nothing. (But since you're here to avoid wasting your time here is a little present: https://en.wikipedia.org/wiki/Belphegor%27s_prime)
+</source>
+</div>
+</div>
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Biostrings Biostrings].
+
+
+== 1.17 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Biostrings Biostrings] ==
+; Objective
+My main objective here is to gain familiarity with the Biostrings R package. 
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-24; date completed: 2018-10-24
+</div>
+
+; Activities
+The usual <code>init()</code> and run through the tutorial goodness.
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Sadly there was no code for me to write here either...
+<div class="mw-collapsible-content">
+<source lang="r">
+# Fool me once, shame on you. Fool me twice? No presents for you.
+</source>
+</div>
+</div>
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Similarity Measuring Sequence Similarity].
+
+== 1.18 Extra learning units ==
 ; Objective
 The main objective is to read through extra programming modules that are not necessary to complete the course. 
 
@@ -664,7 +711,7 @@ Read through in detail the contents of the learning unit page. Indeed I had actu
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Unit_testing Testing R Code].
 
-== 2.5 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-MAT-Graphs_and_networks Graphs & Networks] == 
+== 2.5 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-MAT-Graphs_and_networks Graphs & Networks] (submitted: 6 marks)== 
 ; Objective
 The objective in this unit is to understand how relationships between genes are presented in various graphs & networks. Much time was dedicated here as I plan to maximise my performance in the quiz that will take on this unit. 
 
@@ -673,7 +720,7 @@ Time estimated: 6 h; taken: 6 h; date started: 2018-10-13; date completed: 2018-
 </div>
 
 ; Activities
-I will take the in class quiz for this learning unit! I also attended a quiz before on the NCBI and EBI, just to get a feeling of how they are. 
+I will take the in class quiz for this learning unit (yay, I got 100%)! I also attended a quiz before on the NCBI and EBI, just to get a feeling of how they are. 
 
 I read through the notes on graphs and networks and went through the R script tutorial, which I particularly enjoyed. I also had a gander at the [https://www.ncbi.nlm.nih.gov/pubmed/21527005 pubmed paper] on analysing biological networks using graph theory. A very interesting read even if some of the details went over my head.
 
@@ -703,7 +750,7 @@ The main equations to remember here are:
 
 Graph theory is so awesome. I was familiar with Dijkstra before (a personal hero of mine) but I had no idea about many metrics discovered today. A true gem of information. I can see how these graphs could be leveraged frequently in bioinformatics! 
 
-The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Mutation_impact Mutation impact]
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Databases Databases].
 
 == 2.6 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Genetic_code Genetic Code] ==
 ; Objective
@@ -835,7 +882,7 @@ The genetic code is remarkably mutation proof. This is because the impact of the
 
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Storing_data Storing data]
 
-== 3.5 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Storing_data Storing Data] ==
+== 3.5 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Storing_data Storing Data] (submitted: 6 marks)==
 ; Objective
 The main goal here is to learn about multiple concepts regarding data storage and ACID databases (for example JSON, mySQL and their R wrappers).
 
@@ -1002,7 +1049,85 @@ As expected the only parts similar are the end. This entire unit was very fun as
 
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-MAT-Graphs_and_networks Graphs & Networks].
 
-== 3.6 Extra learning units ==
+== 3.6 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Databases Databases] ==
+; Objective
+The main objective here is to expand my knowledge of Bioinformatics databases to help introduce later databases such as the NCBI and EBI.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-23; date completed: 2018-10-23
+</div>
+
+; Activities
+I read the introductory notes and all of the required NAR articles and issues. It's really cool, I never expected biologists to take so many leaves out of the CS book!
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Concepts Molecular Structures].
+
+== 3.7 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Concepts Molecular Structures] ==
+; Objective
+The main objective here is to learn about how molecules are structured and their computational analysis.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-10-23; date completed: 2018-10-23
+</div>
+
+; Activities
+This unit was tough. There is a lot I didn't understand and had to do external reading about (biologically and chemically, especially for different types of bonding)! But in the end I think I've tackled this unit well. 
+
+The 2 main analysis methods examined were: X-ray crystallography and NMR spectroscopy (neither of these are imaging, they are methods of building consensus models). 
+
+Other analysis methods are: homology models, electron diffraction, neutron diffraction and single molecule diffraction with X-ray lasers (atomic resolution is not trivial to implement).
+
+It was also fun to read about certain algorithms overfitting the data creating less plausible models (perhaps ML advances may help address this in the future, such as the use of regularisers). I am excited to use ChimeraX for visualisations! I am especially excited to learn how to view stereo images. 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PDB Structure Databases]
+
+== 3.8 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PDB Structure Databases] ==
+; Objective
+The main purpose here is to learn how to understand the purpose of and learn how to navigate PDB databases (in particular the RCSB PDB). 
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-10-23; date completed: 2018-10-23
+</div>
+
+; Activities
+I read through all the nodes and navigated the RCSB PDB thoroughly. I identified the following three Saccharomyces cerevisiae Mbp1 transcription factor structures (listed by PDB ID): [http://www.rcsb.org/structure/1MB1 1MB1], [http://www.rcsb.org/structure/1L3G 1L3G] & [http://www.rcsb.org/structure/1BM8 1BM8]. The 1BM8 with all the settings as desired (coloured by hydrophobicity with liquorice style) looks like this:
+
+[[File:Tom_1BM8.png|600px|middle]]
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-STA-Information_theory Information Theory].
+
+== 3.9 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-Concepts Biomolecular Function Concepts] ==
+; Objective
+Here I want to learn the main concepts behind biomolecular functions (in particular representation, annotation and prediction).
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-23; date completed: 2018-10-23
+</div>
+
+; Activities
+A short and sweet unit. Bioinformatics function does not exist. I'm happy with that. Covered all the lecture notes with some extra wiki searches as usual. 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-FASTA FASTA].
+
+== 3.10 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Similarity Measuring Sequence Similarity] ==
+; Objective
+Here I want to figure out how to measure similarity of amino acid sequences.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-24; date completed: 2018-10-??
+</div>
+
+; Activities
+
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SYS-Concepts System models].
+
+== 3.11 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
@@ -1064,6 +1189,20 @@ The [https://www.ncbi.nlm.nih.gov/pubmed/21878926 second paper] reviewed critici
 
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Genetic_code Genetic Code].
+
+== 4.4 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-STA-Information_theory Information Theory] ==
+; Objective
+Since I am already quite familiar with information theory hopefully this should be a refresher.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-23; date completed: 2018-10-23
+</div>
+
+; Activities
+I went through the notes thoroughly and made sure I knew everything. This was not too challenging for me given my background.
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-Concepts Biomolecular Function Concepts].
 
 =Notes and References=
 <references />
