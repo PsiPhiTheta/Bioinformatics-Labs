@@ -90,6 +90,18 @@ In lectures a few days ago, I had my incompetency revealed to myself in the same
 
 : 5 October 2018
 
+== Insight #10 - If It's Broke, Fix It ==
+Unfortunately I was very attached to BABIN, my first MYSPE, as I had read a lot about information around it and wrote a wikipedia stub page for it. Unfortunately its sequence was incomplete and therefore BABIN had to be changed. I initially wanted to ignore this issue but I realised quite fast that in order to continue I really needed to fix this. 
+; If it's broke, fix it
+
+: 13 October 2018
+
+== Insight #11 - Disciplined learning is key to avoid Swiss-cheese knowledge ==
+I think that a lot of the learning units present us with brand new packages, explore them briefly without giving us practice or exercises and moves on. I often felt, when not being quizzed during the R tutorial script, that I was a lot more lenient on myself with my own learning when I was not implementing what I read. This came back to bite me as I figured out I was accumulating Swiss-cheese knowledge causing me to have to return to old units since I had forgotten many concepts. From now on I am more self disciplined and try to play and implement a lot more as I go through tutorials, even if not explicitly demanded. 
+; Disciplined learning is key to avoid Swiss-cheese knowledge.
+
+: 24 October 2018
+
 == Insight #25 - Reflect on How Far You Have Come ==
 [[File:ProgressFinal.png|200px|thumb|right|A screenshot of my final progress]]
 As hindsight is settling in, it seems to me that looking back at the course map and seeing visually how much I have achieved is hugely beneficial.  
