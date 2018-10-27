@@ -625,7 +625,44 @@ Sadly there was no code for me to write here either...
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Similarity Measuring Sequence Similarity].
 
-== 1.18 Extra learning units ==
+== 1.18 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-RegEx R RegEx] ==
+; Objective
+Here I want to practice using RegEx in R.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-10-26; date completed: 2018-10-26
+</div>
+
+; Activities
+Had fun reading through the wiki. I was already briefly familiar with what RegEx is although I had avoided it all my life until now...
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Here is the code I wrote
+<div class="mw-collapsible-content">
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1
+
+atomCount <- function(s) {
+  data <- readLines(s)
+  patt <- "(^ATOM )|(^HETATM)"
+  return (length(grep(patt, data)))
+} 
+
+CAcount <- function(s) {
+  data <- readLines(s)
+  patt <- "^ATOM  ...... CA "
+  return(length(grep(patt, data)))
+}
+
+# END
+</source>
+</div>
+</div>
+
+; Conclusion and Outlook
+RegEx is a powerful tool in R. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SEQA-Concepts Sequence Analysis].
+
+== 1.19 Extra learning units ==
 ; Objective
 The main objective is to read through extra programming modules that are not necessary to complete the course. 
 
@@ -676,7 +713,7 @@ I am so ashamed of it that I have hidden it inside this collapsible box.
 
 Indeed, from all the feedback I received I found out that I had completely missed a critical part of the unit which was a link to a pdf document about data models. Since I had totally not seen this I was a bit confused as I guessed my sketch out of the blue. One humiliating lecture painfully revealed how much I have missed. This was however a surprisingly a great learning opportunity to ensure I am more careful in the future. I redid this unit and wrote an amended version of my initial abomination:
 
-[[File:TomProteinDB2.png]]
+[[File:TomProteinDB2.png|600px|middle]]
 
 I feel like the toughest part here was understanding the biology behind it rather than actually building the model... I had to google A LOT of things. I may revisit this to improve the model at a later date.
 
@@ -1115,19 +1152,105 @@ The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc
 
 == 3.10 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Similarity Measuring Sequence Similarity] ==
 ; Objective
-Here I want to figure out how to measure similarity of amino acid sequences.
+Here I want to figure out how to measure similarity of amino acid sequences in order to build the groundwork for sequence alignment.
 
 <div class="time-estimate">
-Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-24; date completed: 2018-10-??
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-24; date completed: 2018-10-26
 </div>
 
 ; Activities
+Went through the notes in great detail. Scoring matrices are used in sequence alignment to represent a variety of different models of similarity (identity, biophysical similarity, genetic code similarly, PAM or BLOSUM). Here my answers to the Q&A:
 
+''Q: Compare an identical match of histidine with an identical match of serine. What does this mean?''
+
+A: This means we have two sequences that we want to analyse and we have detected histidine in one area of the first sequence and serine in another area of the second sequence. We want to compare these matches for similarity to help us with sequence alignment. In this table we can see that histidine and serine have a similarity of -1.
+
+''Q: How similar are lysine and leucine, as compared to leucine and isoleucine? Is this what you expect?''
+
+A: Lysine and leucine have a similarity of -2 while leucine and isoleucine have a similarity of 2. This is indeed what I expected.
+
+''Q: PAM matrices are sensitive to an interesting artefact. Since W and R can be interchanged with a single point mutation, the probability of observing W→R and R→W exchanges in closely related sequences is much higher than one would expect from the two amino acid's biophysical properties. Why?'' 
+
+A: This is known as the extrapolation problem (as explained in Prof. Steipe's notes). This is because extrapolation to large PAM distances causes problems. If two amino acids have similar codons then mutating from one to the other is likely at the very close evolutionary distance of proteins in the Dayhoff dataset. Also, since evolution favours secondary mutation, introducing amino acids that are biophysically more compatible causes R->W to be unlikely in distantly related pars. However, in the Dayhoff model large evolutionary distances are extrapolated by repeatedly multiplying the matrix with itself so this discrepancy gets amplified and bring the result to almost identity. 
+
+''Q: PAM matrices were compiled from hypothetical point exchanges and then extrapolated. Therefore these matrices assign a relatively high degree of similarity to (W, R), that is not warranted considering what actually happens in nature. Do you see this problem in the BLOSUM matrix? ''
+
+A: No I do not. 
+
+''Q: If BLOSUM does not have this issue, why not?''
+
+A: BLOSUM does not have this issue since is compiles matrices directly from blocks of ungapped alignments of sequences at given evolutionary distances.
 
 ; Conclusion and Outlook
-The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SYS-Concepts System models].
+Different methods of similarity are absolutely critical for sequence alignment and I should always use BLOSUM unless otherwise specified! The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SYS-Concepts System models].
 
-== 3.11 Extra learning units ==
+== 3.11 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SYS-Concepts System models] ==
+; Objective
+Here I want to practice building a system model in bioinformatics.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-10-26; date completed: 2018-10-26
+</div>
+
+; Activities
+Having already taken a formal course on signals and systems hopefully this course should not bee too challenging. 
+
+Important definition: a system (with conceptual levels of bottom up, middle out and top down) is a collection of collaborating genes that have more significant relationships among each other than to genes that are not system members. 
+
+Similarly to Prof. Steipe, I don't like UML conventions either. So here is my architectural diagram of a simple desk light:
+
+[[File:DeskLight.jpg|600px|middle]]
+
+; Conclusion and Outlook
+Systems are a powerful abstraction of many fields of knowledge including bioinformatics. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-RegEx R RegEx].
+
+== 3.12 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SEQA-Concepts Sequence Analysis] ==
+; Objective
+Here I want to learn the basics of sequence analysis in bioinformatics.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-26; date completed: 2018-10-26
+</div>
+
+; Activities
+Learning all about the seven "Cs" of bioinformatics: Composition (e.g. molecular weight), Concatenation (e.g. hydrophobicity), Comparison (e.g. binding sites), Correspondence (e.g. multiple alignment), Conservation (e.g. evolutionary pressure), Context (e.g. domain annotation), Collaboration (e.g. co-expression via "guilt by association"). 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PPI-Concepts Protein Protein Interaction].
+
+== 3.13 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PPI-Concepts Protein Protein Interaction] ==
+; Objective
+Here I want to learn the basics of sequence analysis in bioinformatics.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-26; date completed: 2018-10-27
+</div>
+
+; Activities
+Critical information:
+
+- Think of biomolecular analysis as what happens when A and B interact in manner C
+
+- Complex membership can be interpreted with spoke model, matrix model or complex model (Venn-like diagram)
+
+; Conclusion and Outlook
+This unit was useful to understand the high level abstractions of sequence analysis in bioinformatics. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-PPI-Physical_vs_genetic Physical vs Genetic Interactions].
+
+== 3.14 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-PPI-Physical_vs_genetic Physical vs Genetic Interactions] ==
+; Objective
+Here I want to learn the basics of physical and genetical interactions, how they differ and what impact this has in bioinformatics.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-27; date completed: 2018-10-27
+</div>
+
+; Activities
+I must say I like the name of "synthetic lethal" protein-protein interactions. Next time I break both wrists at the same time I know what I will tell my friends...
+
+; Conclusion and Outlook
+A short and sweet high-level unit. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PPI-Databases PPI Databases].
+
+== 3.15 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
