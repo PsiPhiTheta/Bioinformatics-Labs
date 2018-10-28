@@ -1250,7 +1250,115 @@ I must say I like the name of "synthetic lethal" protein-protein interactions. N
 ; Conclusion and Outlook
 A short and sweet high-level unit. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PPI-Databases PPI Databases].
 
-== 3.15 Extra learning units ==
+== 3.15 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PPI-Databases PPI Databases] ==
+; Objective
+The main goal here is to learn where to find PPI databases and how to use them.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-27; date completed: 2018-10-27
+</div>
+
+; Activities
+There are 283 interactions from 4 databases for MBP1. Most of the interactions come from the regulatory protein SWI6 which makes sense. Most of the interactions are genetic in nature (83%). 
+
+; Conclusion and Outlook
+This unit was very useful. Examining PPI databases will be invaluable to understand MYSPE better. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SEQA-Composition Sequence Composition].
+
+== 3.16 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SEQA-Composition Sequence Composition] ==
+; Objective
+I want to investigate here how to analyse sequences using the first C of bioinformatics: Composition.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-27; date completed: 2018-10-27
+</div>
+
+; Activities
+Using the EMBOSS explorer I ran MYSPE and Baker's Yeast MBP1 through. Indeed it is quite hard to compare for now since there is no expectation, overlay or formal techniques. Here is the data I exported:
+
+[[File:pepinfo1(MYSPE).png|300px|middle]] [[File:Mbp1PepInfo1.png|300px|middle]] 
+
+[[File:pepinfo2(MYSPE).png|300px|middle]] [[File:Mbp1PepInfo2.png|300px|middle]]
+
+From the R tutorial I found out that MYSPE has an isoelectric point of 5.973908 and a molecular weight of 77054.5. The aggregate properties of MYSPE extracted using R can be seen as follows:
+
+[[File:AProp(MYSPE).png|300px|middle]]
+
+[[File:AProp2(MYSPE).png|300px|middle]]
+
+Although this data is not fully interpretable as I do not have a perfect baseline I can infer a few characteristics. Indeed the three most enriched amino acids are histidine, aspartic acid and arginine. Similarly, the three most depleted amino acids are cysteine, phenylalanine and valine.
+
+; Conclusion and Outlook
+Wow. Sequence analysis by composition can go a long way in predicting the structure/role of a protein... The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SEQA-Comparison Sequence Comparison].
+
+== 3.17 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SEQA-Comparison Sequence Comparison] ==
+; Objective
+I want to investigate here how to analyse sequences using the second C of bioinformatics: Comparison.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-27; date completed: 2018-10-27
+</div>
+
+; Activities
+I like the idea of the consensus sequence. There are strong parallels from this topic to topics in the machine learning realm that I am currently studying. Indeed, already being familiar with Markov models and Neural Networks was of good use for this unit.
+
+When passing MYSPE and MBP1 on EMBOSS' pepcoil program I found out both MYSPE and MBP1 have coiled-coil sequences. MYSPE has 1 sequence with a probability of 1.0 while MBP1 has 2 sequences with probabilities of around 0.5 each (approximately comparable regions). 
+
+Similarly when passing MYSPE through EMBOSS' tmap program, it correctly identified that there are no TM helices. In addition, tmap did find all ten TM-helices in Gef1.
+
+; Conclusion and Outlook
+Sequence Comparison is more complicated than the composition method but also provides significant insight. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SEQA-Collaboration Sequence Collaboration].
+
+== 3.18 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SEQA-Collaboration Sequence Collaboration] ==
+; Objective
+I want to investigate here how to analyse sequences using the third C of bioinformatics: Collaboration.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-27; date completed: 2018-10-27
+</div>
+
+; Activities
+I did not find MYSPE in KEGG unfortunately. The full lineage is here: ''cellular organisms; Eukaryota; Opisthokonta; Fungi; Dikarya; Ascomycota; saccharomyceta; Pezizomycotina; leotiomyceta; sordariomyceta; Sordariomycetes; Hypocreomycetidae; Hypocreales; Cordycipitaceae; Cordyceps''.
+
+COXPRESdb did not return any coexpressed genes. I believe this is because the database is not particularly complete for yeast genes...
+
+; Conclusion and Outlook
+I don't think KEGG is particularly well designed but this was a fun unit nonetheless. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-Databases Molecular Function Databases].
+
+== 3.19 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-Databases Molecular Function Databases] ==
+; Objective
+I just want to know about some of the best databases for molecular function as I am sure this will be useful later!
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-27; date completed: 2018-10-27
+</div>
+
+; Activities
+Wow... The payway diagram of Saccharomyces cerevisiae astounded me!
+
+[[File:SCEpathway.png|500px|middle]]
+
+; Conclusion and Outlook
+The amount of databases I come across in bioinformatics never ceases to amaze me... The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Miscellaneous_DB Miscellaneous Databases].
+
+== 3.20 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Miscellaneous_DB Miscellaneous Databases] ==
+; Objective
+More databases! I want all the databases logged in this journal for future reference when I need information.
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-27; date completed: 2018-10-27
+</div>
+
+; Activities
+I liked that SGD gives the option to save as a tab-delimited file because I can read those easily in R!
+
+The STRING database is so amazing! It can do k-means clustering (an algorithm I've studied in ML classes) and a whole host of other really cool features! Look what it comes up with for MBP1 (I tried to make 2 levels readable but it is not an easy task):
+
+[[File:STRINGmbp1.png|650px|middle]]
+
+; Conclusion and Outlook
+I would never have expected so much database computing in biology... The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Mutation_impact Mutation Impact].
+
+== 3.21 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
@@ -1326,6 +1434,63 @@ I went through the notes thoroughly and made sure I knew everything. This was no
 
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-Concepts Biomolecular Function Concepts].
+
+= 5. Integrator Units = 
+
+== 5.1 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Mutation_impact Mutation Impact] ==
+; Objective
+My first integrator unit on mutations. Objective? 100%. 
+<div class="time-estimate">
+Time estimated: 6 h; taken: ? h; date started: 2018-10-27; date completed: 2018-10-??
+</div>
+
+; Activities
+I really want to nail this integrator unit so I have set aside a large number of hours for it. I also made sure to wait until I explored a lot of the bioinformatics map to be as informed as possible before tackling this. 
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-Concepts Biomolecular Function Concepts].
+
+== 5.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Homology_modelling Homology modelling] ==
+; Objective
+
+
+<div class="time-estimate">
+Time estimated: 6 h; taken: ? h; date started: 2018-11-??; date completed: 2018-11-??
+</div>
+
+; Activities
+
+
+; Conclusion and Outlook
+The next unit that I plan to take is [???].
+
+== 5.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Phylogeny Phylogeny] ==
+; Objective
+
+
+<div class="time-estimate">
+Time estimated: 6 h; taken: ? h; date started: 2018-11-??; date completed: 2018-11-??
+</div>
+
+; Activities
+
+
+; Conclusion and Outlook
+The next unit that I plan to take is [???].
+
+== 5.4 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Genome_annotation Genome Annotation] ==
+; Objective
+
+
+<div class="time-estimate">
+Time estimated: 6 h; taken: ? h; date started: 2018-11-??; date completed: 2018-11-??
+</div>
+
+; Activities
+
+
+; Conclusion and Outlook
+The next unit that I plan to take is [???].
 
 =Notes and References=
 <references />
