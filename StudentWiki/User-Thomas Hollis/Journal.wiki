@@ -1358,7 +1358,64 @@ The STRING database is so amazing! It can do k-means clustering (an algorithm I'
 ; Conclusion and Outlook
 I would never have expected so much database computing in biology... The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Mutation_impact Mutation Impact].
 
-== 3.21 Extra learning units ==
+== 3.21 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PPI-Analysis PPI Analysis] (submitted: 6 marks) ==
+; Objective
+Another learning unit for submission! Objective is to get full marks of course!
+
+<div class="time-estimate">
+Time estimated: 2 h; taken: 1 h; date started: 2018-10-31; date completed: 2018-10-31
+</div>
+
+; Activities
+The subpage created for submission can be found [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Thomas_Hollis/Eval_PPI_Analysis here]. The code developed is as follows:
+
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1 
+#     - Purpose: PPI Analysis learning unit (printing ensembleID info)
+#     - Bugs & issues: no bugs, no issues, no warnings
+
+for (ID in ENSPsel) {
+  CPdefs[[ID]] <- getBM(filters = "ensembl_peptide_id",
+                        attributes = c("hgnc_symbol",
+                                       "wikigene_description",
+                                       "interpro_description",
+                                       "phenotype_description"),
+                        values = ID,
+                        mart = myMart)
+
+  symb <- CPdefs[[ID]]['hgnc_symbol'][1,1]
+  gDesc <- CPdefs[[ID]]['wikigene_description'][1,1]
+  pDesc <- CPdefs[[ID]]['phenotype_description'][1,1]
+
+  cat(" The ID is:", ID, "\n",
+      "The first row's HGNC symbol is:", symb, "\n",
+      "The first row's wikigene description is:", gDesc, "\n",
+      "The first row's phenotype is:", pDesc, "\n \n")
+}
+
+# END
+</source>
+
+; Conclusion and Outlook
+This was an easy learning unit which offered a mere glimpse of all the possibilities for PPI analysis in R. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Homology Homology].
+
+== 3.22 [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Homology Homology] ==
+; Objective
+Prof. Steipe says homology is the most important thing in bioinformatics so my objective is to make sure I have a solid understanding of it!
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-10-31; date completed: 2018-10-31
+</div>
+
+; Activities
+Homology - diverged from a common ancester either after speciation (orthologous - close analogues in different species) or after duplication (paralogous - neofunctionalisation or subfunctionalisation). This is a commutative and transitative property. 
+
+Analogous - similar (i.e. sharing a property) but not homologous
+
+; Conclusion and Outlook
+MYSPE (ISAFU) is orthologous to MBP1, as expected. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-NCBI NCBI].
+
+== 3.23 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
@@ -1650,7 +1707,7 @@ if (FALSE){
 </source>
 
 ; Conclusion and Outlook
-This was a great unit to help make sure I fully understand the previous unit on gene optimality. It seems we can conclude that PTPN11 does indeed play a role in cancer. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-Concepts Biomolecular Function Concepts].
+This was a great unit to help make sure I fully understand the previous unit on gene optimality. It seems we can conclude that PTPN11 does indeed play a role in cancer. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PPI-Analysis PPI Analysis].
 
 == 5.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Homology_modelling Homology modelling] ==
 ; Objective
