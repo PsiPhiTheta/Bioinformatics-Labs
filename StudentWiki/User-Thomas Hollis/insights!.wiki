@@ -108,6 +108,12 @@ In a spiritual moment I realised that the more I learn throughout this course th
 
 : 26 October 2018
 
+== Insight #13 - Healthy skepticism is healthy ... but is it? ==
+When writing R code it is all too easy to see the code run as expected without any bugs or warnings and produce the output desired. However, I have found that if something compiles and runs perfectly first time this is a miracle too good to be true. A bit of rubber duck debugging a day keeps the null pointers at bay.
+; Healthy skepticism is healthy ... but is it?
+
+: 31 October 2018
+
 == Insight #25 - Reflect on How Far You Have Come ==
 [[File:ProgressFinal.png|200px|thumb|right|A screenshot of my final progress]]
 As hindsight is settling in, it seems to me that looking back at the course map and seeing visually how much I have achieved is hugely beneficial.  
