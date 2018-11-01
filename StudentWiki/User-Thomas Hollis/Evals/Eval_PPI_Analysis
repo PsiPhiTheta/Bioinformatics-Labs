@@ -1,0 +1,96 @@
+<div id="ABC">
+<div style="padding:5px; border:1px solid #000000; background-color:#C0C0C0; font-size:300%; font-weight:400; color: #000000; width:100%;">
+Evaluation page: PPI Analysis
+<div style="padding:5px; margin-top:20px; margin-bottom:10px; background-color:#C0C0C0; font-size:30%; font-weight:200; color: #000000; ">
+(Thomas Hollis' submission)
+</div>
+</div>
+
+
+ __TOC__
+
+
+= Task 1 =
+
+The code written for this submission is as follows:
+
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1 
+#     - Purpose: PPI Analysis learning unit (printing ensembleID info)
+#     - Bugs & issues: no bugs, no issues, no warnings
+
+for (ID in ENSPsel) {
+  CPdefs[[ID]] <- getBM(filters = "ensembl_peptide_id",
+                        attributes = c("hgnc_symbol",
+                                       "wikigene_description",
+                                       "interpro_description",
+                                       "phenotype_description"),
+                        values = ID,
+                        mart = myMart)
+
+  symb <- CPdefs[[ID]]['hgnc_symbol'][1,1]
+  gDesc <- CPdefs[[ID]]['wikigene_description'][1,1]
+  pDesc <- CPdefs[[ID]]['phenotype_description'][1,1]
+
+  cat(" The ID is:", ID, "\n",
+      "The first row's HGNC symbol is:", symb, "\n",
+      "The first row's wikigene description is:", gDesc, "\n",
+      "The first row's phenotype is:", pDesc, "\n \n")
+}
+
+# Output (variable depending on the sample chosen):
+
+# The ID is: ENSP00000270202
+# The first row's HGNC symbol is: AKT1
+# The first row's wikigene description is: AKT serine/threonine kinase 1
+# The first row's phenotype is: Breast Cancer
+#
+# The ID is: ENSP00000360266
+# The first row's HGNC symbol is: JUN
+# The first row's wikigene description is: Jun proto-oncogene, AP-1 transcription factor subunit
+# The first row's phenotype is: NA
+#
+# The ID is: ENSP00000275493
+# The first row's HGNC symbol is: EGFR
+# The first row's wikigene description is: epidermal growth factor receptor
+# The first row's phenotype is: INFLAMMATORY SKIN AND BOWEL DISEASE NEONATAL 2
+#
+# The ID is: ENSP00000344818
+# The first row's HGNC symbol is: UBC
+# The first row's wikigene description is: ubiquitin C
+# The first row's phenotype is: NA
+#
+# The ID is: ENSP00000335153
+# The first row's HGNC symbol is: HSP90AA1
+# The first row's wikigene description is: heat shock protein 90 alpha family class A member 1
+# The first row's phenotype is: NA
+#
+# The ID is: ENSP00000269305
+# The first row's HGNC symbol is: TP53
+# The first row's wikigene description is: tumor protein p53
+# The first row's phenotype is: ADRENOCORTICAL CARCINOMA HEREDITARY
+#
+# The ID is: ENSP00000350941
+# The first row's HGNC symbol is: SRC
+# The first row's wikigene description is: SRC proto-oncogene, non-receptor tyrosine kinase
+# The first row's phenotype is: Colorectal Cancer
+#
+# The ID is: ENSP00000344456
+# The first row's HGNC symbol is: CTNNB1
+# The first row's wikigene description is: catenin beta 1
+# The first row's phenotype is: Colorectal Cancer
+#
+# The ID is: ENSP00000360525
+# The first row's HGNC symbol is: MAGOH
+# The first row's wikigene description is: mago homolog, exon junction complex subunit
+# The first row's phenotype is: NA
+#
+# The ID is: ENSP00000367207
+# The first row's HGNC symbol is: MYC
+# The first row's wikigene description is: MYC proto-oncogene, bHLH transcription factor
+# The first row's phenotype is: BURKITT LYMPHOMA
+
+# END
+</source>
+
+[[Category:EVAL-BIN-PPI-Analysis]]
