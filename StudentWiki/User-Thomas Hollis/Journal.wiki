@@ -1413,9 +1413,23 @@ Homology - diverged from a common ancester either after speciation (orthologous 
 Analogous - similar (i.e. sharing a property) but not homologous
 
 ; Conclusion and Outlook
-MYSPE (ISAFU) is orthologous to MBP1, as expected. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-NCBI NCBI].
+MYSPE (ISAFU) is orthologous to MBP1, as expected. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Alignment Alignment].
 
-== 3.23 Extra learning units ==
+== 3.23 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Alignment Alignment] ==
+; Objective
+Most sequence similarity analysis requires alignment so my main goal here is to find out how to align sequences! (Note: the exceptions being algorithms that measure similarity through an alignment-free approaches)
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-02; date completed: 2018-11-02
+</div>
+
+; Activities
+I must say this unit troubled me. It obliterated my pre-existing belief that sequence alignment was mathematical and fairly straightforward. In fact, it presents alignment in its messy and imperfect true light. I wonder what solutions and algorithms currently exist for such major alignment issues!
+
+; Conclusion and Outlook
+A worrying and sad unit where the dreams of beautiful and perfect sequence alignment was shattered. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-NCBI NCBI].
+
+== 3.24 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
