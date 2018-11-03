@@ -114,6 +114,12 @@ When writing R code it is all too easy to see the code run as expected without a
 
 : 31 October 2018
 
+== Insight #14 - Do not expect elegance in biology, expect performance ==
+Before taking the sequence alignment learning unit I expected to see a very neat method to align sequences. Maybe an elegant statistical method using maximum similarity or something of the like. I was bitterly disappointed when I found out how messy and imperfect the alignment process can be due to the biochemical underpinnings. This frustration kept me up at night as I wondered why such a lack of elegance was present in nature. In these moments I like to go back to basics and challenge my underlying assumptions. The critical question I asked myself which eventually put my mind at ease was: "Does evolution naturally select elegant solutions?". The simple answer is no. The complicated answer is not really. Some elegant solutions are naturally selected as they are more optimal but evolution has no reason to select a more elegant or simple method over an equally performant messy method. Upon realising that evolution was not in line with my desires I started questioning my own desires. Why do I desire elegant solutions? Is Occam's razor founded on strong evidence or intellectual laziness? Should I really write clean code if the most efficient computer on earth (human brain) is not trying to maximise elegance? Luckily, my knowledge in Machine Learning came to the rescue. If Occam's Razor was not correct, using regularisers would not make a difference on overfitting. I have seen countless model performances be increased by the use of a regulariser so I do think Occam's razor is founded on strong evidence. Indeed, it appears that human-designed algorithms have a slight edge over evolution when it comes to elegance!
+; Do not expect elegance in biology, expect performance
+
+: 2 November 2018
+
 == Insight #25 - Reflect on How Far You Have Come ==
 [[File:ProgressFinal.png|200px|thumb|right|A screenshot of my final progress]]
 As hindsight is settling in, it seems to me that looking back at the course map and seeing visually how much I have achieved is hugely beneficial.  
@@ -123,7 +129,7 @@ As hindsight is settling in, it seems to me that looking back at the course map 
 : ?? ?? 2018
 
 = Honorable Mentions = 
-Upon rereading my insights, I have found another insight: many of my insights use language such as "never, "always" or "worst". This is bound to come back to bite me as I am sure I can find exceptions to all of these rules. Perhaps my final insight should have been: 
+Upon rereading my insights, I have found another insight: many of my insights use language such as "all", "never, "always" or "worst". This is bound to come back to bite me as I am sure I can find exceptions to many of these insights. Perhaps my final insight should have been: 
 ; The only strong opinion anyone is entitled to is the strong opinion that nobody is entitled to strong opinions.
 
 More insights can be found on my [https://github.com/PsiPhiTheta  GitHub] or by asking me in person. 
