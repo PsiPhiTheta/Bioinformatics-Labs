@@ -1427,9 +1427,155 @@ Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-02; date completed: 2
 I must say this unit troubled me. It obliterated my pre-existing belief that sequence alignment was mathematical and fairly straightforward. In fact, it presents alignment in its messy and imperfect true light. I wonder what solutions and algorithms currently exist for such major alignment issues!
 
 ; Conclusion and Outlook
-A worrying and sad unit where the dreams of beautiful and perfect sequence alignment was shattered. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-NCBI NCBI].
+A worrying and sad unit where the dreams of beautiful and perfect sequence alignment was shattered. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Optimal_sequence_alignment Optimal Sequence Alignment].
 
-== 3.24 Extra learning units ==
+== 3.24 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Optimal_sequence_alignment Optimal Sequence Alignment] ==
+; Objective
+After the reality check of the previous unit, I am curious to see the optimal solutions for the various issues with sequence alignment. 
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-02; date completed: 2018-11-02
+</div>
+
+; Activities
+Okay, so even if we can never be certain that we have the ''correct'' alignment we can still make fair assumptions. If the alignment of two sequences is such that their random similarity is highly unlikely, we can assume homology as the most probably reason. 
+
+The optimal alignment is the closest we can ever get to the true alignment. Therefore if even the optimal alignment does not support homology then we can state confidently that the correct alignment does not support it either. 
+
+So how to we do we do optimal sequence alignment?
+
+Well not easily. For starters it having an NP-hard algorithm whose permutation space is more than the number of particles in the universe is not a good start. Enter: divide and conquer, recursion, momoization and a whole bunch of techniques to make this problem tractable.
+
+Path matrices are an awesome way of showing alignments in a computationally efficient manner. As proved by the Needleman-Wunsch algorithm, the optimal sequence is that which leads to the highest possible sum of all pair scores it contains. Have touched on dynamic programming before, I find this solution elegant and beautiful. 
+
+Cargo cult warning here as aligning non-homologous sequences is meaningless. 
+
+EMBOS was fun to use!
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Here are the results for different programs and different gap opening and gap extensions between ISAFU and SACCE
+<div class="mw-collapsible-content">
+<source lang="r">
+########################################
+# Program: water
+# Rundate: Sat  3 Nov 2018 01:46:15
+# Commandline: water
+#    -auto
+#    -stdout
+#    -asequence emboss_water-I20181103-014614-0891-78615610-p1m.asequence
+#    -bsequence emboss_water-I20181103-014614-0891-78615610-p1m.bsequence
+#    -datafile EBLOSUM62
+#    -gapopen 10.0
+#    -gapextend 0.5
+#    -aformat3 pair
+#    -sprotein1
+#    -sprotein2
+# Align_format: pair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: EMBOSS_001
+# 2: EMBOSS_001
+# Matrix: EBLOSUM62
+# Gap_penalty: 10.0
+# Extend_penalty: 0.5
+#
+# Length: 871
+# Identity:     221/871 (25.4%)
+# Similarity:   350/871 (40.2%)
+# Gaps:         261/871 (30.0%)
+# Score: 683.5
+# 
+#
+#=======================================
+
+########################################
+# Program: water
+# Rundate: Sat  3 Nov 2018 01:51:39
+# Commandline: water
+#    -auto
+#    -stdout
+#    -asequence emboss_water-I20181103-015138-0294-75136221-p2m.asequence
+#    -bsequence emboss_water-I20181103-015138-0294-75136221-p2m.bsequence
+#    -datafile EBLOSUM62
+#    -gapopen 25.0
+#    -gapextend 5.0
+#    -aformat3 pair
+#    -sprotein1
+#    -sprotein2
+# Align_format: pair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: EMBOSS_001
+# 2: EMBOSS_001
+# Matrix: EBLOSUM62
+# Gap_penalty: 25.0
+# Extend_penalty: 5.0
+#
+# Length: 126
+# Identity:      68/126 (54.0%)
+# Similarity:    89/126 (70.6%)
+# Gaps:           5/126 ( 4.0%)
+# Score: 326.0
+# 
+#
+#=======================================
+
+########################################
+# Program: needle
+# Rundate: Sat  3 Nov 2018 01:54:02
+# Commandline: needle
+#    -auto
+#    -stdout
+#    -asequence emboss_needle-I20181103-015359-0546-83729805-p1m.asequence
+#    -bsequence emboss_needle-I20181103-015359-0546-83729805-p1m.bsequence
+#    -datafile EBLOSUM62
+#    -gapopen 10.0
+#    -gapextend 0.5
+#    -endopen 10.0
+#    -endextend 0.5
+#    -aformat3 pair
+#    -sprotein1
+#    -sprotein2
+# Align_format: pair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: EMBOSS_001
+# 2: EMBOSS_001
+# Matrix: EBLOSUM62
+# Gap_penalty: 10.0
+# Extend_penalty: 0.5
+#
+# Length: 905
+# Identity:     222/905 (24.5%)
+# Similarity:   351/905 (38.8%)
+# Gaps:         290/905 (32.0%)
+# Score: 672.0
+# 
+#
+#=======================================
+
+</source>
+</div>
+</div>
+
+I also know how to do this in R which will be very useful in the future no doubt!
+
+; Conclusion and Outlook
+This was a very lengthy unit but absolutely fascinating stuff! I feel comfortable in sequence alignment science (and associated pseudoscience). The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-NCBI NCBI].
+
+== 3.25 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
