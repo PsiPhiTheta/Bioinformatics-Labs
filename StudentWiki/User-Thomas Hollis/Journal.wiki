@@ -1184,7 +1184,7 @@ A: BLOSUM does not have this issue since is compiles matrices directly from bloc
 ; Conclusion and Outlook
 Different methods of similarity are absolutely critical for sequence alignment and I should always use BLOSUM unless otherwise specified! The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SYS-Concepts System models].
 
-== 3.11 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SYS-Concepts System models] ==
+== 3.11 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SYS-Concepts System Models] ==
 ; Objective
 Here I want to practice building a system model in bioinformatics.
 
@@ -1434,7 +1434,7 @@ A worrying and sad unit where the dreams of beautiful and perfect sequence align
 After the reality check of the previous unit, I am curious to see the optimal solutions for the various issues with sequence alignment. 
 
 <div class="time-estimate">
-Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-02; date completed: 2018-11-02
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-11-02; date completed: 2018-11-02
 </div>
 
 ; Activities
@@ -1573,9 +1573,45 @@ Here are the results for different programs and different gap opening and gap ex
 I also know how to do this in R which will be very useful in the future no doubt!
 
 ; Conclusion and Outlook
-This was a very lengthy unit but absolutely fascinating stuff! I feel comfortable in sequence alignment science (and associated pseudoscience). The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-NCBI NCBI].
+This was a very lengthy unit but absolutely fascinating stuff! I feel comfortable in sequence alignment science (and associated pseudoscience). The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-GO Gene Ontology].
 
-== 3.25 Extra learning units ==
+== 3.25 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-GO Gene Ontology] ==
+; Objective
+The term ontology is still not crystal clear in my mind so my objective is to really understand what GO is and how GOA is undertaken and stored in databases. 
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-03; date completed: 2018-11-03
+</div>
+
+; Activities
+I think the main takeaway here is that GO is split into three categories: cellular components, molecular function and biologic components. All annotations in GO have GOA evidence codes to specify the explicit source of knowledge. This seems like a crazy web of knowledge. 
+
+Having now visited amiGO and quickGO, the tree graphs and general organisation is truly admirable!
+
+; Conclusion and Outlook
+Wow GO seems like something that will become very powerful in subsequent units. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-Semantic_similarity Semantic similarity].
+
+== 3.26 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-Semantic_similarity Semantic Similarity] ==
+; Objective
+How are genes similar? <- my objective is to be able to answer this question in considerable detail
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-03; date completed: 2018-11-03
+</div>
+
+; Activities
+I think the following definition is critical so I will note it down in my journal:
+
+''Two genes are considered similar if the nodes they are annotated to are close in the gene ontology (GO). ''
+
+I think the concept of information gain (or most informative common ancestor) and entropy cropping up here is interesting as it reminds me a lot of my decision tree classifiers in Machine Learning. 
+
+It was amazing to run through the R script and see how well bioinformaticians have supported and documented R packages! Want to get the genetic similarity between genes (using optimal assignment)? Easy, just run <code>getGenSim("gene1", "gene2", similarity = "OA")</code> and voila! 
+
+; Conclusion and Outlook
+This was very informative and now I know how to compare similarity between genes in R! The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-NCBI NCBI].
+
+== 3.27 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
@@ -1869,7 +1905,7 @@ if (FALSE){
 ; Conclusion and Outlook
 This was a great unit to help make sure I fully understand the previous unit on gene optimality. It seems we can conclude that PTPN11 does indeed play a role in cancer. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PPI-Analysis PPI Analysis].
 
-== 5.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Homology_modelling Homology modelling] ==
+== 5.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Homology_modelling Homology Modelling] ==
 ; Objective
 
 
