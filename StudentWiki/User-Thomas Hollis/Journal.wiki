@@ -1609,9 +1609,163 @@ I think the concept of information gain (or most informative common ancestor) an
 It was amazing to run through the R script and see how well bioinformaticians have supported and documented R packages! Want to get the genetic similarity between genes (using optimal assignment)? Easy, just run <code>getGenSim("gene1", "gene2", similarity = "OA")</code> and voila! 
 
 ; Conclusion and Outlook
-This was very informative and now I know how to compare similarity between genes in R! The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-NCBI NCBI].
+This was very informative and now I know how to compare similarity between genes in R! The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-BLAST BLAST].
 
-== 3.27 Extra learning units ==
+== 3.27 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-BLAST BLAST] ==
+; Objective
+I've already seen BLAST databases in a previous learning unit so I have a rough idea how BLAST searches for homologues but I want to know the details!
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-11-04; date completed: 2018-11-04
+</div>
+
+; Activities
+Homology algorithms having a complexity of O(n^2) means they are too slow for database-wide searches. 
+
+Enter: Reciprocal Best-Match (RBM). RBM is defines orthologues by finding the best match in another specie's genome being identical it's own. 
+
+BLAST (a non-global heuristic alternative to exact alignment) builds on this by adding extra enhancement and different implementations of RBM to find "High Scoring Pairs". 
+
+Cargo-cult warning: high E-values do not mean that the hit is not a homologue, but small E-values do indicate that a pure-chance alignment is unlikely.
+
+Hmm there seems to be a bug in the R-script... *types commands in the console furiously for 30min* ... aha! I found the source of my error! All fixed!
+
+; Conclusion and Outlook
+This unit took longer than expected as I was bug-hunting. However, at least now I understand what BLAST is (and more importantly what it is not). It is simply put a heuristic algorithm. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-Sequencing Genome Sequencing].
+
+== 3.28 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-Sequencing Genome Sequencing] ==
+; Objective
+As I wanted to take a break from alignment and BLAST, I moved to this Genome Sequencing unit. My main objective here is to find out how my 23andme test (and other similar sequencing methods) were carried out! 
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-11-04; date completed: 2018-11-04
+</div>
+
+; Activities
+The main methods of sequencing are (note that Mba/Gba is used here to represent the Megabase/Gigabase unit rather than Megabit/Gigabit): 
+
+- First generation: traditional sequencing (2001 - 2 Mba/day, up to $6000/Mb)
+
+- Second generation: parallel sequencing (2005 - 800+ Mba/day, depending on the technique $25-0.05/Mb)
+
+- Third generation: single molecule sequencing (2014 - 10+ Gba/day, $0.01-0.05/Mb)
+
+However, a much more complete list can be found on [https://en.wikipedia.org/wiki/DNA_sequencing#Next-generation_methods the DNA sequencing Wikipedia page].
+
+Prof. Steipe said, "the golden age of the desktop bioinformaticians may be coming to an end" for cross-genome comparisons but a silver lining is that our desktops get more and more powerful, our DNA complexity remains stable.
+
+; Conclusion and Outlook
+This unit was absolutely fascinating. My favourite so far! I am even considering buying my own full genome sequence in the future - rather than simply my partial genome that I purchased from 23andme! The earlier methods required a lot of preparation which is no longer needed today. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-Annotation Genome Annotation].
+
+== 3.29 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-Annotation Genome Annotation] ==
+; Objective
+So I know how sequence annotation is done but what about full genome annotations? This is the question I want to be able to answer in this unit!
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-04; date completed: 2018-11-04
+</div>
+
+; Activities
+Well I could have guessed but the first step is to split the entire genome in subsequences and annotate the subsequences. 
+
+Databases: ENCODE (human, mouse, worm & fly data), GOLD (info about current status of genome projects and their datasources). 
+
+We must also find the genes for genome annotation. This can be achieved by four methods: analysis by signal (look for translation start sites, attachment sites and boundary signals), analysis by contents (look for characteristic trinucleotide patterns), analysis by homology (look for homologues in other species - most accurate if available) or interpretation of the transcriptome (look at RNASeq data). 
+
+; Conclusion and Outlook
+This was a short but informative unit. Thankfully full genome annotation does not seem too far fetched from previous annotation techniques seen in this course. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-PSI-BLAST PSI BLAST].
+
+== 3.30 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-PSI-BLAST PSI BLAST] ==
+; Objective
+My objective here is to learn what the PSI BLAST algorithm improves on from the original BLAST, how it was designed and how to run it. 
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 3 h; date started: 2018-11-04; date completed: 2018-11-04
+</div>
+
+; Activities
+It seems the Position Specific Iterated (PSI) BLAST is a more sensitive version of BLAST that reduces neutral drift and works as follows:
+
+   1. BLAST a query against protein DB
+
+   2. Construct multiple sequence alignments from BLAST hits to create a Position Specific Scoring Matrix (PSSM profile).
+
+   3. Query the DB with the PSSM
+
+   4. Estimate statistical significance (E-values) and propose significant hits for inclusion in next iteration.
+
+   5. Go back to step 3 (usually 5 iterations). 
+
+''Helpful advice: don't be overly vague or overly specific, use PSI-BLAST for weak but biologically meaningful relationships between proteins, irrelevant proteins can cause profile corruption (so filter if low complexity regions appear to cause specificity issues by introducing an E-value limit, visually inspect output after each iteration and remove suspicious hits by unchecking certain boxes) and false positive rate around 5%.''
+
+On the other hand DELTA-BLAST builds a profile from CDD domains in the query and searches for this in the database. Other BLAST flavours include bl2seq and the PROCAIN server's improved BLAST. Finally we could also use EMBOSS for optimal alignments.
+
+During the search I had some results with particularly low E-values for coverages above 80% so I omitted them. As recommended I noted them here:
+
+   iter = 2, removed: XP_018706125.1	KilA/APSES-type HTH DNA-binding domain protein [Cordyceps fumosorosea ARSEF 2679]
+   38.3	38.3	97%        9e-04	20% 	XP_018706125.1
+   iter = 2, removed: Transcription regulator HTH, APSES-type DNA-binding domain protein [Cordyceps fumosorosea ARSEF 2679]
+   48.7	48.7	86%	2e-07	26%        XP_018703649.1
+
+   iter = 3, removed: XP_018706125.1	KilA/APSES-type HTH DNA-binding domain protein [Cordyceps fumosorosea ARSEF 2679]
+   40.2	40.2	97%	        2e-04	19%	        XP_018706125.1
+   iter = 3, removed: Transcription regulator HTH, APSES-type DNA-binding domain protein [Cordyceps fumosorosea ARSEF 2679]
+   52.6	52.6	90%	1e-08	24%	        XP_018703649.1
+   iter = 3, removed: Select seq XP_024513299.1	hypothetical protein CNH00150 [Cryptococcus neoformans var. neoformans JEC21]
+   39.9	39.9	83%	3e-04	20%	        XP_024513299.1
+
+   iter = 4, removed: hypothetical protein CC1G_13964 [Coprinopsis cinerea okayama7#130]
+   39.1	39.1	88%	6e-04	19%	XP_002911924.1
+   iter = 4, removed: XP_024513299.1	hypothetical protein CNH00150 [Cryptococcus neoformans var. neoformans JEC21]
+   39.1	39.1	83%	5e-04	19%	XP_024513299.1
+
+   iter = 5, removed: XP_024513299.1	hypothetical protein CNH00150 [Cryptococcus neoformans var. neoformans JEC21]
+   40.3	40.3	88%	2e-04	17%	XP_024513299.1	
+   iter = 5, removed: XP_002911924.1	hypothetical protein CC1G_13964 [Coprinopsis cinerea okayama7#130]
+   39.5	39.5	88%	4e-04	19%	XP_002911924.1	
+
+The above log was useful until convergence after which I proceeded without logging. The results of my PSI-BLAST are as follows:
+
+[[File:PSI-BLAST.png|middle|800px]]
+
+; Conclusion and Outlook
+This unit was very lengthy (waiting for PSI-BLAST and copying data into JSON files was a true test of patience) but worthwhile as I love to have this new skill of being able to PSI-BLAST smartly! The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-MSA Multiple Sequence Alignment].
+
+== 3.31 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-MSA Multiple Sequence Alignment] (submitted: 6 marks) ==
+; Objective
+After all the units before, I am ready to tackle the MSA learning unit and I want to submit it. Again, the objective here is to hoover up as many marks as possible (and of course apply what I have learnt while learning about MSA). 
+
+<div class="time-estimate">
+Time estimated: 2 h; taken: ? h; date started: 2018-11-04; date completed: 2018-11-05
+</div>
+
+; Activities
+First things first, my submission page is available [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Thomas_Hollis/Eval_MSA here].
+
+Well this unit started off with a two disheartening facts: 
+
+''1. Optimal pairwise alignments are less good than multiple sequence alignments!'' 
+
+''2. Optimal multiple alignment is intractable for more than about 10 sequences!''
+
+Objective functions here remind me of cost functions in machine learning... Are we going to minimise/maximise these with gradient descent/ascent? Sadly, no gradient surfing for today. MSA algorithms covered:
+
+- Progressive alignment (e.g. Clustal W): fundamental but superseded with far better algorithms
+
+- Consistency-based alignment (e.g. MUSCA & MEME): fundamental and incorporated into modern algorithms
+
+- Probabilistic alignment (e.g. HMMER): fundamental
+
+- Profile-based alignment (e.g. Gapped BLAST & PSI-BLAST): results can be displayed as an MSA
+
+- Consistency-based progressive alignment (e.g. TCoffee): Prof. Steipe's favourite in terms of usefulness and usability
+
+- General purpose (e.g. MUSCLE & MAFFT): very easy to use
+
+; Conclusion and Outlook
+??? The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Concepts Concepts of Phylogenetic Analysis].
+
+== 3.32 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
@@ -1620,7 +1774,7 @@ Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-05; date completed: 2
 </div>
 
 ; Activities
-So far the only units I have checked out are [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-Human_genomics Human Genomics], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Dotplot Dotplot], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Internal_repeats Internal Repeats], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Selective_pressure Phylogenetic Analysis], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Conservation_scores Conservation Scores], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Motifs Structure Motifs], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-MD Molecular Dynamics], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Ab_initio_prediction Prediction] and [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-NGS_bioinformatics Next Generation Sequencing], which are still stubs.
+So far the only units I have checked out are [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-Human_genomics Human Genomics], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Dotplot Dotplot], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-ALI-Internal_repeats Internal Repeats], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Selective_pressure Phylogenetic Analysis], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Conservation_scores Conservation Scores], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Motifs Structure Motifs], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-MD Molecular Dynamics], [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Ab_initio_prediction Prediction] and [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-NGS_bioinformatics Next Generation Sequencing], which are still stubs. So I decided instead to go ahead and get lost in wikipedia!
 
 ; Conclusion and Outlook
 Although this was not required, it was definitely worthwhile!
