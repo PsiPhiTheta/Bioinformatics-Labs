@@ -96,29 +96,35 @@ Unfortunately I was very attached to BABIN, my first MYSPE, as I had read a lot 
 
 : 13 October 2018
 
-== Insight #11 - Disciplined learning is key to avoid Swiss-cheese knowledge ==
+== Insight #11 - Disciplined Learning is Key to Avoid Swiss-Cheese Knowledge ==
 I think that a lot of the learning units present us with brand new packages, explore them briefly without giving us practice or exercises and moves on. I often felt, when not being quizzed during the R tutorial script, that I was a lot more lenient on myself with my own learning when I was not implementing what I read. This came back to bite me as I figured out I was accumulating Swiss-cheese knowledge causing me to have to return to old units since I had forgotten many concepts. From now on I am more self disciplined and try to play and implement a lot more as I go through tutorials, even if not explicitly demanded. 
 ; Disciplined learning is key to avoid Swiss-cheese knowledge.
 
 : 24 October 2018
 
-== Insight #12 - Understanding your own biology is understanding yourself ==
+== Insight #12 - Understanding Your Own Biology is Understanding Yourself ==
 In a spiritual moment I realised that the more I learn throughout this course the more I understand myself. When I started this course I got my genome sequenced. Since then I have been looking up papers on particular gene variants and their impact, tracking down the SNPs and checking my own SNPs. The more I understand how my body works the more my own actions and reactions make sense.
 ; Understanding your own biology is understanding yourself.
 
 : 26 October 2018
 
-== Insight #13 - Healthy skepticism is healthy ... but is it? ==
+== Insight #13 - Healthy Skepticism is Healthy ... But is it? ==
 When writing R code it is all too easy to see the code run as expected without any bugs or warnings and produce the output desired. However, I have found that if something compiles and runs perfectly first time this is a miracle too good to be true. A bit of rubber duck debugging a day keeps the null pointers at bay.
 ; Healthy skepticism is healthy ... but is it?
 
 : 31 October 2018
 
-== Insight #14 - Do not expect elegance in biology, expect performance ==
+== Insight #14 - Do Not Expect Elegance in Biology, Expect Performance ==
 Before taking the sequence alignment learning unit I expected to see a very neat method to align sequences. Maybe an elegant statistical method using maximum similarity or something of the like. I was bitterly disappointed when I found out how messy and imperfect the alignment process can be due to the biochemical underpinnings. This frustration kept me up at night as I wondered why such a lack of elegance was present in nature. In these moments I like to go back to basics and challenge my underlying assumptions. The critical question I asked myself which eventually put my mind at ease was: "Does evolution naturally select elegant solutions?". The simple answer is no. The complicated answer is not really. Some elegant solutions are naturally selected as they are more optimal but evolution has no reason to select a more elegant or simple method over an equally performant messy method. Upon realising that evolution was not in line with my desires I started questioning my own desires. Why do I desire elegant solutions? Is Occam's razor founded on strong evidence or intellectual laziness? Should I really write clean code if the most efficient computer on earth (human brain) is not trying to maximise elegance? Luckily, my knowledge in Machine Learning came to the rescue. If Occam's Razor was not correct, using regularisers would not make a difference on overfitting. I have seen countless model performances be increased by the use of a regulariser so I do think Occam's razor is founded on strong evidence. Indeed, it appears that human-designed algorithms have a slight edge over evolution when it comes to elegance!
 ; Do not expect elegance in biology, expect performance
 
 : 2 November 2018
+
+== Insight #15 - Compile High Level Summaries Early ==
+As I get quite advanced in this course I feel like I should have made a shortlist of my favourite databases in bioinformatics (a bit like I made my revision sheet of R syntax). I know that NAR publish a lot of material grouping all of the best resources together but my own personal list would be nice to have to help me compile all my tools in one place. I feel that now it is a bit late but I will backtrack through past units to compile this list. Perhaps I will make it available here or in my own unit design task. 
+; Compile high level summaries early
+
+: 4 November 2018
 
 == Insight #25 - Reflect on How Far You Have Come ==
 [[File:ProgressFinal.png|200px|thumb|right|A screenshot of my final progress]]
