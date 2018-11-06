@@ -1736,7 +1736,7 @@ This unit was very lengthy (waiting for PSI-BLAST and copying data into JSON fil
 After all the units before, I am ready to tackle the MSA learning unit and I want to submit it. Again, the objective here is to hoover up as many marks as possible (and of course apply what I have learnt while learning about MSA). 
 
 <div class="time-estimate">
-Time estimated: 2 h; taken: ? h; date started: 2018-11-04; date completed: 2018-11-05
+Time estimated: 2 h; taken: 12 h; date started: 2018-11-04; date completed: 2018-11-05
 </div>
 
 ; Activities
@@ -1762,10 +1762,138 @@ Objective functions here remind me of cost functions in machine learning... Are 
 
 - General purpose (e.g. MUSCLE & MAFFT): very easy to use
 
-; Conclusion and Outlook
-??? The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Concepts Concepts of Phylogenetic Analysis].
+The file formats covered are:
 
-== 3.32 Extra learning units ==
+- Aligned FASTA
+
+- CLUSTAL (not the same as the CLUSTAL algorithm)
+
+- MSF (used by EMBOSS' EMAA)
+
+Software examined was:
+
+- JALVIEW (MSA editor)
+
+Finally, the code developed for my submission is as follows: 
+
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v9.3
+#     - Purpose: generate overview plot of a full-length alignment in one image
+#     - Bugs & issues: no bugs, no issues, no warnings
+#     - Acknowledgements: thanks to Prof. Steipe's learning unit on R MSA which was of great help
+
+###### Section 0. Excluded code used to call the function while testing ######
+if (FALSE) {
+  source(file = "BIN-ALI-MSA.R")
+  fullAliPlot(msaT)
+  fullAliPlot(msaT, lCol = "firebrick", fCol = "black", colGrad = FALSE)
+  fullAliPlot(msaT, lCol = "black", fCol = "orange", colGrad = TRUE)
+  fullAliPlot(msaW, lCol = "lightgrey", fCol = "skyblue", colGrad = FALSE)
+  fullAliPlot(msaW, lCol = "firebrick", fCol = "black", colGrad = FALSE)
+  fullAliPlot(msaW, lCol = "black", fCol = "orange", colGrad = TRUE)
+}
+
+###### Section 1. Full alignment plot function ######
+fullAliPlot <- function(MsaAAMultipleAlignment, lCol = "lightgrey", fCol = "skyblue", colGrad = FALSE) {
+
+  # 1.1 Copy the input object to local data object to avoid accidental modifications
+  data <- MsaAAMultipleAlignment
+
+  # 1.2 Create the background plot
+  lenSeq <- nchar(data) # get the sequence length (here: 1269)
+  xAxis <- c(1,lenSeq) # create the x axis
+  numSeq <- length(data@unmasked) # get the number of sequences being aligned (here: 11)
+  yAxis <- c(1,numSeq) # create the y axis
+  plot(x = xAxis, y = yAxis, type = "n", ylab = "Sequences", xlab = "Position", main = "Full MSA Plot") # plot
+
+  # 1.3 Pre-compute and create the colour palette
+  if (colGrad) { # if colour gradient option is chosen, create the score colour palette
+    aliScore <- msaConservationScore(data, substitutionMatrix = BLOSUM62)
+    lev <- cut(aliScore, labels = FALSE, breaks = 10)
+    myPal <- colorRampPalette(c("lightgrey", "firebrick")) #colour from grey to red
+  } else { # else use the fCol to fill the rectangle
+    myCol <- fCol
+  }
+
+  # 1.4 Add the rectangles and lines to the plot
+  for (i in 1:numSeq) { # run through all lines
+    currSeq <- unlist(strsplit(as.character(data@unmasked[i]),"")) # split current line to vector of char
+
+    segRLE <- rle(currSeq == "-") # I forgot about the existance of RLE & spent 3h trying to implement it manually.
+    segRLEidx <- cumsum(c(1,segRLE$lengths)) # Eventually gave up & checked Alana Man's Journal which saved me here!
+    # Citation: Alan Man, available at: steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Alana_Man
+
+    for (j in 1:length(segRLE$lengths)) { # run through all positions in current line
+      if (segRLE$values[j]) { # returns true only for locations with segments
+        segments(segRLEidx[j], i, (segRLEidx[j]+segRLE$lengths[j]), i, col = lCol) # plot segments
+        } else { # only runs for locations with rectangles
+        if (colGrad) { # if colour gradient option is chosen, set the colour
+          currScore <- ceiling(mean(lev[segRLEidx[j]:(segRLEidx[j]+segRLE$lengths[j])])) # ceiling for more vibrancy
+          myCol <- myPal(10)[currScore] # pick the colour from the colour palette
+        }
+        rect(segRLEidx[j], i-0.1, (segRLEidx[j]+segRLE$lengths[j]), i+0.1, col = myCol, border = lCol) # plot rect
+      }
+    }
+  }
+
+  # 1.5 Add labels to the plot
+  labels <- names(data@unmasked)
+  for (k in 1:numSeq) { # run through all lines
+    text(floor(lenSeq/2), (k+0.25), labels = labels[k]) # place labels in middle
+  }
+}
+
+# END
+</source>
+
+That code took me over 10 hours of non-stop coding to complete! Damn... Here are the beautiful outputs:
+
+[[File:LU4a.png|middle|600px]]
+
+[[File:LU4b.png|middle|600px]]
+
+[[File:LU4c.png|middle|600px]]
+
+[[File:LU4d.png|middle|600px]]
+
+[[File:LU4e.png|middle|600px]]
+
+[[File:LU4f.png|middle|600px]]
+
+; Conclusion and Outlook
+Wow this learning unit was content-heavy and the R code submission was also very challenging! Thankfully I did lots of note taking and I am now happy I successfully implemented MSA in R. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Concepts Concepts of Phylogenetic Analysis].
+
+== 3.32 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Concepts Concepts of Phylogenetic Analysis] ==
+; Objective
+I want to be able to understand what phylogeny is and how it is used in bioinformatics for analysis. 
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-05; date completed: 2018-11-05
+</div>
+
+; Activities
+Some important definitions I want to note in my journal:
+
+- Monophyletic group: a clade (node and all its descendants).
+
+- Paraphyletic group: a clade minus some of its members.
+
+- Polyphyletic group: members of several clades, perhaps grouped by a convergence feature or other superficial similarity. 
+
+- Cladogram: phylogenetic relationship graph showing only branching pattern, no meaningful branch length.
+
+- Phylogram: most popular phylogenetic relationship graph showing branching where branch lengths indicate amount of genetic change.
+
+- Ultrametric tree: cladograms but where branching point height is proportional to amount of time passed.
+
+- Split network: phylogenetic relationship graph showing collections of splits.
+
+- Horizontal gene transfer: transfer of genetic material other than by parent-offspring transmission (e.g. genetic engineering or gene-modifying viruses like those found in Chagas disease) 
+
+; Conclusion and Outlook
+Great, I got the basics, now only 34'459'425 possible trees to explore! The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Data_preparation Preparing Data for Phylogenetic Analysis].
+
+== 3.33 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
