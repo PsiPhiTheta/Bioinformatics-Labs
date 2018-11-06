@@ -126,11 +126,21 @@ As I get quite advanced in this course I feel like I should have made a shortlis
 
 : 4 November 2018
 
+== Insight #16 - Build A Tree Of Knowledge ==
+After reading about the Tree of Life in the Phylogeny Concepts learning unit, I decided it was time for me to share one of my most valuable learning tools discovered to date: bookmarks. Now this may sound silly, but used correctly, bookmarks can become an incredible way to memorise and absorb a high level overview of all the different nuggets of information fed to us throughout our life. Everytime that I look something up of value on Wikipedia (or elsewhere) I bookmark it in my Tree of Knowledge (rigorously organised bookmark structure):
+
+[[File:TreeOfKnowledge.png|middle|700px]]
+
+Note: The above also has the added benefit of caching all these terms so that if you need to look something up again, the second time you search it will come up pre-loaded instantaneously in the Chrome Omnibar (similar behaviour will occur on Safari, Firefox and other browsers). 
+
+; Build A Tree Of Knowledge
+
+: 5 November 2018
+
 == Insight #25 - Reflect on How Far You Have Come ==
 [[File:ProgressFinal.png|200px|thumb|right|A screenshot of my final progress]]
-As hindsight is settling in, it seems to me that looking back at the course map and seeing visually how much I have achieved is hugely beneficial.  
-; Therefore, I have decided to repost Insight #4 but updated showing the overall achievement. 
-; (see screenshot of progress aside)
+As hindsight is settling in, it seems to me that looking back at the course map progression (shown in insight #4) allows me to see visually how much I have achieved. This has come to be hugely beneficial to me and it seems to others as well who have similar maps in their insights.  
+; Therefore, I have decided to repost Insight #4 but updated showing the overall achievement (see screenshot of progress aside). 
 
 : ?? ?? 2018
 
