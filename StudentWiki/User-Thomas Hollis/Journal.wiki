@@ -761,25 +761,25 @@ I will take the in class quiz for this learning unit (yay, I got 100%)! I also a
 
 I read through the notes on graphs and networks and went through the R script tutorial, which I particularly enjoyed. I also had a gander at the [https://www.ncbi.nlm.nih.gov/pubmed/21527005 pubmed paper] on analysing biological networks using graph theory. A very interesting read even if some of the details went over my head.
 
-- The 8 main categories of graphs covered (in lectures and in my external readings) were: DAGs (directed acyclic graphs), cyclic graphs (like DAGs but with infinite response), trees (top to bottom direction only graph), random graphs, hypergraphs (with sets), dual graphs (a.k.a Voronoi diagrams), De Bruijn graphs (with amino acid sequences), Euler cycles (each edge visited once), Hamilton Cycles (each node visited exactly once).
+* The 8 main categories of graphs covered (in lectures and in my external readings) were: DAGs (directed acyclic graphs), cyclic graphs (like DAGs but with infinite response), trees (top to bottom direction only graph), random graphs, hypergraphs (with sets), dual graphs (a.k.a Voronoi diagrams), De Bruijn graphs (with amino acid sequences), Euler cycles (each edge visited once), Hamilton Cycles (each node visited exactly once).
 
-- The 5 main types of graph set metrics covered were: node number (size), edge number (in-degree, out-degree or simply degree), histogram of degrees, topology (degree centrality leads to high degree nodes in centre of network), state (random, scale-free i.e. no meaningful average node or hierarchical).
+* The 5 main types of graph set metrics covered were: node number (size), edge number (in-degree, out-degree or simply degree), histogram of degrees, topology (degree centrality leads to high degree nodes in centre of network), state (random, scale-free i.e. no meaningful average node or hierarchical).
 
-- The 5 main topologic metrics covered are: shortest path, centrality, diameter, spanning trees (all the vertices covered with minimum possible number of edges - cannot be disconnected), causality (cannot have time delay units violating principles of causality) 
+* The 5 main topologic metrics covered are: shortest path, centrality, diameter, spanning trees (all the vertices covered with minimum possible number of edges - cannot be disconnected), causality (cannot have time delay units violating principles of causality) 
 
-- The 4 main methods for automatic graph generation were: Erdos-Renyi (random connection), Gilbert, Barabasi-Albert (degree drop as node number increases), Price.
+* The 4 main methods for automatic graph generation were: Erdos-Renyi (random connection), Gilbert, Barabasi-Albert (degree drop as node number increases), Price.
 
-- The 4 main techniques for achieving scale-free graphs were: Erdos-Renyi (as before), copy model (add new nodes by copying a fraction of links of existing nodes), hierarchal model, hyperbolic geometric graphs (nodes connected if distance between them is smaller than a hyperbolic threshold)
+* The 4 main techniques for achieving scale-free graphs were: Erdos-Renyi (as before), copy model (add new nodes by copying a fraction of links of existing nodes), hierarchal model, hyperbolic geometric graphs (nodes connected if distance between them is smaller than a hyperbolic threshold)
 
-- The 2 main algorithms for structure analysis covered were: Dijkstra's algorithm (find shortest path in O(<math>V^2</math>)), Floyd-Warshall algorithm (all the shortest paths in O(<math>V^3</math>))
+* The 2 main algorithms for structure analysis covered were: Dijkstra's algorithm (find shortest path in O(<math>V^2</math>)), Floyd-Warshall algorithm (all the shortest paths in O(<math>V^3</math>))
 
 The main equations to remember here are:
 
-- Scale free state probability (where <math>k</math> is usually between 2 and 3): 
+* Scale free state probability (where <math>k</math> is usually between 2 and 3): 
 
 <math>P(k) \propto k^{-\gamma}</math> (blimey, wiki renders LaTeX poorly...)
 
-- Betweenness centrality: 
+* Betweenness centrality: 
 
 <math>C_b(w) = \sum_{i\neq j\neq w} \frac{\sigma_{ij}(w)}{\sigma_{ij}}</math> 
 
@@ -1229,9 +1229,9 @@ Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-10-26; date completed: 2
 ; Activities
 Critical information:
 
-- Think of biomolecular analysis as what happens when A and B interact in manner C
+* Think of biomolecular analysis as what happens when A and B interact in manner C
 
-- Complex membership can be interpreted with spoke model, matrix model or complex model (Venn-like diagram)
+* Complex membership can be interpreted with spoke model, matrix model or complex model (Venn-like diagram)
 
 ; Conclusion and Outlook
 This unit was useful to understand the high level abstractions of sequence analysis in bioinformatics. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-PPI-Physical_vs_genetic Physical vs Genetic Interactions].
@@ -1644,11 +1644,11 @@ Time estimated: 0.5 h; taken: 1 h; date started: 2018-11-04; date completed: 201
 ; Activities
 The main methods of sequencing are (note that Mba/Gba is used here to represent the Megabase/Gigabase unit rather than Megabit/Gigabit): 
 
-- First generation: traditional sequencing (2001 - 2 Mba/day, up to $6000/Mb)
+* First generation: traditional sequencing (2001 - 2 Mba/day, up to $6000/Mb)
 
-- Second generation: parallel sequencing (2005 - 800+ Mba/day, depending on the technique $25-0.05/Mb)
+* Second generation: parallel sequencing (2005 - 800+ Mba/day, depending on the technique $25-0.05/Mb)
 
-- Third generation: single molecule sequencing (2014 - 10+ Gba/day, $0.01-0.05/Mb)
+* Third generation: single molecule sequencing (2014 - 10+ Gba/day, $0.01-0.05/Mb)
 
 However, a much more complete list can be found on [https://en.wikipedia.org/wiki/DNA_sequencing#Next-generation_methods the DNA sequencing Wikipedia page].
 
@@ -1750,29 +1750,29 @@ Well this unit started off with a two disheartening facts:
 
 Objective functions here remind me of cost functions in machine learning... Are we going to minimise/maximise these with gradient descent/ascent? Sadly, no gradient surfing for today. MSA algorithms covered:
 
-- Progressive alignment (e.g. Clustal W): fundamental but superseded with far better algorithms
+* Progressive alignment (e.g. Clustal W): fundamental but superseded with far better algorithms
 
-- Consistency-based alignment (e.g. MUSCA & MEME): fundamental and incorporated into modern algorithms
+* Consistency-based alignment (e.g. MUSCA & MEME): fundamental and incorporated into modern algorithms
 
-- Probabilistic alignment (e.g. HMMER): fundamental
+* Probabilistic alignment (e.g. HMMER): fundamental
 
-- Profile-based alignment (e.g. Gapped BLAST & PSI-BLAST): results can be displayed as an MSA
+* Profile-based alignment (e.g. Gapped BLAST & PSI-BLAST): results can be displayed as an MSA
 
-- Consistency-based progressive alignment (e.g. TCoffee): Prof. Steipe's favourite in terms of usefulness and usability
+* Consistency-based progressive alignment (e.g. TCoffee): Prof. Steipe's favourite in terms of usefulness and usability
 
-- General purpose (e.g. MUSCLE & MAFFT): very easy to use
+* General purpose (e.g. MUSCLE & MAFFT): very easy to use
 
 The file formats covered are:
 
-- Aligned FASTA
+* Aligned FASTA
 
-- CLUSTAL (not the same as the CLUSTAL algorithm)
+* CLUSTAL (not the same as the CLUSTAL algorithm)
 
-- MSF (used by EMBOSS' EMAA)
+* MSF (used by EMBOSS' EMAA)
 
 Software examined was:
 
-- JALVIEW (MSA editor)
+* JALVIEW (MSA editor)
 
 Finally, the code developed for my submission is as follows: 
 
@@ -1874,26 +1874,161 @@ Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-05; date completed: 2
 ; Activities
 Some important definitions I want to note in my journal:
 
-- Monophyletic group: a clade (node and all its descendants).
+* Monophyletic group: a clade (node and all its descendants).
 
-- Paraphyletic group: a clade minus some of its members.
+* Paraphyletic group: a clade minus some of its members.
 
-- Polyphyletic group: members of several clades, perhaps grouped by a convergence feature or other superficial similarity. 
+* Polyphyletic group: members of several clades, perhaps grouped by a convergence feature or other superficial similarity. 
 
-- Cladogram: phylogenetic relationship graph showing only branching pattern, no meaningful branch length.
+* Cladogram: phylogenetic relationship graph showing only branching pattern, no meaningful branch length.
 
-- Phylogram: most popular phylogenetic relationship graph showing branching where branch lengths indicate amount of genetic change.
+* Phylogram: most popular phylogenetic relationship graph showing branching where branch lengths indicate amount of genetic change.
 
-- Ultrametric tree: cladograms but where branching point height is proportional to amount of time passed.
+* Ultrametric tree: cladograms but where branching point height is proportional to amount of time passed.
 
-- Split network: phylogenetic relationship graph showing collections of splits.
+* Split network: phylogenetic relationship graph showing collections of splits.
 
-- Horizontal gene transfer: transfer of genetic material other than by parent-offspring transmission (e.g. genetic engineering or gene-modifying viruses like those found in Chagas disease) 
+* Horizontal gene transfer: transfer of genetic material other than by parent-offspring transmission (e.g. genetic engineering or gene-modifying viruses like those found in Chagas disease) 
 
 ; Conclusion and Outlook
 Great, I got the basics, now only 34'459'425 possible trees to explore! The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Data_preparation Preparing Data for Phylogenetic Analysis].
 
-== 3.33 Extra learning units ==
+== 3.33 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Data_preparation Preparing Data for Phylogenetic Analysis] ==
+; Objective
+I have covered the basic concepts now I want to learn how to implement them in R!
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-06; date completed: 2018-11-06
+</div>
+
+; Activities
+A few key facts I wish to note down in my journal before building phylogenetic trees:
+
+0. (Optional) Assume a molecular clock
+
+1. A good tree relies on a good MSA. Do it right.
+
+2. Rows of sequences have to have the same number of characters and must hold aligned characters in the right columns.
+
+3. Data must not include fragments of sequence which have evolved under a different evolutionary model.
+
+4. Add an outgroup to root the tree (i.e. a last common ancestor).
+
+; Conclusion and Outlook
+Machine Learning methods are currently taking over human inspection for Phylogenetic Data Preparation techniques! It is however useful to know how to implement a quick and dirty approach in R. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Tree_building Tree Building].
+
+== 3.34 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Tree_building Tree Building] ==
+; Objective
+Now that I know how to prepare the data, my objective is to learn how to build my first phylogenetic tree!
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-06; date completed: 2018-11-06
+</div>
+
+; Activities
+Covered all the lectures notes and installed the software as required. Successfully built my first phylogenetic tree using maximum likelihood from the 'proml' package! Very cool! Here it is in all it's glory:
+
+[[File:PhyloTree1.png]]
+
+; Conclusion and Outlook
+A short and straight-to-the-point unit. It looks like MYSPE (ISAFU) is very close (in this tree) to SACCE (as expected) and NEUCR but far from ESCCO (which makes sense as this is the root). Further analysis here is needed and will be done in subsequent units. As the tree was successfully built, I am moving onto the next unit that I plan to take which is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Tree_analysis Tree Analysis].
+
+== 3.35 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PHYLO-Tree_analysis Tree Analysis] ==
+; Objective
+Having finally built my phylogenetic tree my objective is to learn to analyse it and others!
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1.5 h; date started: 2018-11-06; date completed: 2018-11-06
+</div>
+
+; Activities
+After going through the notes, I fixed an error with the learning unit and sent out the update to the mailing list (pending Prof. Steipe's approval). My fix is inspired from information on Biostars and is as follows:
+
+<source lang="r">
+if (!require(treeio, quietly=TRUE)) {
+  if (! exists("biocLite")) {
+    source("https://bioconductor.org/biocLite.R")
+  }
+  biocLite("treeio")
+  library(treeio)
+}
+
+treeText <- readLines("phyliptree.phy")
+treeText <- paste0(treeText, collapse="")
+fungiTree <- read.tree(text = treeText)
+distMat <- cophenetic(fungiTree)
+
+fungiTree$tip.label <- apsTree2$tip.label #run this when the first error crops up at the end of the script
+</source>
+
+The learning unit says to follow the script, print a copy of the tree and bring it to class but the script no longer says to do this... So I decided to save some trees and print it here on the Wiki instead:
+
+[[File:PhyloTree2.png|middle|500px]]
+
+; Conclusion and Outlook
+I hope Prof. Steipe accepts my hacky-fix but this made the unit more fun. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Phylogeny Phylogeny (Intergrator Unit)].
+
+== 3.36 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-Browsers Genome Browsers] ==
+; Objective
+While waiting to finish my phylogeny integrator unit, let's move back to Genome Browsers for a while! I want to find which are the main online resources for this and how to use them.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-06; date completed: 2018-11-06
+</div>
+
+; Activities
+A short and sweet unit. So I took advantage of this to curate my own database of databases! Great stuff I am sure I will find useful in the future. I added the fantastic UCSC Genome Browser Project to the database. An easy choice to make (albeit maybe not as carefully considered as NAR compilations).
+
+; Conclusion and Outlook
+I know how to use the UCSC Genome Project - sweet. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-NCBI NCBI].
+
+== 3.37 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-NCBI NCBI] ==
+; Objective
+More databases to look at with the main objective again of understanding what they contain and how to use them.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-11-06; date completed: 2018-11-06
+</div>
+
+; Activities
+Went through the database instructions. Also did a major overhaul of the [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/Entrez Entrez page]. 
+
+* MYSPE refSeq ID: <code>XP_018701899</code>
+
+* MYSPE UniProt ID: <code>A0A167PNW1</code>
+
+; Conclusion and Outlook
+The NCBI is vast, I still cannot believe the things I find on there. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-EBI EBI].
+
+== 3.38 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-EBI EBI] ==
+; Objective
+The NCBI's sibling the EBI also must be learned and loved. My objective here is again to find out what it contains and how to use it.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-06; date completed: 2018-11-06
+</div>
+
+; Activities
+Thoroughly went through the EBI website. Not much more to add here.
+
+; Conclusion and Outlook
+The EBI also seems vast but I don't seem to come across it as often (yet). The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Data_integration Data Integration].
+
+== 3.39 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Data_integration Data Integration] ==
+; Objective
+
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-06; date completed: 2018-11-06
+</div>
+
+; Activities
+
+
+; Conclusion and Outlook
+???. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Data_integration Data Integration].
+
+== 3.40 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
@@ -2187,7 +2322,7 @@ if (FALSE){
 ; Conclusion and Outlook
 This was a great unit to help make sure I fully understand the previous unit on gene optimality. It seems we can conclude that PTPN11 does indeed play a role in cancer. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-PPI-Analysis PPI Analysis].
 
-== 5.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Homology_modelling Homology Modelling] ==
+== 5.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Phylogeny Phylogeny] ==
 ; Objective
 
 
@@ -2199,9 +2334,9 @@ Time estimated: 6 h; taken: ? h; date started: 2018-11-??; date completed: 2018-
 
 
 ; Conclusion and Outlook
-The next unit that I plan to take is [???].
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-Browsers Genome Browsers Genome Browsers].
 
-== 5.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Phylogeny Phylogeny] ==
+== 5.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Homology_modelling Homology Modelling] ==
 ; Objective
 
 
