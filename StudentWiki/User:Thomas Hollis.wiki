@@ -143,11 +143,31 @@ ylab = "Number of concurrent diseases")</source>
 |-
 |}
 
-= External Links =
+= My Subpages =
 
 ====[[User:Thomas Hollis/Journal | Journal]]====
 
 ====[[User:Thomas Hollis/insights! | Insights!]]====
+
+====[[User:Thomas Hollis/Eval_Storing_Data | Evaluation: Storing Data (learning unit)]]====
+
+====[[User:Thomas Hollis/Eval_Graphs | Evaluation: Graphs and Networks (learning unit)]]====
+
+====[[User:Thomas Hollis/Eval_PPI_Analysis | Evaluation: PPI Analysis (learning unit)]]====
+
+====[[User:Thomas Hollis/Eval_MSA | Evaluation: Multiple Sequence Alignment (learning unit)]]====
+
+====[[User:Thomas Hollis/Eval_GEO2R | Evaluation: GEO2R (learning unit)]]====
+
+====[[User:Thomas Hollis/Eval_Mutation_Impact | Evaluation: Mutation Impact (integrator unit)]]====
+
+====[[User:Thomas Hollis/Eval_Phylogeny | Evaluation: Phylogeny (integrator unit)]]====
+
+====[[User:Thomas Hollis/Eval_Homology_Modelling | Evaluation: Homology Modelling (integrator unit)]]====
+
+====[[User:Thomas Hollis/Eval_Genome_Annotation | Evaluation: Genome Annotation (integrator unit)]]====
+
+= External Links =
 
 Github account: https://github.com/PsiPhiTheta (lots of additional material here that this course inspired me to do) 
 
@@ -156,7 +176,6 @@ Google scholar account: https://scholar.google.co.uk/citations?user=Gmr1zVUAAAAJ
 UofT landing page: http://www.cs.toronto.edu/~thollis/
 
 Personal landing page: http://www.thomashollis.com
-
 
 = References = 
 <references/>
