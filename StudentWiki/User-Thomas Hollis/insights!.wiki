@@ -137,6 +137,25 @@ Note: The above also has the added benefit of caching all these terms so that if
 
 : 5 November 2018
 
+== Insight #17 - Take Error Message Documentation Seriously ==
+''I should preface this insight with a confession that this is going to be more of a rant than an insight.'' 
+
+RStudio, while running an 8 hour long method call by PROML started to repeatedly issue the following error messages:
+
+[[File:RNonsense.jpg|400px|middle]]
+
+Now don't get me wrong, I love a bit of constructive criticism. But this is not helping. Who decided they would give me the option to chose between " ", " " or "OK" in such a critically long method call! How do I know this prompt hasn't interrupted the call? I would know if RStudio implemented progress bars but I guess that's too much to ask so if the developpers of a package don't write their own then the users are left in the dark... Sad!
+
+Anyway, I know what will be able to help me out: official R error discussion forums! Let's have a look what I found:
+
+[[File:RNonsense2.jpg|400px|middle]]
+
+Fantastic, right? Believe it or not this was actually a '''design choice'''! The head of department of R forums decided that for old posts he would simply replace all the usernames and pictures by his own. Why? Because [https://www.youtube.com/watch?v=Q6Fuxkinhug John Malkovich]...
+
+; Take Error Message Documentation Seriously
+
+: 07 Nov 2018
+
 == Insight #25 - Reflect on How Far You Have Come ==
 [[File:ProgressFinal.png|200px|thumb|right|A screenshot of my final progress]]
 As hindsight is settling in, it seems to me that looking back at the course map progression (shown in insight #4) allows me to see visually how much I have achieved. This has come to be hugely beneficial to me and it seems to others as well who have similar maps in their insights.  
