@@ -1,0 +1,149 @@
+---
+title: 'Phylogeny: An introductory R Notebook by T. Hollis'
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+# 1. Introduction
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. I decided to write up my oral examination into an R notebook to engage in literate programming (as mentionned in a bonus learning unit that I took).
+
+Thomas Hollis (BCH441, University of Toronto) -v2.1
+
+   - Purpose: Phylogeny Oral Evaluation (build & analyse aphylogenetic tree)
+   
+   - Bugs & issues: no bugs, no issues, no warnings
+   
+   - Acknowledgements: thanks to Prof. Steipe's learning units on Phylogeny which were of great help
+   
+Disclaimer: I used a patch designed by myself (see mailing list) in earlier units so I hope this will not hinder the oral test. 
+   
+# 2. Code
+
+## 2.1. Import required libraries
+
+As always, lets import our required libraries and data before starting:
+
+```{r eval=FALSE}
+init()
+
+if (! require(msa, quietly=TRUE)) {
+  if (! exists("biocLite")) {
+    source("https://bioconductor.org/biocLite.R")
+  }
+  biocLite("msa")
+  library(msa)
+}
+
+if (! require(Biostrings, quietly=TRUE)) {
+  if (! exists("biocLite")) {
+    source("https://bioconductor.org/biocLite.R")
+  }
+  biocLite("Biostrings")
+  library(Biostrings)
+}
+
+if (!require(Rphylip, quietly=TRUE)) {
+  install.packages("Rphylip")
+  library(Rphylip)
+}
+
+if (!require(phangorn, quietly=TRUE)) {
+  install.packages("phangorn")
+  library(phangorn)
+}
+
+source("makeProteinDB.R")
+```
+
+## 2.2. Data Preparation
+
+### 2.2.1 Alignment
+
+Let's first align some sequences (all sequences in the database + KILA_ESSCO for rooting the tree):
+
+```{r eval=FALSE}
+mySeq <- myDB$protein$sequence # add all DB sequences
+names(mySeq) <- myDB$protein$name # add names of all DB sequences
+
+mySeq <- c(mySeq,"IDGEIIHLRAKDGYINATSMCRTAGKLLSDYTRLKTTQEFFDELSRDMGIPISELIQSFKGGRPENQGTWVHPDIAINLAQ")
+names(mySeq)[length(mySeq)] <- "KILA_ESCCO" # add KILLA_ESSCO sequence and name
+
+(mySeqMSA <- msaClustalOmega(AAStringSet(mySeq))) # ClustalOmega used, too many seq for MUSCLE
+```
+
+### 2.2.2 Get the sequence of the SACCE APSES domain 
+
+```{r eval=FALSE}
+sel <- myDB$protein$name == "MBP1_SACCE" # selector for SACCE protein
+proID <- myDB$protein$ID[sel] # store SACCE protein in proID for later
+
+sel <- myDB$feature$ID[myDB$feature$name == "APSES fold"] # selector for APSES
+fanID <- myDB$annotation$ID[myDB$annotation$proteinID == proID & myDB$annotation$featureID == sel] # SACCE & APSES
+(start <- myDB$annotation$start[fanID]) # set start point (4)
+(end   <- myDB$annotation$end[fanID]) # set the end point (102)
+
+(SACCEapses <- substring(myDB$protein$sequence[proID], start, end)) #SACCE APSES seq
+```
+
+### 2.2.3 Extract the APSES domains from the MSA
+
+It is worth noting that this includes PSI-BLAST results which can be found in MYSPE_APSES_PSI-BLAST.json. It addition, APSESmsa is of type "AAStringSet" not "MsaAAMultipleAlignment" as seen before. 
+
+```{r eval=FALSE}
+(APSESmsa <- fetchMSAmotif(mySeqMSA, SACCEapses)) # stored in .utilities.R, returns matching seq
+```
+
+### 2.2.4 Process the APSESmsa data for Tree Building
+
+We need to mask some of the collumns. To do this we must first convert to a matrix of characters, then mask, then convert back and export to multi-FASTA.
+
+```{r eval=FALSE}
+(numAli <- length(names(APSESmsa))) # get the number of alignments (52)
+(lenAli <- length(APSESmsa$MBP1_SACCE)) # get the length of the alignments (269)
+
+msaMatrix <- matrix(nrow = numAli, ncol = lenAli) # initialize matrix to hold all chars
+(rownames(msaMatrix) <- APSESmsa@ranges@NAMES) # assign the correct rownames
+for (i in 1:numAli) {
+  msaMatrix[i, ] <- unlist(strsplit(as.character(APSESmsa[i]), "")) # fill matrix
+}
+msaMatrix[1:7, 1:14] # check result is a well defined and formatted matrix
+
+colMask <- logical(lenAli) # initialize a mask (logical vector to trim cols)
+limit <- round(numAli * (2/3)) # define the 2/3 threshold for rejecting a column
+for (i in 1:ncol(msaMatrix)) {  # iterate over all columns
+  count <- sum(msaMatrix[ , i] == "-") # count hyphens in col
+  colMask[i] <- count <= limit # write TRUE if less-or-equal to limit, FALSE if not
+}
+colMask # check mask makes sense
+sum(colMask) # check how many collumns are kept (should be 101)
+cat(sprintf("Masking %4.2f %% of columns.\n", 100*(1 - (sum(colMask)/length(colMask)) )))
+maskedMatrix <- msaMatrix[ , colMask] # remove masked cols
+ncol(maskedMatrix) # check how many cols left (should be 101)
+
+tomAPSESphyloSet <- character() # initialise char object, namechange to avoid confusion
+for (i in 1:nrow(maskedMatrix)) { # collapse back to string
+  tomAPSESphyloSet[i] <- paste(maskedMatrix[i, ], collapse="")
+}
+names(tomAPSESphyloSet) <- rownames(maskedMatrix) # add names
+
+writeALN(tomAPSESphyloSet) # inspect final result
+writeMFA(tomAPSESphyloSet, myCon="tom_APSESphyloSet.mfa") # save aligned & masked to multi-FASTA
+```
+
+## 2.3 Build the tree using PROML
+
+Import the clean, aligned & masked data. Use this to build the tree. (WARNING: took around 8h to run)
+
+```{r eval=FALSE}
+PROMLPATH <- "/Users/tom/Applications/phylip-3.695/exe/proml.app/Contents/MacOS" # set PROMLPATH
+list.dirs(PROMLPATH) # confirm one directory is listed only
+list.files(PROMLPATH) # confirm two files listed only "proml" and "proml.command"
+apsIn <- read.protein("tom_APSESphyloSet.mfa") # import aligned & masked from multi-FASTA
+myTree <- Rproml(apsIn, path=PROMLPATH) # run PROML to build tree (warning: 4-8h) start:6pm,end:?pm
+plot(myTree) # have a quick look before further analysis
+save(myTree, file = "tom_myTreeRproml.RData") # save locally to RData file
+```
+
+## 2.4 Analyse the tree
