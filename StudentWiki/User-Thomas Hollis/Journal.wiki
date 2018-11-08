@@ -2016,17 +2016,26 @@ The EBI also seems vast but I don't seem to come across it as often (yet). The n
 
 == 3.39 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Data_integration Data Integration] ==
 ; Objective
-
+Now that we have all this data available, my objective is to find out how it all integrates together!
 
 <div class="time-estimate">
-Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-06; date completed: 2018-11-06
+Time estimated: 0.5 h; taken: 0.5 h; date started: 2018-11-06; date completed: 2018-11-07
 </div>
 
 ; Activities
+Databases interface with... identifiers (a.k.a. IDs), cross references, federated databases (distinct DB, distributed query, merged result), programmable APIs (like in Entrez)! 
 
+Here is a snipped of code that I wrote for this unit:
+
+<source lang="r">
+myMappedIDs[3,2] <- myIDs$name[match("NP_010038", myIDs$refID)]
+myMappedIDs[3,1] <- "NP_010038"
+myMappedIDs[4,2] <- myIDs$name[match("NP_013629", myIDs$refID)]
+myMappedIDs[4,1] <- "NP_013629"
+</source>
 
 ; Conclusion and Outlook
-???. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Data_integration Data Integration].
+Having worked with APIs before this unit was not too surprising but was fun anyway. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Scripting_data_downloads Scripting Data Downloads].
 
 == 3.40 Extra learning units ==
 ; Objective
@@ -2324,17 +2333,23 @@ This was a great unit to help make sure I fully understand the previous unit on 
 
 == 5.2 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Phylogeny Phylogeny] ==
 ; Objective
-
+I want to review all the concepts I have learnt in phylogeny and phylogenetic tree analysis to be ready for questions by Prof. Steipe during my oral test.
 
 <div class="time-estimate">
-Time estimated: 6 h; taken: ? h; date started: 2018-11-??; date completed: 2018-11-??
+Time estimated: 6 h; taken: ? h; date started: 2018-11-07; date completed: 2018-11-15
 </div>
 
 ; Activities
+Went through the notes carefully (also did a second pass through of previous learning units to help remember better the content). Submission page can be found [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Thomas_Hollis/Eval_Phylogeny here]. Code developed is shown as follows:
 
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.1 
+
+# END
+</source>
 
 ; Conclusion and Outlook
-The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-Browsers Genome Browsers Genome Browsers].
+This was a fun and productive roundup putting together all the units in this part of the course map. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-Genome-Browsers Genome Browsers].
 
 == 5.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Homology_modelling Homology Modelling] ==
 ; Objective
