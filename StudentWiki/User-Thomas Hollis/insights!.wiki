@@ -220,6 +220,6 @@ Note: This section is still in development.
 = References =
 <references/>
 
-{{CC-BY}}
+{{CC-BY}} 
 
 [[Category:Insights!]]
