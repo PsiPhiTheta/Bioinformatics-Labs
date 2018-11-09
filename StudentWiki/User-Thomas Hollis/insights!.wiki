@@ -154,7 +154,51 @@ Fantastic, right? Believe it or not this was actually a '''design choice'''! The
 
 ; Take Error Message Documentation Seriously
 
+: 06 Nov 2018
+
+== Insight #18 - The Power of Literate Programming ==
+When I first took the Literate Programming unit (bonus unit), I thought my burst of motivation and keen energy would only help improve my grade in this subject and I did not really believe I would end up embracing the concepts of Literate Programming. A few months later here I am, writing every single one of my machine learning assignments in a Jupyter Notebook... In fact, I have started writing some of my R scripts into .Rmd files and knitting them in HTML into a notebook! I love this new method of programming! It is so useful for teaching or running code in chunks! Fun fact: Kaggle (the biggest Machine Learning Competition platform) encourages literate programming via its user of publicly-accessible Kernels! I am sure this is no coincidence... 
+; Therefore, I have decided to embrace the Power of Literate Programming. 
+
 : 07 Nov 2018
+
+== Insight #19 - Bug Hunting as a Way of Learning ==
+There are many ways to learn how to write code. Bottom up: learn intricate details of a language from documentation and write carefully and incrementally more challenging code. Top down: throw yourself in the deep end of complex code and figure out how it works and how to change it to suit your needs. However, I feel that bug hunting is more of Middle-Out learning approach. You need to a have a strong understand of the language you are coding in but you also need to be going through code that is foreign and written by someone else. So you learn from both approaches at once. (If you, dear reader, were expecting a Silicon Valley joke, I am afraid this section will disappoint). I found this insight while I patched a few bugs in the mailing list and helped find a workaround for deprecated software tools. 
+; If you want to learn a language while optimising for a strong baseline - go for bottom up
+; If you want to learn a language while optimising speed of discovery - go for top down
+; If you want a compromise of both and have some previous experience - go for middle out
+
+:07 Nov 2018
+
+== Insight #20 - Must All Good Things Come To An End? ==
+I am getting close to the end now of BCH441. It almost feels sad as I can feel the day where I run out of units is just around the corner. It got me thinking if the quest of learning new things is one of those things in life that break the eternal saying "all good things must come to an end?". I believe so for now. Perhaps it is that saying itself which must come to an end (no mention of GEB will be made in this insight, do not fear). 
+; The Quest For Knowledge Can Only Be Brought To An End By Death Or Dementia
+
+: 08 Nov 2018
+
+== Insight #21 - Complete Means 100% ==
+I decided I would check out all the optional learning units because I believe that something is not truly complete if all rocks have not been turned over. All the optional units are now complete so I know I will reach my goal of 100%!
+; Complete Means 100%
+
+: 09 Nov 2018
+
+== Insight #22 - ??? ==
+???
+; ???
+
+: ?? ?? 2018
+
+== Insight #23 - ??? ==
+???
+; ???
+
+: ?? ?? 2018
+
+== Insight #24 - ??? ==
+???
+; ???
+
+: ?? ?? 2018
 
 == Insight #25 - Reflect on How Far You Have Come ==
 [[File:ProgressFinal.png|200px|thumb|right|A screenshot of my final progress]]
