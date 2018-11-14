@@ -139,20 +139,32 @@ source("makeProteinDB.R")
     myTree$root.edge <- mean(myTree$edge.length) * 1.5 # make the root visable
     plot(myTree, cex = 0.7, root.edge = TRUE) # check it out
 
-    # 2.3.3 Rotate the clades
+    # 2.3.3 Rotate the clades (useful to compare with cladogram of species)
+    nodelabels(cex = 0.5, frame = "circle") # add node labels - looks messy, not very useful here
+    myTree <- rotate(myTree, node = 100)
+    myTree <- rotate(myTree, node = 54)
+    myTree <- rotate(myTree, node = 60)
+    myTree <- rotate(myTree, node = 61)
+    myTree <- rotate(myTree, node = 62)
+    myTree <- rotate(myTree, node = 77)
+    myTree <- rotate(myTree, node = 74)
+    myTree <- rotate(myTree, node = 69)
+    myTree <- rotate(myTree, node = 70)
+    myTree <- rotate(myTree, node = 71)
+    myTree <- rotate(myTree, node = 98)
+    myTree <- rotate(myTree, node = 96)
+    myTree <- rotate(myTree, node = 95)
+    myTree <- rotate(myTree, node = 81)
+    myTree <- rotate(myTree, node = 64)
+    myTree <- rotate(myTree, node = 58)
+    myTree <- rotate(myTree, node = 80)
+    myTree <- rotate(myTree, node = 84)
+    myTree <- rotate(myTree, node = 93)
+    myTree <- rotate(myTree, node = 88)
+    myTree <- rotate(myTree, node = 99) # beautify
+    plot(myTree, cex = 0.7, root.edge = TRUE)
 
-    #TODO
-
-    # Task: Study the two trees and consider their similarities and differences.
-    #         What do you expect? What do you find? Note that this is not a "mixed"
-    #         gene tree yet, since it contains only a single gene for the species
-    #         we considered. All of the branch points in this tree are speciation
-    #         events. Thus the gene tree should have the same topology as the
-    #         species tree. Does it? Are the differences important? How many
-    #         branches would you need to remove and reinsert elsewhere to get the
-    #         same topology as the species tree?
-
-    # In order to quantiofy how different these tow trees are, we need to compute
-    # tree distances.
+    # 2.3.4 Computing Tree Distance with reference tree
+    # This is bonus tree analysis and was omitted here as it is not included in instructions.
 
 # END
