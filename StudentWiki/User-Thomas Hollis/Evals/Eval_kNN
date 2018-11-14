@@ -1,0 +1,238 @@
+<div id="ABC">
+<div style="padding:5px; border:1px solid #000000; background-color:#C0C0C0; font-size:300%; font-weight:400; color: #000000; width:100%;">
+Custom Learning Unit: Cancer Detection Using kNN 
+<div style="padding:5px; margin-top:20px; margin-bottom:10px; background-color:#C0C0C0; font-size:30%; font-weight:200; color: #000000; ">
+(Thomas Hollis' submission)
+</div>
+</div>
+
+
+
+<div class="note">
+THIS LEARNING UNIT IS STILL BEING WRITTEN. DO NOT PROCEED.
+</div>
+
+
+<div style="padding:5px; border:1px solid #000000; background-color:#f2fafa33; font-size:85%;">
+<div style="font-size:118%;">
+<b>Abstract:</b><br />
+<section begin=abstract />
+What is Machine Learning? Why is AI all of a sudden becoming fashionable and widely lauded in newspapers? Can advances in Machine Learning also help advance fields in bioinformatics? The answers to all these questions and more will be provided through a theoretical and practical implementation of the k-Nearest-Neighbours (kNN) algorithm for detecting cancerous cells. 
+<section end=abstract />
+</div>
+<!-- ============================  -->
+<hr>
+<table>
+<tr>
+<td style="padding:10px;">
+<b>Objectives:</b><br />
+* Introduce the concept of Machine Learning
+* Give an overview of different algorithms in Machine Learning
+* Explain in detail the theory and implementation behind kNN
+</td>
+<td style="padding:10px;">
+<b>Outcomes:</b><br />
+* Be able to understand basic concepts in ML
+* Gain a good overview of the field
+* Be able to implement kNN theoretically from scratch (without packages) and using a standard R package
+</td>
+</tr>
+</table>
+<!-- ============================  -->
+<hr>
+<b>Deliverables:</b><br />
+<section begin=deliverables />
+<!-- included from "./data/ABC-unit_components.txt", section: "deliverables-time_management" -->
+*<b>Time management</b>: Before you begin, estimate how long it will take you to complete this unit. Then, record in your course journal: the number of hours you estimated, the number of hours you worked on the unit, and the amount of time that passed between start and completion of this unit.
+<!-- included from "./data/ABC-unit_components.txt", section: "deliverables-journal" -->
+*<b>Journal</b>: Document your progress in your [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/Category:BCH441-2018_Journal Course Journal]. Some tasks may ask you to include specific items in your journal. Don't overlook these.
+<!-- included from "./data/ABC-unit_components.txt", section: "deliverables-insights" -->
+*<b>Insights</b>: If you find something particularly noteworthy about this unit, make a note in your [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/Category:Insights! insights page].
+<section end=deliverables />
+<!-- ============================  -->
+<hr>
+<section begin=prerequisites />
+<b>Prerequisites:</b><br />
+<!-- included from "./data/ABC-unit_components.txt", section: "notes-prerequisites" -->
+This unit was designed to have very few prerequisites as it is an introductory unit to Machine Learning applications in bioinformatics. Please do not hesitate to use your search engine of choice for further information if you feel like digging deeper into some of the concepts presented here.
+<section end=prerequisites />
+<!-- ============================  -->
+</div>
+
+
+__TOC__
+
+= 0. Acknowledgments =
+
+Style inspired from Prof. Steipe's [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-Optimization Optimisation (stub)] learning unit.
+
+The kNN cancer dataset was inspired from Bret Lantz's book "Machine Learning with R" <ref>Pakt Publishing. (2013). Machine Learning with R. Retrieved November 13, 2018, from https://www.packtpub.com/big-data-and-business-intelligence/machine-learning-r</ref>.
+
+{{Vspace}}
+
+= 1. Introduction =
+
+Let's start with a quick-fire background Q&A:
+
+* ''What is Machine Learning (ML)?''
+
+Machine Learning is a field of Artificial Intelligence (AI) that leverages statistical computation methods for 'teaching' computers how to extract information from data, without setting explicit programmatic rules. 
+
+Think of this as equivalent to teaching a computer how to walk as follows: first, initially let computer make random trials to learn how to walk ; then punish it more when it reaches small distances and less when in reaches longer distances ; finally computer will eventually learn to walk long distances. Here the explicit programmatic alternative (without using ML) would be to teach the computer how to walk by giving it coordinates of where to place each foot in front of the other.
+
+* ''Why is ML becoming so important in bioinformatics?''
+
+Well there are two types of problems in bioinformatics where ML solutions are preferred to explicit ones. The first type of problem is when we have data where we don't actually know the specific rules for dealing with it (i.e. genetic clustering using k-means). The second type of problem is when the sheer number of rules are so complicated and intertwined that explicitly writing code-based rules would be slower than implementing an ML-based algorithm to approximate solutions (e.g. text mining bioinformatics journals using NLP). 
+
+ML development is much like many fast emerging technological developments. You either get on the train, or you get left behind.
+
+* ''So what are the main fields of applications of ML in bioinformatics?''
+
+The main fields where ML is commonly used in bioinformatics are:
+
+- Disease detection (clustering from image data, disease impact and geo predictions...) 
+
+- Systems biology (genetic algorithms, network modelling...)
+
+- Genomics/Proteomics (clustering, MSA, homology, gene prediction...)
+
+- Text mining (knowledge extraction from bioinformatics papers, annotation databases...)
+
+* ''How does the field of machine learning look like?''
+
+I am a firm believer in starting off an explanation with a high level overview of the field. This helps to understand where we are situated in the current field, what other options there are available and where our algorithm lies amongst its other alternatives. So I build you, dear reader, a nice map (thank Prof. Steipe for his inspiration on this):
+
+[[File:MLmap.png|middle|700px]]
+
+Of course the big disadvantage with these map is that I couldn't include ''all'' the algorithms currently developed in ML. Indeed, I had to pick those that I had come across or the most famous. I also couldn't include lots of interesting material on methods of training (i.e. meta-learning, learning rate, gradient descent optimisation...). If you feel something is missing here, upload an improved version in the [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/File:MLmap.png MLmap wiki page] and include it in your journal!
+
+* ''What is k-Nearest-Neighbours?''
+
+As the MLmap above clearly shows, k-Nearest-Neighbours (kNN) is one of the most basic of many [https://en.wikipedia.org/wiki/Supervised_learning supervised] learning algorithms in the field of ML. More specifically, kNN a type of clustering algorithm used to classify data based on its proximity in data space to other data within the cluster of a particular label.
+
+* ''What is supervised learning?''
+
+Supervised learning is a subset of problems in ML that deal with problems which contain labelled data, as opposed to unsupervised learning which handles problems with unlabelled data. Labelled training data is one which contains both the training features (here: size of cell, shape of cell...) and it's label (here: cancerous or benign...). The label is what we are trying to predict given the input data (features). 
+
+{{Vspace}}
+
+= 2. kNN in Theory =
+
+Let's first look at how R works from a theoretical perspective. 
+
+(insert kNN theory)
+
+'''Bonus task: After this section if you really want to test your theoretical and mathematical understanding of kNN, try implementing one from scratch in R. Then compare your implementation to the package approach described in the next section. 
+'''
+{{Vspace}}
+
+= 3. kNN in Practice =
+
+In order to implement your own kNN for cancer detection you can clone my [https://github.com/PsiPhiTheta/Bioinformatics-Labs GitHub repo] and load "<code>scripts/ABC-ML-kNN.R</code>" into R like you have done for all your previous learning units. 
+
+Alternatively, if you just want to have a quick overview without executing code yourself (not recommended), you can follow along below.
+
+(insert kNN tutorial)
+
+{{Vspace}}
+
+= 4. Self-evaluation =
+
+== Question 1 ==
+
+Question: Explain in your own words what ML is, how it works and wether or not kNN is supervised or unsupervised.
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Answer ...
+<div class="mw-collapsible-content">
+Machine Learning is a field of Artificial Intelligence (AI) that leverages statistical computation methods for 'teaching' computers how to extract information from data, without setting explicit programmatic rules.
+
+Think of this as equivalent to teaching a computer how to walk as follows: first, initially let computer make random trials to learn how to walk ; then punish it more when it reaches small distances and less when in reaches longer distances ; finally computer will eventually learn to walk long distances. Here the explicit programmatic alternative (without using ML) would be to teach the computer how to walk by giving it coordinates of where to place each foot in front of the other.
+
+kNN is supervised because we provide the "correct" labels in the training data. 
+</div>
+</div>
+
+== Question 2 ==
+
+Question: What is the metric that kNN uses to assign a data point to a cluster? 
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Answer ...
+<div class="mw-collapsible-content">
+kNN uses Euclidean distance metric to set its classification as the most common class of its k-nearest-neighbours! 
+</div>
+</div>
+
+== Question 3 ==
+
+Question: What are hyper-parameters and which is the only hyper-parameter to tune in kNN?
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Answer ...
+<div class="mw-collapsible-content">
+Hyper-parameters are the inputs of ML algorithms that are not automatically 'learned' on the training data by the algorithm but that must instead be tuned on validation data by the implementor. In kNN, the hyper-parameter is k of course! 
+</div>
+</div>
+
+== Question 4 ==
+
+Question: What is overfitting and how do you avoid it?
+
+<div class="toccolours mw-collapsible mw-collapsed" style="width:800px">
+Answer ...
+<div class="mw-collapsible-content">
+Overfitting is when your training error rate is very low but this does not generalise to the testing data. Solve this by tuning the hyper-parameter (here k) on the validation data and leave the test data till the end! Fun fact: you can also use [https://en.wikipedia.org/wiki/Regularization_(mathematics) regularisers] to help use Occam's Razor to reduce overfitting.
+</div>
+</div>
+
+{{Vspace}}
+
+= 5. Notes and references =
+<references />
+
+{{Vspace}}
+
+= 6. Further reading, links and resources =
+
+1. Regularisation wiki: https://en.wikipedia.org/wiki/Regularization_(mathematics)
+
+2. ML wiki: https://en.wikipedia.org/wiki/Machine_learning
+
+3. A brilliant course by an ML pioneer (Andrew Ng): https://www.coursera.org/learn/machine-learning
+
+4. kNN wiki: https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm
+
+{{Vspace}}
+
+
+----
+
+<b>If in doubt, ask!</b> If anything about this learning unit is not clear to you, do not proceed blindly but ask for clarification. Post your question on the course mailing list: others are likely to have similar problems. Or send an email to your instructor.
+
+----
+
+{{Vspace}}
+
+<div class="about">
+<div style="padding:5px; border:1px solid #000000; background-color:#ffffff; width:100%;">
+<b>About </b><br />
+&nbsp;<br />
+<b>Author:</b><br />
+:Thomas Hollis <thollis@cs.toronto.edu>
+<b>Created:</b><br />
+:2018-11-13
+<b>Modified:</b><br />
+:2018-11-13
+<b>Version:</b><br />
+:1.1
+<b>Version history:</b><br />
+*0.1 First stub
+*1.1 Content added
+</div>
+</div>
+
+{{CC-BY}}
+
+
+<!-- [END] -->
