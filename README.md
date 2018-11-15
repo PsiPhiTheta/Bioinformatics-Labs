@@ -9,3 +9,6 @@ All my bioinformatics work is documented in the [Journal Wiki](https://github.co
 
 Some of the scripts written are saved explicitely as seperate scripts in the [scripts](https://github.com/PsiPhiTheta/Bioinformatics-Labs/tree/master/scripts) folder, but of the R programming and other code is embedded in the [Journal Wiki](https://github.com/PsiPhiTheta/Bioinformatics-Labs/blob/master/StudentWiki/User-Thomas%20Hollis/Journal.wiki).
 
+## 3. Datasets
+
+Only one external dataset is used for example purposes only and can be found inside the [data](https://github.com/PsiPhiTheta/Bioinformatics-Labs/blob/master/data) folder.
