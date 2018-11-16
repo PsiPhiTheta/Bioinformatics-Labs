@@ -1644,11 +1644,11 @@ Time estimated: 0.5 h; taken: 1 h; date started: 2018-11-04; date completed: 201
 ; Activities
 The main methods of sequencing are (note that Mba/Gba is used here to represent the Megabase/Gigabase unit rather than Megabit/Gigabit): 
 
-* First generation: traditional sequencing (2001 - 2 Mba/day, up to $6000/Mb)
+* First generation: traditional sequencing (2001 - 2 Mba/day, up to $6000 (400h 0m)/Mb)
 
-* Second generation: parallel sequencing (2005 - 800+ Mba/day, depending on the technique $25-0.05/Mb)
+* Second generation: parallel sequencing (2005 - 800+ Mba/day, depending on the technique $25 (1h 41m)-0.05/Mb)
 
-* Third generation: single molecule sequencing (2014 - 10+ Gba/day, $0.01-0.05/Mb)
+* Third generation: single molecule sequencing (2014 - 10+ Gba/day, $0.01 (0h 1m)-0.05/Mb)
 
 However, a much more complete list can be found on [https://en.wikipedia.org/wiki/DNA_sequencing#Next-generation_methods the DNA sequencing Wikipedia page].
 
@@ -1958,7 +1958,7 @@ treeText <- paste0(treeText, collapse="")
 fungiTree <- read.tree(text = treeText)
 distMat <- cophenetic(fungiTree)
 
-fungiTree$tip.label <- apsTree2$tip.label #run this when the first error crops up at the end of the script
+fungiTree$tip.label <- apsTree2$ (0h 8m)tip.label #run this when the first error crops up at the end of the script
 </source>
 
 The learning unit says to follow the script, print a copy of the tree and bring it to class but the script no longer says to do this... So I decided to save some trees and print it here on the Wiki instead:
@@ -2179,7 +2179,21 @@ As for my interpretation of this... Well it is clear from the plot that all MBP1
 ; Conclusion and Outlook
 Wow, domains are really powerful in helping sequence analysis in bioinformatics. Although inputting the data manually here was tedious. Specificity is an asset to avoid algorithms taking into account irrelevant data (this it turns out is true both for bioinformatics and a whole host of machine learning algorithms that I am studying at the moment). The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-Annotation Function Annotation].
 
-== 3.47 Extra learning units ==
+== 3.47 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-FUNC-Annotation Function Annotation] ==
+; Objective
+My objective here is to recap all the units in this area.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 0 h; date started: 2018-11-10; date completed: 2018-11-10
+</div>
+
+; Activities
+This unit seems empty. Since this unit is a recap unit anyway, I didn't expect much material. I was a bit mislead by the "do not work on this unit until it is live" but Wiki history saved me as it confirmed this unit has looked like this since September 2017 so I can safely skip past it!
+
+; Conclusion and Outlook
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Genome_annotation Genome Annotation].
+
+== 3.48 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
@@ -2237,7 +2251,7 @@ I went through the R code thoroughly and read the recommended papers. The p valu
 
 The [https://www.ncbi.nlm.nih.gov/pubmed/26961635 first paper] reviewed basically describes the tears of the American Statistical Association (ASA) which are concerned that papers only get published when p-values indicated statistical significance while papers showing no statistical significance do not get published. This yields a falsely robust methodology that the ASA are hoping to reverse.
 
-The [https://www.ncbi.nlm.nih.gov/pubmed/21878926 second paper] reviewed criticises neuroscience publications finding that around 50% of them use the incorrect procedure for evaluating statistical significance between two events, say A and B. The main error being that often A is shown to be statistically significant and control event B is said to be statistically significant but the difference between A and B is not examined to see if it itself is statistically significant. This paper also criticises the Cliff effect whereby people are overly swayed once the artificial boundary of $p < 0.05$ is crossed. It however concludes than in many cases this lack of statistic rigour would not however change the conclusions of the papers.
+The [https://www.ncbi.nlm.nih.gov/pubmed/21878926 second paper] reviewed criticises neuroscience publications finding that around 50% of them use the incorrect procedure for evaluating statistical significance between two events, say A and B. The main error being that often A is shown to be statistically significant and control event B is said to be statistically significant but the difference between A and B is not examined to see if it itself is statistically significant. This paper also criticises the Cliff effect whereby people are overly swayed once the artificial boundary of $p < 0.05$ (0h 1m) is crossed. It however concludes than in many cases this lack of statistic rigour would not however change the conclusions of the papers.
 
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/FND-Genetic_code Genetic Code].
@@ -2626,26 +2640,39 @@ source("makeProteinDB.R")
     myTree$root.edge <- mean(myTree$edge.length) * 1.5 # make the root visable
     plot(myTree, cex = 0.7, root.edge = TRUE) # check it out
 
-    # 2.3.3 Rotate the clades
+    # 2.3.3 Rotate the clades (useful to compare with cladogram of species)
+    nodelabels(cex = 0.5, frame = "circle") # add node labels - looks messy, not very useful here
+    myTree <- rotate(myTree, node = 100)
+    myTree <- rotate(myTree, node = 54)
+    myTree <- rotate(myTree, node = 60)
+    myTree <- rotate(myTree, node = 61)
+    myTree <- rotate(myTree, node = 62)
+    myTree <- rotate(myTree, node = 77)
+    myTree <- rotate(myTree, node = 74)
+    myTree <- rotate(myTree, node = 69)
+    myTree <- rotate(myTree, node = 70)
+    myTree <- rotate(myTree, node = 71)
+    myTree <- rotate(myTree, node = 98)
+    myTree <- rotate(myTree, node = 96)
+    myTree <- rotate(myTree, node = 95)
+    myTree <- rotate(myTree, node = 81)
+    myTree <- rotate(myTree, node = 64)
+    myTree <- rotate(myTree, node = 58)
+    myTree <- rotate(myTree, node = 80)
+    myTree <- rotate(myTree, node = 84)
+    myTree <- rotate(myTree, node = 93)
+    myTree <- rotate(myTree, node = 88)
+    myTree <- rotate(myTree, node = 99) # beautify
+    plot(myTree, cex = 0.7, root.edge = TRUE)
 
-    #TODO
-
-    # Task: Study the two trees and consider their similarities and differences.
-    #         What do you expect? What do you find? Note that this is not a "mixed"
-    #         gene tree yet, since it contains only a single gene for the species
-    #         we considered. All of the branch points in this tree are speciation
-    #         events. Thus the gene tree should have the same topology as the
-    #         species tree. Does it? Are the differences important? How many
-    #         branches would you need to remove and reinsert elsewhere to get the
-    #         same topology as the species tree?
-
-    # In order to quantiofy how different these tow trees are, we need to compute
-    # tree distances.
+    # 2.3.4 Computing Tree Distance with reference tree
+    # This is bonus tree analysis and was omitted here as it is not included in instructions.
 
 # END
 </source>
 
 I also put this into an R markdown for better presentation in the oral!
+
 <source lang="r">
 ---
 title: 'Phylogeny: An introductory R Notebook by T. Hollis'
@@ -2670,7 +2697,7 @@ Disclaimer: I used a patch designed by myself (see mailing list) in earlier unit
    
 # 2. Code
 
-## 2.1. Import required libraries
+## 2.1 Import required libraries
 
 As always, lets import our required libraries and data before starting:
 
@@ -2706,7 +2733,7 @@ if (!require(phangorn, quietly=TRUE)) {
 source("makeProteinDB.R")
 ```
 
-## 2.2. Data Preparation
+## 2.2 Data Preparation
 
 ### 2.2.1 Alignment
 
@@ -2797,6 +2824,79 @@ save(myTree, file = "tom_myTreeRproml.RData") # save locally to RData file
 
 ## 2.4 Analyse the tree
 
+### 2.4.1 A few quick exploratory views of the tree
+
+```{r eval=FALSE}
+load(file = "tom_myTreeRproml.RData")
+plot(myTree) # default type: "phylogram"
+plot(myTree, type = "unrooted") # unrooted type
+plot(myTree, type = "fan", no.margin = TRUE) # concentric circle type
+
+str(myTree) # inspect the tree object
+myTree$tip.label # inspect the tree object
+myTree$edge # inspect the tree object
+myTree$edge.length # inspect the tree object
+
+plot(myTree) # plot the tree with labels
+tiplabels(cex = 0.5, frame = "rect") # useful to find the outgroup (should be 17 here)
+edgelabels(cex = 0.5) # add edge labels - looks messy, not very useful here
+nodelabels(cex = 0.5, frame = "circle") # add node labels - looks messy, not very useful here
+
+Nnode(myTree) # number of nodes (should be 50)
+Nedge(myTree) # number of edges (should be 101)
+Ntip(myTree) # number of tips (should be 52)
+
+write.tree(myTree) # show the tree in console in Newick format
+```
+
+### 2.4.2 Rearrange the tree & root it with the outgroup
+
+```{r eval=FALSE}
+myTree <- root(myTree, outgroup = 17, resolve.root = TRUE) # change this for outgroup number
+plot(myTree) # check it out
+is.rooted(myTree) # make sure the tree is now rooted
+
+myTree$edge.length[1] <- 0.1 # rescale the tree to a reasonable size
+plot(myTree, cex = 0.7) # check it out
+
+myTree$root.edge <- mean(myTree$edge.length) * 1.5 # make the root visable
+plot(myTree, cex = 0.7, root.edge = TRUE) # check it out
+```
+
+### 2.4.3 Rotate the clades 
+
+This is useful to better compare with cladogram of species.
+
+```{r eval=FALSE}
+nodelabels(cex = 0.5, frame = "circle") # add node labels - looks messy, not very useful here (except for rotations)
+myTree <- rotate(myTree, node = 100)
+myTree <- rotate(myTree, node = 54)
+myTree <- rotate(myTree, node = 60)
+myTree <- rotate(myTree, node = 61)
+myTree <- rotate(myTree, node = 62)
+myTree <- rotate(myTree, node = 77)
+myTree <- rotate(myTree, node = 74)
+myTree <- rotate(myTree, node = 69)
+myTree <- rotate(myTree, node = 70)
+myTree <- rotate(myTree, node = 71)
+myTree <- rotate(myTree, node = 98)
+myTree <- rotate(myTree, node = 96)
+myTree <- rotate(myTree, node = 95)
+myTree <- rotate(myTree, node = 81)
+myTree <- rotate(myTree, node = 64)
+myTree <- rotate(myTree, node = 58)
+myTree <- rotate(myTree, node = 80)
+myTree <- rotate(myTree, node = 84)
+myTree <- rotate(myTree, node = 93)
+myTree <- rotate(myTree, node = 88)
+myTree <- rotate(myTree, node = 99) # beautify
+plot(myTree, cex = 0.7, root.edge = TRUE)
+```
+
+### 2.4.4 Computing Tree Distance with reference tree
+
+This is bonus tree analysis and was omitted here as it is not included in instructions.
+
 </source>
 
 
@@ -2833,19 +2933,23 @@ The next unit that I plan to take is [???].
 
 = 6. Custom Learning Unit =
 
-== 6.1 [???] ==
+== 6.1 [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Thomas_Hollis/Eval_Cancer_kNN Cancer Detection using kNN] (submitted: 14 marks) ==
 ; Objective
-
+My objective here is to write an absolutely fabulous introductory learning unit to Machine Learning applications (in this case kNN) in bioinformatics (in this case cancer detection). 
 
 <div class="time-estimate">
-Time estimated: 6 h; taken: ? h; date started: 2018-11-??; date completed: 2018-11-??
+Time estimated: 12 h; taken: 20 h; date started: 2018-11-09; date completed: 2018-11-15
 </div>
 
 ; Activities
-???
+You can access the page [http://steipe.biochemistry.utoronto.ca/abc/students/index.php/User:Thomas_Hollis/Eval_Cancer_kNN here].
+
+Please see the version history to see all the development that has gone on in building this unit from v0.1 (stub) to the latest version!
+
+I am so proud of this unit. I designed it in the same style as prof. Steipe's units so that it could easily be added to future courses without too many changes. I absolutely loved creating it and I really hope some student stumbles across it some day (I must confess I spend a bit too many hours on this unit and I got really carried away...)
 
 ; Conclusion and Outlook
-???
+This really was great fun. I hope my learning unit is taken by someone in the future! I am even considering having a wiki structure for any course that I may end up teaching if my career heads toward education.
 
 =Notes and References=
 <references />
