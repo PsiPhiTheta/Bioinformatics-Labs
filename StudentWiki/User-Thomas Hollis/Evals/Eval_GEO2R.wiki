@@ -1,1 +1,352 @@
-(null)
+<div id="ABC">
+<div style="padding:5px; border:1px solid #000000; background-color:#C0C0C0; font-size:300%; font-weight:400; color: #000000; width:100%;">
+Evaluation page: GEO2R [R Code]
+<div style="padding:5px; margin-top:20px; margin-bottom:10px; background-color:#C0C0C0; font-size:30%; font-weight:200; color: #000000; ">
+(Thomas Hollis' submission)
+</div>
+</div>
+
+
+ __TOC__
+
+
+= Task 1 - What are the data in each cell, column and row? =
+
+Here we are looking at the results from a series of experiments looking at the expression levels inside Saccharomyces cerevisiae.
+
+<source lang="r">
+
+> exprs(tmp)   # exprs() gives us the actual expression values.
+            GSM81064     GSM81065    GSM81066    GSM81067   GSM81068     GSM81069
+YAL001C -0.103485383 -0.045432985  0.03036515 -0.07880245 0.02152000  0.064690128
+YAL002W -0.080561906 -0.065335117  0.05850999  0.10747982 0.03228810  0.068920076
+YAL003W -0.072594196 -0.013590488 -0.01922754  0.03102694 0.02831172 -0.000978841
+YAL004W -0.110246792 -0.020650784 -0.03424255  0.10437975 0.11602340  0.044769045
+YAL005C  0.009980532  0.006532799  0.07304193  0.20764822 0.24090600  0.165025279
+YAL007C -0.179559127  0.003669272  0.19000509  0.14934748 0.06447802 -0.018602740
+
+</source>
+
+* Each cell contains the expression value (i.e. how much a particular gene of a particular sample is expressed).
+
+* Each column contains the sample name (representing one experiment) and all the expression levels associated with that sample in particular genes.
+
+* Each row contains feature names (in this case genes) and all the expression levels associated with that gene across multiple experiments' sample.
+
+= Task 2 - What are these experiments? =
+
+These experiments are (in order):
+
+* GSM81064 - Yeast cell cycle-time point 0 min 2001-05-03_0000.rfm
+* GSM81065 - Yeast cell cycle-time point 10 min 2001-05-03_0010.rfm
+* GSM81066 - Yeast cell cycle-time point 20 min 2001-05-03_0020.rfm
+* GSM81067 - Yeast cell cycle-time point 30 min 2001-05-03_0030.rfm
+* GSM81068 - Yeast cell cycle-time point 40 min 2001-04-11_0040.rfm
+* GSM81069 - Yeast cell cycle-time point 50 min 2001-04-11_0050.rfm
+
+In each experiment the yeast cell cycle microarray was used to identify global trancription profile. The full description is as follows: "Cells were synchronized with alpha factor and sampled every 10 min across 2 cell cycles. A total of 13 samples were analyzed. No replicates were included. cDNA of the cell cycle samples were labelled with Cy5. For Cy3 labelling, asynchronous yeast population was used."
+
+(Full citation: Pramila T, Miles S, GuhaThakurta D, Jemiolo D et al. Conserved homeodomain proteins interact with MADS box protein Mcm1 to restrict ECB-dependent transcription to the M/G1 phase of the cell cycle. Genes Dev 2002 Dec 1;16(23):3034-45. PMID: 12464633)
+
+= Task 3 - Study this boxplot =
+
+[[File:TomBoxplot.png|middle|600px]]
+
+* ''Q3.1: What's going on? Are these expression values?''
+
+This box plot shows the distribution of gene expression values for the different samples detailed earlier. Box plots work by labelling the median in the middle, the inter-quartile range on either side of the median and the maximum and minimum quartiles. Each quartile contains 25% of the data points. This shows us how spread the data is and where it is concentrated. 
+
+* ''Q3.2: What do the numbers that exprs() returns from the dataset mean?''
+
+The <code> exprs() </code> command returns the expression measurements as well as error measurements (with controls) of the experiment data (as per the package description). We can confirm this by inspecting the function output. Indeed, we see expression levels for the genes as well as some levels for "blank", "empty" and various controls (like "E. coli control") which. 
+
+= Task 4 - Study this plot =
+
+[[File:TomGEO2RPlot.png|middle|600px]]
+
+* ''Q4.1: What does it tell you? Is there systematic, global change in the values over time? Within a cycle? Over the course of the experiment?''
+
+This line plot shows that the gene expression distribution is roughly Gaussian-distributed, centred about 0. Initially at T=0, around 3000 genes have expression levels very near 0. There is a systematic decrease in this number of genes near zero from T=0 to T=6 (inclusive). Then from T=9 to T=12 (inclusive) the gene expression values tend to go back to 0. 
+
+I could infer from this that certain genes start being more expressed or suppressed between times of 30min and 60min in this experiment.
+
+= Task 5 - Row-wise Analysis: Expression Profiles =
+
+* ''Q5.1: Are all rows genes?''
+
+No. As described earlier, not all rows are genes. Many rows contain "controls", some are "blank" and some are "empty". 
+
+* ''Q5.2: What identifiers are being used?''
+
+We are using the SGD Nuclear ORF systematic nomenclature convention and format here. Y stands for Yeast, A is the chromosome number (1), and the third letter is either "L" or "R" for the chromosome arm, as described in the [https://sites.google.com/view/yeastgenome-help/community-help/nomenclature-conventions SGD page].
+
+* ''Q5.3: Are all rows/genes unique?''
+
+Indeed all rows/genes are unique since <code> unique(rownames(ex)) == rownames(ex) </code> only returns <code> TRUE </code> values. 
+
+* ''Q5.4: Are all yeast genes accounted for?''
+
+As described in the code, we cannot know this yet as we have no information other than the gene identifiers, for now. (answers to come in future tasks no doubt...)
+
+= Task 6 - Read a table of features =
+Code developed:
+
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.3
+# Purpose: Read a table of features
+
+# ==   4.1  Task - Read a table of features  ===================================
+
+# This data file is rather typical of datasets that you will encounter "in the
+# wild". To proceed, you need to write code to read it into an R-object. Develop
+# the code in your script file according to the following specification:
+#
+#    -  read "./data/SGD_features.tab" into a data frame
+#          called "SGD_features"
+
+SGD_original <- read.table(file = "./data/SGD_features.tab", quote = "", header = FALSE,
+                           fill = TRUE, sep = "\t", stringsAsFactors = FALSE) #for debugging
+
+SGD_features <- read.table(file = "./data/SGD_features.tab", quote = "", header = FALSE,
+                           fill = TRUE, sep = "\t", stringsAsFactors = FALSE)
+
+#    -  remove unneeded columns - keep the following information:
+#         -   Primary SGDID (1)
+#         -   Feature type (2)
+#         -   Feature qualifier (3)
+#         -   Feature name - (the systematic name !) (4)
+#         -   Standard gene name (5)
+#         -   Description (16)
+
+SGD_features <- SGD_features[,-(6:15)]
+
+#    -  give the data frame meaningful column names:
+
+colnames(SGD_features) <- c("SGDID", "type", "qual", "sysName", "name", "description")
+
+#    -  remove all rows that don't have a systematic name. (You'll have to check
+#          what's in cells that don't have a systematic name)
+
+(nrow(SGD_features)) #16454
+
+SGD_features <- SGD_features[!((SGD_features$sysName)==""), ]
+
+(nrow(SGD_features)) #8061, checked visually - OK
+
+#    -  check that the systematic names are unique (Hint: use the duplicated()
+#          function.)
+
+anyDuplicated(SGD_features$sysName) == "0" # returns TRUE - OK
+
+#    -  assign the systematic names as row names
+
+rownames(SGD_features) <- SGD_features$sysName
+
+#    -  confirm: are all rows of the expression data set represented in
+#                  the feature table? Hint: use setdiff() to print all that
+#                  are not.
+#                  Example:  A <- c("duck", "crow", "gull", "tern")
+#                            B <- c("gull", "rook", "tern", "kite", "myna")
+#                            setdiff(A, B)
+#                            setdiff(B, A)
+
+feature_names <- SGD_features$sysName
+length(featureNames(GSE3635)) # 6228
+length(feature_names) # 8061 - at least 1833 missing some that are missing in GSE3635
+length(setdiff(feature_names, featureNames(GSE3635))) # 1907 missing
+
+#       If some of the features in the expression set are not listed in the
+#       systematic names, you have to be aware of that, when you try to get
+#       more information on them. I presume they are missing because revisions
+#       of the yeast genome after these experiments were done showed that these
+#       genes did not actually exist.
+#    -  confirm: how many / which genes in the feature table do not
+#                have expression data?
+
+# Answer: Since we saw above we had 1907 missing, thus 1907 genes in SGD_features table
+# will not have corresponding expression data in GSE3635.
+# All the names of the missing genes can be found by running:
+# setdiff(feature_names, featureNames(GSE3635))
+
+#  How should we handle rows/columns that are missing or not unique?
+
+# Answer: Could simply drop them if they are not important. Else if they are
+# we could pull the data from another database
+
+# END
+</source>
+
+= Task 7 - Selected Expression Profiles =
+
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.3
+# Purpose: Plot expression profiles for certain genes and study them
+
+# ==   4.2  Selected Expression profiles  ======================================
+
+
+# Here is an expression profile for Mbp1.
+
+gName <- "MBP1"
+(iFeature <- which(SGD_features$name == gName))
+(iExprs   <- which(featureNames(GSE3635) == SGD_features$sysName[iFeature]))
+plot(seq(0, 120, by = 10),
+     exprs(GSE3635)[iExprs, ],
+     main = paste("Expression profile for", gName),
+     xlab = "time (min)",
+     ylab = "expression",
+     type = "b",
+     col= "maroon")
+abline(h =  0, col = "#00000055")
+abline(v = 60, col = "#00000055")
+
+# Print the description
+SGD_features$description[iFeature]
+
+# Here is a list of gene names that may be involved in the cell cycle switch,
+# and some genes that are controls (cf. BIN-SYS-Concepts):
+
+# Turning it on
+# Cdc14, Mbp1, Swi6, Swi4, Whi5, Cdc28, Cln1, Cln2, Cln3
+
+# Turning it off
+# Rad53, Cdc28, Clb1, Clb2, Clb6, Nrm1
+
+# Housekeeping genes
+# Act1, and Alg9
+
+#TASK>  Plot expression profiles for these genes and study them. What do you
+#TASK>  expect the profiles to look like, given the role of these genes? What
+#TASK>  do you find? (Hint: you will make your life much easier if you define
+#TASK>  a function that plots and prints descriptions with a gene name as input.
+#TASK>  Also: are the gene names in the feature table upper case, or lower case?
+#TASK>  Also: note that the absolute values of change are quite different.
+#TASK>  Also: note that some values may be outliers i.e. failed experiments.)
+
+# Indeed the names are in uppercase so I have accounted for this in my function
+
+printExpProf <- function(gName) {
+  iFeature <- which(SGD_features$name == toupper(gName))
+  iExprs   <- which(featureNames(GSE3635) == SGD_features$sysName[iFeature])
+  plot(seq(0, 120, by = 10),
+       exprs(GSE3635)[iExprs, ],
+       main = paste("Expression profile for", gName),
+       xlab = "time (min)",
+       ylab = "expression",
+       type = "b",
+       col= "maroon")
+  abline(h =  0, col = "#00000055")
+  abline(v = 60, col = "#00000055")
+
+  # Print the description
+  SGD_features$description[iFeature]
+}
+
+# END
+</source>
+
+Turn on gene plots can be found below. Indeed, from a pretty lengthy read of wikipedia I would expect turn on genes to have a cyclical pattern. I expect them to rise throughout the cycle and fall back again before the start of the next cycle (roughly 60min cycles here). This seems to be consistent with what most of the expression plots show (albeit Cdc14 and Cln3 seem to have a slightly delayed onset). The only gene that does not seem consistent with my expectations would be Cdc28 as it does not seem to be cyclical. Indeed this might be because it is both a turn on and a turn off gene (as will be discussed in the next section). I also hypothesise that Whi5 might have an odd point at T=60min which, if removed, might become inconsistent with my expectations. 
+
+[[File:LU5Plot1.png|middle|250px]] [[File:LU5Plot2.png|middle|250px]] [[File:LU5Plot3.png|middle|250px]]
+
+[[File:LU5Plot4.png|middle|250px]] [[File:LU5Plot5.png|middle|250px]] [[File:LU5Plot6.png|middle|250px]]
+
+[[File:LU5Plot7.png|middle|250px]] [[File:LU5Plot8.png|middle|250px]] [[File:LU5Plot9.png|middle|250px]]
+
+Turn off gene plots can be found below. Indeed, I would expect turn off genes to initially have a low expression (as they are suppressing) before returning to a higher expression. All these plots seem moderately consistent with this hypothesis except Cdc28 which seems to behave unexpectedly again. Once again, I hypothesise there that it is because it is both a turn on and a turn off gene that it has such unusual expression behaviour. 
+
+[[File:LU5Plot10.png|middle|250px]] [[File:LU5Plot11.png|middle|250px]] [[File:LU5Plot12.png|middle|250px]]
+
+[[File:LU5Plot13.png|middle|250px]] [[File:LU5Plot14.png|middle|250px]] [[File:LU5Plot15.png|middle|250px]]
+
+Housekeeping genes plots can be found below. Indeed, I have read that housekeeping genes are needed to maintain basic cellular function. The [https://en.wikipedia.org/wiki/Housekeeping_gene housekeeping gene wiki page] also explains that we can expect genes to be expressed at relatively constant rates (i.e. non-cyclical) in most non-pathological situation, even if this varies depending on experimental conditions. Therefore, I would expect them to be roughly expressed constantly in a non-cyclical manner throughout the cycle. This seems to be consistent with what their expression actually does as neither is cyclical (albeit alg9 has a slightly strange low start which increases expression throughout the cycle). This deviation is nonetheless consistent with literature as expression rates vary on experimental conditions, as seen in the wiki page. 
+
+[[File:LU5Plot16.png|middle|250px]] [[File:LU5Plot17.png|middle|250px]]
+
+= Task 8 - Gene descriptions = 
+
+Here is the code I developed: 
+
+<source lang="r">
+# Thomas Hollis (BCH441, University of Toronto) -v2.3
+# Purpose: Print descriptions of differentially expressed genes
+
+# ==   5.1  Final task: Gene descriptions  =====================================
+
+#    Print the descriptions of the top ten differentially expressed genes.
+
+top10 <- myTable[1:10,1]
+for (g in top10) {
+  cat("======================================= \n")
+  des <- SGD_features$description[rownames(SGD_features) == g]
+  if (length(des) != 0) {
+    cat("Gene", g, "has description: \n", des, "\n")
+  } else {
+    cat("Gene", g, "has description: \n", des)
+    cat("Error 404: No description found \n")
+  }
+}
+
+# END
+</source>
+
+And here is the output:
+
+<source lang="html4strict">
+
+======================================= 
+Gene YMR215W has description: 
+ Putative 1,3-beta-glucanosyltransferase; has similarity go other GAS family members; low 
+abundance, possibly inactive member of the GAS family of GPI-containing proteins; localizes 
+to the cell wall; mRNA induced during sporulation 
+======================================= 
+Gene YEL032W has description: 
+ Protein involved in DNA replication; component of the Mcm2-7 hexameric helicase complex 
+that binds chromatin as a part of the pre-replicative complex 
+======================================= 
+Gene YBL003C has description: 
+ Histone H2A; core histone protein required for chromatin assembly and chromosome 
+function; one of two nearly identical (see also HTA1) subtypes; DNA damage-dependent
+phosphorylation by Mec1p facilitates DNA repair; acetylated by Nat4p 
+======================================= 
+Gene YIL123W has description: 
+ Protein of the SUN family (Sim1p, Uth1p, Nca3p, Sun4p); may participate in DNA replication; 
+promoter contains SCB regulation box at -300 bp indicating that expression may be cell 
+cycle-regulated; SIM1 has a paralog, SUN4, that arose from the whole genome duplication 
+======================================= 
+Gene YGR098C has description: 
+ Separase, a caspase-like cysteine protease; promotes sister chromatid separation by 
+mediating dissociation of the cohesin Scc1p from chromatin; inhibits protein phosphatase 
+2A-Cdc55p to promote mitotic exit; inhibited by Pds1p; relative distribution to the nucleus 
+increases upon DNA replication stress 
+======================================= 
+Gene YML117W-A has description: 
+ Error: No description found 
+======================================= 
+Gene YNL031C has description: 
+ Histone H3; core histone protein required for chromatin assembly, part of 
+heterochromatin-mediated telomeric and HM silencing; one of two identical histone H3 
+proteins (see HHT1); regulated by acetylation, methylation, and phosphorylation; H3K14 
+acetylation plays an important role in the unfolding of strongly positioned nucleosomes 
+during repair of UV damage 
+======================================= 
+Gene YJL137C has description: 
+ Glycogenin glucosyltransferase; self-glucosylating initiator of glycogen synthesis, also 
+glucosylates n-dodecyl-beta-D-maltoside; similar to mammalian glycogenin; GLG2 has a 
+paralog, GLG1, that arose from the whole genome duplication 
+======================================= 
+Gene YOR066W has description: 
+ Activator of G1-specific transcription factors MBF and SBF; involved in regulation of the 
+timing of G1-specific gene transcription and cell cycle initiation; localization is cell-cycle 
+dependent and regulated by Cdc28p phosphorylation; MSA1 has a paralog, MSA2, that 
+arose from the whole genome duplication 
+======================================= 
+Gene YDR224C has description: 
+ Histone H2B; core histone protein required for chromatin assembly and chromosome 
+function; nearly identical to HTB2; Rad6p-Bre1p-Lge1p mediated ubiquitination regulates 
+reassembly after DNA replication, transcriptional activation, meiotic DSB formation and H3
+methylation 
+
+</source>
+
+[[Category:EVAL-RPR-GEO2R]]
