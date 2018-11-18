@@ -2535,7 +2535,105 @@ This unit seems empty. Since this unit is a recap unit anyway, I didn't expect m
 ; Conclusion and Outlook
 The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Genome_annotation Genome Annotation].
 
-== 3.48 Extra learning units ==
+== 3.48 [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-SX-PDB PDB files] ==
+; Objective
+My objective here is to learn how to read PDB files and how to interpret their contents.
+
+<div class="time-estimate">
+Time estimated: 0.5 h; taken: 1 h; date started: 2018-11-18; date completed: 2018-11-18
+</div>
+
+; Activities
+The first file has a resolution of 1.71 Angstroms. The the first residue in the SEQRES section "GLN" also the first residue with an ATOM record ("GLN" too). I think 66 water molecules of solvent were used while there are 248 in the structure. Remark 525 just lists two particular water molecules that are further than 5 Angstroms away.  
+
+; Conclusion and Outlook
+Honestly I struggled a lot with this unit because there was no introductory theory. It was straight into the PDB files with no biological context. I did learn loads of awesome new plotting techniques though! I might revisit this unit later once I have more perspective. The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Chimera Chimera].
+
+== 3.49 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Chimera Chimera] ==
+; Objective
+I want to learn how to use Chimera! Seems like an amazing piece of kit!
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-11-18; date completed: 2018-11-18
+</div>
+
+; Activities
+Chimera? ChimeraX? After thinking for a few minutes about the pro's and con's of each I just downloaded and installed both. What is the worst than could happen?
+
+; Conclusion and Outlook
+??? The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Small_molecules Small Molecules].
+
+== 3.50 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Small_molecules Small Molecules] ==
+; Objective
+???
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-11-??; date completed: 2018-11-??
+</div>
+
+; Activities
+
+
+; Conclusion and Outlook
+??? The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Molecular_forcefields Molecular Forcefields].
+
+== 3.51 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Molecular_forcefields Molecular Forcefields] ==
+; Objective
+???
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-11-??; date completed: 2018-11-??
+</div>
+
+; Activities
+
+
+; Conclusion and Outlook
+??? The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Domains Structure Domains].
+
+== 3.52 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Domains Structure Domains] ==
+; Objective
+???
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-11-??; date completed: 2018-11-??
+</div>
+
+; Activities
+
+
+; Conclusion and Outlook
+??? The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Superposition Structure Superposition].
+
+== 3.53 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Superposition Structure Superposition] ==
+; Objective
+???
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-11-??; date completed: 2018-11-??
+</div>
+
+; Activities
+
+
+; Conclusion and Outlook
+??? The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Homology_modelling Homology Modelling].
+
+== 3.54 [http://steipe.biochemistry.utoronto.ca/abc/index.php/BIN-SX-Homology_modelling Homology Modelling] ==
+; Objective
+???
+
+<div class="time-estimate">
+Time estimated: 1 h; taken: 1 h; date started: 2018-11-??; date completed: 2018-11-??
+</div>
+
+; Activities
+
+
+; Conclusion and Outlook
+??? The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Homology_modelling Homology Modelling (Intergrator Unit)].
+
+== 3.55 Extra learning units ==
 ; Objective
 The main objective is to read through extra fundamental modules that are not necessary to complete the course to make sure I am fully equipped. 
 
@@ -3257,7 +3355,7 @@ Time estimated: 6 h; taken: ? h; date started: 2018-11-??; date completed: 2018-
 
 
 ; Conclusion and Outlook
-The next unit that I plan to take is [???].
+The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-SX-PDB PDB files].
 
 == 5.4 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Homology_modelling Homology Modelling] ==
 ; Objective
@@ -3271,7 +3369,7 @@ Time estimated: 6 h; taken: ? h; date started: 2018-11-??; date completed: 2018-
 
 
 ; Conclusion and Outlook
-The next unit that I plan to take is [???].
+Wow this is the final unit... Cannot quite believe it... Maybe time to do a big review of my journal and run through any chapters that I feel are weak!
 
 = 6. Custom Learning Unit =
 
