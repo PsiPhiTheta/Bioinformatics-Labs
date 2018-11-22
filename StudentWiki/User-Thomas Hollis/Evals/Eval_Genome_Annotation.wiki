@@ -254,6 +254,6 @@ So we can see that there are indeed some CGCG, [AT]CGCG, CGCG[AT] and [AT]CGCG[A
 
 * Interpret your finding. Does this support or refute the idea that MBP1_MYSPE has the same DNA sequence binding specificity as MBP1_SACCE?
 
-I am not a biologist but I will do my best to interpret my findings. Indeed, since the regex has shown a high similarity in the clustering, it seems that MBP1_ISAFU (a.k.a. MBP1_CORFU) has the same DNA sequence binding specificity as MBP1_SACCE.
+I am not a biologist but I will do my best to interpret my findings. I took the sequences and aligned them in Sublime as best I could. From this information and since the regex has shown a high similarity in the clustering, it seems that MBP1_ISAFU (a.k.a. MBP1_CORFU) has the same DNA sequence binding specificity as MBP1_SACCE.
 
 [[Category:EVAL-INT-Genome_annotation]]
