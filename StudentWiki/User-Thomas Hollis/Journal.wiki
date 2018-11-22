@@ -3391,18 +3391,263 @@ This was a fun and productive roundup putting together all the units in this par
 
 == 5.3 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Genome_annotation Genome Annotation] (submitted: 8 marks) ==
 ; Objective
-
+As per, objective 100% here.
 
 <div class="time-estimate">
-Time estimated: 6 h; taken: ? h; date started: 2018-11-??; date completed: 2018-11-??
+Time estimated: 6 h; taken: 7 h; date started: 2018-11-18; date completed: 2018-11-21
 </div>
 
 ; Activities
 You can find my submission page [http://steipe.biochemistry.utoronto.ca/abc/students/index.php?title=User:Thomas_Hollis/Eval_Genome_Annotation&action=edit&redlink=1 here].
 
+'''Task 1 - Finding the ISAFU orthologue for Cdc6'''
+
+* Find the MYSPE orthologue for yeast Cdc6.
+
+1.1. First and foremost I need to find the RefSeqID for SACCE Cdc6: 
+
+[[File:INT4F1.png|middle|400px]]
+
+The RefSeq is <code>NP_012341.1</code> (NCBI page [https://www.ncbi.nlm.nih.gov/protein/NP_012341.1 here])
+
+FASTA is: 
+
+<code> >NP_012341.1 AAA family ATPase CDC6 [Saccharomyces cerevisiae S288C]
+MSAIPITPTKRIRRNLFDDAPATPPRPLKRKKLQFTDVTPESSPEKLQFGSQSIFLRTKALLQKSSELVN
+LNSSDGALPARTAEYEQVMNFLAKAISEHRSDSLYITGPPGTGKTAQLDMIIRQKFQSLPLSLSTPRSKD
+VLRHTNPNLQNLSWFELPDGRLESVAVTSINCISLGEPSSIFQKIFDSFQDLNGPTLQIKNMQHLQKFLE
+PYHKKTTFVVVLDEMDRLLHANTSETQSVRTILELFLLAKLPTVSFVLIGMANSLDMKDRFLSRLNLDRG
+LLPQTIVFQPYTAEQMYEIVIQKMSSLPTIIFQPMAIKFAAKKCAGNTGDLRKLFDVLRGSIEIYELEKR
+FLLSPTRGSLNSAQVPLTPTTSPVKKSYPEPQGKIGLNYIAKVFSKFVNNNSTRTRIAKLNIQQKLILCT
+IIQSLKLNSDATIDESFDHYIKAITKTDTLAPLQRNEFLEICTILETCGLVSIKKTKCKGKTKRFVDKID
+VDLDMREFYDEMTKISILKPFLH </code>
+
+1.2. Now I need to do a protein BLAST:
+
+[[File:INT4F2.png|middle|400px]]
+
+The results of this BLAST are:
+
+[[File:INT4F3.png|middle|400px]]
+
+The top hit for the ISAFU (a.k.a. CORFU) orthologue is a "cell division control protein". (Accession: [https://www.ncbi.nlm.nih.gov/protein/XP_018708463.1?report=genbank&log$=protalign&blast_rank=1&RID=Z8RJWMNP013 XP_018708463.1], E-value: 8e-40, Coverage: 93%)
+
+FASTA is:
+
+<code> >XP_018708463.1 cell division control protein Cdc6 [Cordyceps fumosorosea ARSEF 2679]
+MASSALGKRSRRAVIYDSDESPSKRPRRSCAATVDYNDENEDPEDIVSVATTNPIIIKTEVDDSPSKRNR
+SLSQSSARNPVTPSTPRHHDALAAYPTTPRHAVMSAGKLFKRLTPHSPLSPSTIQTVYHSARQLFARGAE
+PGQLVGRDEERQQLTAFLERCTSDSPNGCLYVSGPPGTGKSAMITGLIQKYANRDDVKSAYINCMSVKSS
+KDLYMTLLDGMGLEAEGVTEADAMDALQDAFYPRDDNATTYLITLDEIDHILTMGLESLYRVFEWALHKS
+SKLLLVGIANALDLTDRFLPRLKSKNLKPELLPFLPYTATQVKNIITTRLKSLMPQGKENFVPFIHPAAI
+ELCSRKVSSQTGDLRKAFEICRRALDLIENETRSKHEEEAREAMLQMTPSKRPLGENINGAMGGRSIVQI
+MGNSLKALTAETAPRASIAHLNKVTAAAFSNGTTQRLKTLNLQQKAALCALVAYENHLRSKVKVGMPTTP
+SKTQLLAPTVKKLFGAYCRLCTRDSVLHPLSSSEFREVMGSLETLGLVNAVDGKNGSFITPQTPSKRGRK
+AAVLASGDDKRVASCVTEKDMESVVAGLGSGILASILHGEALD </code>
+
+'''Task 2 - Fetching nucleotides'''
+
+* Fetch 500 nucleotides of upstream genome sequence. (Demonstrate that this is the correct sequence by showing the first 10 translated Cdc6 codons with your sequence.)
+
+Using the NCBI website, the upstream genome sequence can be extracted with some casual URL modification. The [https://www.ncbi.nlm.nih.gov/nuccore/NW_017387301.1?report=fasta&from=1232756&to=1234623 original URL] is modified to decrease the "from" parameter by 500, effectively shifting upstream. 
+
+[https://www.ncbi.nlm.nih.gov/nuccore/NW_017387301.1?report=fasta&from=1232756&to=1234623 Original URL] output FASTA:
+
+<code> >NW_017387301.1:1232756-1234623 Cordyceps fumosorosea ARSEF 2679 chromosome Unknown scaffold_1, whole genome shotgun sequence
+ATGGCGTCCTCAGCTCTGGGAAAGAGATCCCGCCGCGCGGTAATCTATGGTACGTACAAACAGGCACGGT
+GCCTTCTAGACAATCGTACTTACCTGTTACCCCAGACTCAGACGAGTCTCCTTCCAAACGGCCTCGCCGG
+TCGTGCGCCGCCACTGTCGACTACAACGACGAGAACGAGGATCCCGAGGACATTGTCAGCGTTGCTACCA
+CCAATCCCATTATTATCAAGACCGAAGTCGACGACTCGCCTAGCAAGAGAAATCGATCTCTTTCTCAGTC
+TTCAGCTCGGAACCCCGTCACACCGTCGACGCCACGCCATCACGATGCCTTGGCCGCGTATCCCACGACG
+CCTCGACACGCCGTCATGTCGGCCGGCAAGCTCTTCAAGAGACTGACGCCGCACTCTCCCCTGTCTCCCA
+GCACCATCCAAACCGTTTACCACTCGGCTCGCCAATTATTCGCCCGCGGGGCGGAGCCCGGTCAGCTCGT
+CGGCCGTGACGAAGAGCGTCAGCAGCTCACGGCTTTCCTGGAGCGGTGCACATCAGACTCGCCAAATGGG
+TGCCTCTACGTCAGCGGCCCGCCTGGTACCGGCAAGAGCGCCATGATTACCGGGCTCATTCAAAAGTACG
+CAAATAGGGACGATGTCAAGTCGGCATACATCAACTGCATGAGCGTCAAGTCCTCCAAGGATCTCTACAT
+GACGCTACTCGACGGCATGGGGCTTGAGGCCGAGGGCGTAACCGAGGCTGATGCCATGGACGCTCTGCAA
+GACGCTTTCTACCCCAGAGACGACAACGCCACGACCTATCTGATCACTCTCGATGAGATTGATCATATTC
+TCACTATGGGCCTGGAGAGCTTGTATCGTGTATTTGAATGGGCCCTCCACAAGTCGTCAAAGCTTCTCCT
+TGTCGGCATTGCCAACGCGCTAGATCTCACGGACCGATTTCTCCCTCGTCTCAAGTCCAAGAACCTTAAA
+CCTGAGCTTCTTCCGTTTCTTCCCTATACCGCTACGCAAGTGAAGAATATCATCACAACTCGTCTGAAGT
+CTTTGATGCCCCAGGGTAAAGAAAACTTCGTTCCATTTATTCACCCTGCTGCCATTGAACTGTGCTCCCG
+CAAAGTGTCGAGTCAGACGGGGGATCTTCGCAAGGCGTTTGAGATTTGCAGAAGGGCTTTGGATCTGATT
+GAGAACGAAACACGGTCGAAGCACGAGGAAGAGGCAAGGGAAGCTATGCTTCAGATGACACCATCGAAGC
+GACCTCTTGGCGAGAATATCAACGGGGCCATGGGAGGACGAAGCATTGTACAAATTATGGGCAATTCACT
+CAAGGCATTGACGGCCGAGACGGCCCCTCGCGCTTCCATAGCCCATCTGAACAAGGTGACGGCAGCAGCG
+TTCAGCAACGGCACCACACAGAGGCTCAAGACTCTCAACCTTCAGCAAAAGGCAGCCCTGTGCGCTCTGG
+TTGCGTACGAGAATCACTTGCGATCAAAGGTTAAGGTCGGCATGCCCACTACACCAAGCAAGACCCAGTT
+ACTGGCACCAACTGTGAAGAAGCTCTTTGGCGCGTACTGCCGCCTGTGCACGCGCGACTCTGTGCTCCAC
+CCTCTCTCGAGCTCCGAGTTCCGCGAGGTCATGGGTAGCTTGGAGACGCTGGGCCTTGTCAACGCGGTCG
+ATGGCAAGAATGGAAGCTTCATTACGCCGCAGACGCCTAGCAAGCGTGGCCGCAAAGCCGCCGTGTTGGC
+GAGCGGAGACGACAAGCGAGTTGCGAGCTGTGTGACCGAGAAGGACATGGAGTCGGTTGTTGCCGGCCTC
+GGCTCAGGCATTCTAGCCAGCATTTTGCATGGAGAGGCGTTGGATTAA </code>
+
+[https://www.ncbi.nlm.nih.gov/nuccore/NW_017387301.1?report=fasta&from=1232756&to=1234623 Modified URL] output FASTA (upstream and sequence):
+
+<code> >NW_017387301.1:1232256-1234623 Cordyceps fumosorosea ARSEF 2679 chromosome Unknown scaffold_1, whole genome shotgun sequence
+CTATCAATTGAGCCAGCTTTTCAAATATTCATTCTTTCCTTTTTTCAATAGTTTCCAGACCCTGCCGTTA
+ACAGCTCTCCCTCCTCCCAGGTATTGAGCCTTGGGCTGTGGAGCGGCACTAGCCACGCCCGCGCCACACC
+CAGGTTTTGCCATATCCACACACTGACCAGGGCTTTAATAGATTTTGTCGCGTACTGGCGCGTTGAAACG
+CGCTCGACACGGTTCGTCCCGCCCTTGCGCGACCCTGGTCGTGGCGCGAGCTGCTTTACTTAATCCTTTC
+GTGCCCTTGTGAGACTTTCCACAGCAACCAGCTTTTTCTCATCTACCAATTCCCCAGCGACGCATTTCCA
+TCTCGACATTGCCTCTTCACATCTGTTTATATTAGTCGCCCGCATTCTGCATCTCGCACTACCAGCATTC
+TACACTTAGCCGGCAAGAACATATCCGTATCAGCATTTTTCGATTGGCAGGAAGCTTCCTGCCCCAGGTG
+TTCCGCATCAATGGCGTCCTCAGCTCTGGGAAAGAGATCCCGCCGCGCGGTAATCTATGGTACGTACAAA
+CAGGCACGGTGCCTTCTAGACAATCGTACTTACCTGTTACCCCAGACTCAGACGAGTCTCCTTCCAAACG
+GCCTCGCCGGTCGTGCGCCGCCACTGTCGACTACAACGACGAGAACGAGGATCCCGAGGACATTGTCAGC
+GTTGCTACCACCAATCCCATTATTATCAAGACCGAAGTCGACGACTCGCCTAGCAAGAGAAATCGATCTC
+TTTCTCAGTCTTCAGCTCGGAACCCCGTCACACCGTCGACGCCACGCCATCACGATGCCTTGGCCGCGTA
+TCCCACGACGCCTCGACACGCCGTCATGTCGGCCGGCAAGCTCTTCAAGAGACTGACGCCGCACTCTCCC
+CTGTCTCCCAGCACCATCCAAACCGTTTACCACTCGGCTCGCCAATTATTCGCCCGCGGGGCGGAGCCCG
+GTCAGCTCGTCGGCCGTGACGAAGAGCGTCAGCAGCTCACGGCTTTCCTGGAGCGGTGCACATCAGACTC
+GCCAAATGGGTGCCTCTACGTCAGCGGCCCGCCTGGTACCGGCAAGAGCGCCATGATTACCGGGCTCATT
+CAAAAGTACGCAAATAGGGACGATGTCAAGTCGGCATACATCAACTGCATGAGCGTCAAGTCCTCCAAGG
+ATCTCTACATGACGCTACTCGACGGCATGGGGCTTGAGGCCGAGGGCGTAACCGAGGCTGATGCCATGGA
+CGCTCTGCAAGACGCTTTCTACCCCAGAGACGACAACGCCACGACCTATCTGATCACTCTCGATGAGATT
+GATCATATTCTCACTATGGGCCTGGAGAGCTTGTATCGTGTATTTGAATGGGCCCTCCACAAGTCGTCAA
+AGCTTCTCCTTGTCGGCATTGCCAACGCGCTAGATCTCACGGACCGATTTCTCCCTCGTCTCAAGTCCAA
+GAACCTTAAACCTGAGCTTCTTCCGTTTCTTCCCTATACCGCTACGCAAGTGAAGAATATCATCACAACT
+CGTCTGAAGTCTTTGATGCCCCAGGGTAAAGAAAACTTCGTTCCATTTATTCACCCTGCTGCCATTGAAC
+TGTGCTCCCGCAAAGTGTCGAGTCAGACGGGGGATCTTCGCAAGGCGTTTGAGATTTGCAGAAGGGCTTT
+GGATCTGATTGAGAACGAAACACGGTCGAAGCACGAGGAAGAGGCAAGGGAAGCTATGCTTCAGATGACA
+CCATCGAAGCGACCTCTTGGCGAGAATATCAACGGGGCCATGGGAGGACGAAGCATTGTACAAATTATGG
+GCAATTCACTCAAGGCATTGACGGCCGAGACGGCCCCTCGCGCTTCCATAGCCCATCTGAACAAGGTGAC
+GGCAGCAGCGTTCAGCAACGGCACCACACAGAGGCTCAAGACTCTCAACCTTCAGCAAAAGGCAGCCCTG
+TGCGCTCTGGTTGCGTACGAGAATCACTTGCGATCAAAGGTTAAGGTCGGCATGCCCACTACACCAAGCA
+AGACCCAGTTACTGGCACCAACTGTGAAGAAGCTCTTTGGCGCGTACTGCCGCCTGTGCACGCGCGACTC
+TGTGCTCCACCCTCTCTCGAGCTCCGAGTTCCGCGAGGTCATGGGTAGCTTGGAGACGCTGGGCCTTGTC
+AACGCGGTCGATGGCAAGAATGGAAGCTTCATTACGCCGCAGACGCCTAGCAAGCGTGGCCGCAAAGCCG
+CCGTGTTGGCGAGCGGAGACGACAAGCGAGTTGCGAGCTGTGTGACCGAGAAGGACATGGAGTCGGTTGT
+TGCCGGCCTCGGCTCAGGCATTCTAGCCAGCATTTTGCATGGAGAGGCGTTGGATTAA </code>
+
+Remember, from the second FASTA file in Task 1 we can see that the first 10 codons are "MASSALGKRS". 
+
+Therefore, we can check that our process is correct so far by executing the following code (shows the first 10 translated Cdc6 codons with my sequence):
+
+<source lang="r">
+###### TASK 2 ######
+
+# Thomas Hollis (BCH441, University of Toronto) -v9.3
+#     - Purpose: Genome Annotation Learning Unit (Task 2)
+#     - Bugs & issues: no bugs, no issues, no warnings
+#     - Acknowledgements: thanks to Prof. Steipe's learning units which were of great help
+
+if (! require(Biostrings, quietly=TRUE)) {
+  if (! exists("biocLite")) {
+    source("https://bioconductor.org/biocLite.R")
+  }
+  biocLite("Biostrings")
+  library(Biostrings)
+}
+
+Task1Seq <- readAAStringSet("./data/tom_orth.fasta")[[1]]
+cat("Ensure that the next output is equal to: \n", as.character(Task1Seq[1:10]))
+Task2Seq <- translate( (readDNAStringSet("./data/tom_orth_upGen.fasta")[[1]])[501:531] )
+cat(as.character(Task2Seq))
+
+# END
+</source>
+
+Output:
+
+<source lang="r">
+> Task1Seq <- readAAStringSet("./data/tom_orth.fasta")[[1]]
+> cat("Ensure that the next output is equal to: \n", as.character(Task1Seq[1:10]))
+Ensure that the next output is equal to: 
+ MASSALGKRS> Task2Seq <- translate( (readDNAStringSet("./data/tom_orth_upGen.fasta")[[1]])[501:531] )
+Warning message:
+In .Call2("DNAStringSet_translate", x, skip_code, dna_codes[codon_alphabet],  :
+  last base was ignored
+> cat(as.character(Task2Seq))
+MASSALGKRS
+</source>
+
+Indeed, as the above strings match we can confirm our process thus far.
+
+'''Task 3 - Analysing Genome using Regex'''
+
+* The yeast Mbp1 canonical binding site is defined by the regular expression [AT]CGCG[AT]. Are there CGCG motifs present in your nucleotide sequence? Identify them using a regular expression search. Are there [AT]CGCG or CGCG[AT] motifs? What about [AT]CGCG[AT]? Where are they located? Do they cluster? Are they arranged in a similar way as the yeast binding sites that you visited at UCSC?
+
+In order to answer all of these questions, I wrote an R script to compare both sequences. 
+
+The sequence to compare to is the 500-upstream SACCE sequence found with the same method of URL modification as before. Indeed the [https://www.ncbi.nlm.nih.gov/nuccore/NC_001142.9?from=69338&to=70879&report=fasta original URL] is modified by subtracting 500 from the "from" field to produce the [https://www.ncbi.nlm.nih.gov/nuccore/NC_001142.9?from=68838&to=70879&report=fasta modified URL], from which the FASTA is extracted. 
+
+Here is the interleaved input and output:
+
+<source lang="r">
+> ###### TASK 3 ######
+> 
+> # Thomas Hollis (BCH441, University of Toronto) -v9.3
+> #     - Purpose: Genome Annotation Learning Unit (Task 3)
+> #     - Bugs & issues: no bugs, no issues, no warnings
+> #     - Acknowledgements: thanks to Prof. Steipe's helper code which was of great help
+> 
+> mySeq <- as.character(readDNAStringSet("./data/tom_orth_upGen.fasta")[[1]])
+> mySeq2 <- as.character(readDNAStringSet("./data/tom_Cdc6_upGen.fasta")[[1]])
+> 
+> patt <- "..CGCG.."
+> m <- gregexpr(patt, mySeq)
+> cat(m[[1]], "\n")
+128 187 197 207 236 253 532 833 963 1424 1857 2069 2089 2130 2171 
+> (out <- regmatches(mySeq, m)[[1]])
+ [1] "CCCGCGCC" "GTCGCGTA" "GGCGCGTT" "AACGCGCT" "TGCGCGAC" "GGCGCGAG" "GCCGCGCG"
+ [8] "GCCGCGTA" "CCCGCGGG" "AACGCGCT" "CTCGCGCT" "GGCGCGTA" "CACGCGCG" "TCCGCGAG"
+[15] "AACGCGGT"
+> m <- gregexpr(patt, mySeq2)
+> cat(m[[1]], "\n")
+95 284 296 
+> (out <- regmatches(mySeq2, m)[[1]])
+[1] "GACGCGGG" "GACGCGAG" "CACGCGTC"
+> 
+> patt <- "[AT]CGCG.."
+> m <- gregexpr(patt, mySeq)
+> cat(m[[1]], "\n")
+188 208 1425 1858 2090 2172 
+> (out <- regmatches(mySeq, m)[[1]])
+[1] "TCGCGTA" "ACGCGCT" "ACGCGCT" "TCGCGCT" "ACGCGCG" "ACGCGGT"
+> m <- gregexpr(patt, mySeq2)
+> cat(m[[1]], "\n")
+96 285 297 
+> (out <- regmatches(mySeq2, m)[[1]])
+[1] "ACGCGGG" "ACGCGAG" "ACGCGTC"
+> 
+> patt <- "..CGCG[AT]"
+> m <- gregexpr(patt, mySeq)
+> cat(m[[1]], "\n")
+187 197 236 253 833 2069 2091 2130 
+> (out <- regmatches(mySeq, m)[[1]])
+[1] "GTCGCGT" "GGCGCGT" "TGCGCGA" "GGCGCGA" "GCCGCGT" "GGCGCGT" "CGCGCGA" "TCCGCGA"
+> m <- gregexpr(patt, mySeq2)
+> cat(m[[1]], "\n")
+284 296 
+> (out <- regmatches(mySeq2, m)[[1]])
+[1] "GACGCGA" "CACGCGT"
+> 
+> patt <- "[AT]CGCG[AT]"
+> m <- gregexpr(patt, mySeq)
+> cat(m[[1]], "\n")
+188 
+> (out <- regmatches(mySeq, m)[[1]])
+[1] "TCGCGT"
+> m <- gregexpr(patt, mySeq2)
+> cat(m[[1]], "\n")
+285 297 
+> (out <- regmatches(mySeq2, m)[[1]])
+[1] "ACGCGA" "ACGCGT"
+> 
+> # END
+</source>
+
+So we can see that there are indeed some CGCG, [AT]CGCG, CGCG[AT] and [AT]CGCG[AT] motifs throughout the sequence. This is true for both sequences.
+
+'''Task 4 - Interpreting findings'''
+
+* Interpret your finding. Does this support or refute the idea that MBP1_MYSPE has the same DNA sequence binding specificity as MBP1_SACCE?
+
+I am not a biologist but I will do my best to interpret my findings. I took the sequences and aligned them in Sublime as best I could. From this information and since the regex has shown a high similarity in the clustering, it seems that MBP1_ISAFU (a.k.a. MBP1_CORFU) has the same DNA sequence binding specificity as MBP1_SACCE.
 
 ; Conclusion and Outlook
-The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-SX-PDB PDB files].
+I struggled with this one but the NCBI website saved me! Such good documentation! The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/RPR-SX-PDB PDB files].
 
 == 5.4 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Homology_modelling Homology Modelling] (submitted: 8 marks) ==
 ; Objective
