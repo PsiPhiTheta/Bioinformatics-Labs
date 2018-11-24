@@ -1,1 +1,71 @@
-(null)
+<div id="ABC">
+<div style="padding:5px; border:1px solid #000000; background-color:#C0C0C0; font-size:300%; font-weight:400; color: #000000; width:100%;">
+Evaluation page: Homology Modelling [Publication Image Option]
+<div style="padding:5px; margin-top:20px; margin-bottom:10px; background-color:#C0C0C0; font-size:30%; font-weight:200; color: #000000; ">
+(Thomas Hollis' submission)
+</div>
+</div>
+
+
+ __TOC__
+
+
+= Task 1 - Preparations =
+
+'''Instructions: In Chimera, create a model of your MBP1_MYSPE APSES domain bound to DNA, based on the 4UX5 structure. (Superimpose your homology model on Chain A and delete Chain B)'''
+
+* To get this project started I loaded my MBP1_ISAFU from the previous learning unit (using the history menu option) and loaded 4UX5 from the <code>File > Fetch by ID</code> (typing 4UX5 in the input box). 
+
+* Selected Interactive 1 (ribbons) as preset for now by doing: <code> Presets > Interactive 1 (ribbons) </code>.
+
+* Selected Chain B of 4UX5 by doing: <code> Select > Chain > B </code>.
+
+* Deleted Chain B of 4UX5 by doing: <code> Actions > atoms/bonds > delete </code> .
+
+* Dimmed for better visibility 4UX5 chain A and highlighted the other chain by doing: <code> Select > Chain > A </code> then <code> Actions > Color > dim grey </code> and <code> Select > Chain > A </code> then <code> Actions > Color > magenta </code>.
+
+* Superimposed MBP1_ISAFU by doing: <code> Tools > Structure Comparison > MatchMaker > Specific chain(s) in reference structure with specific chain(s) in match structure </code> then adding 4UX5 chain A as the reference chain and MBP1_MYSPE-APSESrenum.pdb chain A as the chain to match then clicking <code> Apply </code>. Then did: <code> Tools > Structure Comparison > Match --> Align </code> for inspection. ''(note: ran into a minor error here)''
+
+= Task 2 - Conserved positively charged residues = 
+
+'''Instructions: Show the conserved positively charged residues of MBP1_MYSPE that bind to DNA (labels!) in context of the bound DNA. Best done as a stick or sphere model but it's your figure so channel your creative talent for information design.'''
+
+* Showed positively charged residues by doing: <code> Select > Residue > Amino Acid Category > Positive </code> then <code> Actions > Color > green </code>.
+
+* Added labels by doing: <code> Actions > Labels > Residue > name </code> at key strategic points to avoid having too many labels and chose the bold option in <code> Actions > Labels > Options </code>. 
+
+* Changed the label colour to make them readable by doing: <code> Actions > Color > all options </code>.
+
+* Set the sphere model by doing: <code> Actions > Atoms/bond > sphere </code> then  <code> Actions > Atoms/bond > show </code>.
+
+* Set the optimal view using <code> Tools > Viewing Controls > Camera </code>.
+
+* Exported image using <code> File > Save Image </code>.
+
+= Task 3 - Coulombic surface coloring =
+
+'''Instructions: Show the solvent excluded surface calculated separately for protein and DNA, colored by Coulombic surface coloring. Make the surface sufficiently transparent to show the underlying ribbon representations of the backbone, and the side-chains of the conserved positively charged residues. May combine (i) the protein and DNA backbones (in ribbon view), (ii) the sidechains of residues that your are discussing, distinctly coloured, (iii) a transparent surface of the protein, and (iv) a transparent surface of the DNA.''' 
+
+* Set the rest of MBP1 as spheres by doing: <code> Select > Chain > A > MBP1... </code> and then <code> Actions > Atoms/bonds > sphere </code> and finally <code> Actions > Atoms/bonds > show </code>. 
+
+* Recolour them light grey by doing <code> Actions > Color > light grey </code>. 
+
+* Set the D and C chains as backbone only by doing: <code> Select > Chain > C </code> and <code> Select > Chain > D </code> choosing <code> Actions > Ribbon > Show </code>.
+
+* Add surfaces by doing: <code> Actions > Surface > Show </code> for both chain C, chain D and chain A separately. 
+
+* Add Coulombic surface colouring by doing: <code> Tools > Surface/Binding analysis > Coulombic Surface Coloring </code>.
+
+* Add transparency by doing: <code> Actions > Surface > Transparency </code> and set it to 50% for both chains C, D and A. 
+
+* Set the optimal view using <code> Tools > Viewing Controls > Camera </code>.
+
+* Exported image using <code> File > Save Image </code>.
+
+= Task 4 - Publication quality image =
+
+'''Instructions: The goal is to demonstrate that the residue conservation of positively charged residues can be explained by their contribution to a surface that is electrostatically complementary to DNA. Print your figure and figure caption as a PDF and upload to the Student Wiki.''' 
+
+My figure and caption can be found here: [[File:TomPublicationImage.pdf]]
+
+[[Category:EVAL-INT-Homology_modelling]]
