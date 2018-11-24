@@ -2676,6 +2676,8 @@ I chose "4UX5_A" as my template since it has a higher sequence similarity to the
 
 The final comparison was pretty impressive...
 
+There was also a type on the last line of the script. It should be <code>write.pdb(pdb = MYSPEmodel, file=PDB_OUTFILE)</code>.
+
 ; Conclusion and Outlook
 I really struggled here so I think I will go over this unit again as part of my recap (only 5 or so units need recapping). The next unit that I plan to take is [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Homology_modelling Homology Modelling (Integrator Unit)].
 
@@ -3651,17 +3653,21 @@ I struggled with this one but the NCBI website saved me! Such good documentation
 
 == 5.4 [http://steipe.biochemistry.utoronto.ca/abc/index.php/ABC-INT-Homology_modelling Homology Modelling] (submitted: 8 marks) ==
 ; Objective
-
+My objective here is to create a flawless publication image of MBP1_MYSPE APSES domain bound to DNA, based on the 4UX5 structure.
 
 <div class="time-estimate">
-Time estimated: 6 h; taken: ? h; date started: 2018-11-??; date completed: 2018-11-??
+Time estimated: 6 h; taken: 8 h; date started: 2018-11-21; date completed: 2018-11-23
 </div>
 
 ; Activities
 You can find my submission page [http://steipe.biochemistry.utoronto.ca/abc/students/index.php?title=User:Thomas_Hollis/Eval_Homology_Modelling&action=edit&redlink=1 here].
 
+This is what my final publication image looked like (it took me almost half a century to create but I did my best):
+
+[[File:TomPublicationImage.png|middle|600px]]
+
 ; Conclusion and Outlook
-Wow this is the final unit... Cannot quite believe it... Maybe time to do a big review of my journal and run through any chapters that I feel are weak!
+Wow this is the final unit... Cannot quite believe it... This might be a good time to do a big review of my journal and run through any chapters that I feel are weak!
 
 = 6. Custom Learning Unit =
 
@@ -3687,11 +3693,6 @@ This really was great fun. I hope my learning unit is taken by someone in the fu
 <references />
 
 {{Vspace}}
-
-<div class="note">
-Note: This page is still in development. 
-</div>
-
 
 {{CC-BY}}
 
