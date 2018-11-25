@@ -1,5 +1,5 @@
 # Bioinformatics-Labs
-Coursework and laboratory files for the UofT Bioinformatics course. See .pdf exports for GitHub issues in rendering <code>.wiki</code> files. 
+Coursework and laboratory files for the UofT Bioinformatics course. See <code>.pdf</code> exports for GitHub issues in rendering <code>.wiki</code> files. 
 
 ## 1. Student Wiki
 
